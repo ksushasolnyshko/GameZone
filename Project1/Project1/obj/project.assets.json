@@ -7530,9 +7530,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Project1.csproj",
-      "projectName": "Project1",
-      "projectPath": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Project1.csproj",
+      "projectUniqueName": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Zone.csproj",
+      "projectName": "Zone",
+      "projectPath": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Zone.csproj",
       "packagesPath": "C:\\Users\\ksupo\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\obj\\",
       "projectStyle": "PackageReference",

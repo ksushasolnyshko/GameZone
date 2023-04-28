@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Co5sNzn69707BlzDwNFjF2Y8U7VT6SfZno/hlxiC4iq1mcHePSy5HUEamuFChx6HnHOxROrk/armIk5PJFOYJQ==",
+  "dgSpecHash": "sCzRKjCVWIuI/BgBER4Gk1sSD/c6FogQdw4Zs79d9xsOGIAm51EoxXea4siYylD3KTPYJBT9UXeW2H1QSbKkKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Project1.csproj",
+  "projectFilePath": "C:\\Users\\ksupo\\GitHub\\GameZone\\Project1\\Project1\\Zone.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ksupo\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Users\\ksupo\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",
