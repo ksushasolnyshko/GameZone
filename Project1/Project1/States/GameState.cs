@@ -8,7 +8,7 @@ using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Zone.GameCore;
+using Zone.Models;
 using Zone.Managers;
 using Zone.Sprites;
 
@@ -28,6 +28,7 @@ namespace Zone.States
             var animations = new Dictionary<string, Animation>(){
                 {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
+                {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
             _sprites = new List<Sprite>()
             {
@@ -38,6 +39,7 @@ namespace Zone.States
                     {
                         Right = Keys.D,
                         Left = Keys.A,
+                        Up = Keys.W,
                     }
                 }
             };

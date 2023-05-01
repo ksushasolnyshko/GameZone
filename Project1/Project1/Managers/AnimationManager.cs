@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zone.GameCore;
+using Zone.Models;
 
 namespace Zone.Managers
 {

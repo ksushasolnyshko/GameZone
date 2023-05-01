@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Zone.GameCore;
+using Zone.Models;
 using Zone.Managers;
 
 namespace Zone.Sprites
@@ -16,12 +16,16 @@ namespace Zone.Sprites
         #region Fields
 
         protected AnimationManager _animationManager;
-
         protected Dictionary<string, Animation> _animations;
-
         protected Vector2 _position;
-
+        protected Vector2 current_position;
         protected Texture2D _texture;
+
+        KeyboardState state;
+        KeyboardState Oldstate = Keyboard.GetState();
+        bool isJump = false;
+        float _TotalSeconds = 0;
+        float seconds = 0.3f;
 
         #endregion
 
@@ -58,7 +62,7 @@ namespace Zone.Sprites
             else throw new Exception("This ain't right..!");
         }
 
-        public virtual void Move( )
+        public virtual void Move(GameTime gameTime)
         {
             //if (Keyboard.GetState().IsKeyDown(Input.Up))
             //    Velocity.Y = -Speed;
@@ -68,6 +72,25 @@ namespace Zone.Sprites
                 Velocity.X = -Speed;
             else if (Keyboard.GetState().IsKeyDown(Input.Right))
                 Velocity.X = Speed;
+            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Oldstate.IsKeyDown(Keys.W))
+            {
+                isJump = true;
+            }
+            if (isJump && seconds > _TotalSeconds)
+            {
+                _TotalSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                Velocity.Y = -7;
+                Velocity.X = Speed;
+            }
+            else
+            {
+                if (Position.Y < 30)
+                {  
+                    Velocity.Y += 7;
+                    _TotalSeconds = 0;//Если герой упал, обнуляем счетчик.
+                }
+                isJump = false;
+            }
         }
 
         protected virtual void SetAnimations()
@@ -78,8 +101,8 @@ namespace Zone.Sprites
                 _animationManager.Play(_animations["WalkLeft"]);
             //else if (Velocity.Y > 0)
             //    _animationManager.Play(_animations["WalkDown"]);
-            //else if (Velocity.Y < 0)
-            //    _animationManager.Play(_animations["WalkUp"]);
+            else if (Velocity.Y < 0)
+               _animationManager.Play(_animations["WalkRight"]);
             else _animationManager.Stop();
         }
 
@@ -96,12 +119,14 @@ namespace Zone.Sprites
 
         public virtual void Update(GameTime gameTime, List<Sprite> sprites)
         {
-            Move();
+            state = Keyboard.GetState();
+            Oldstate = state;
+            Move(gameTime);
 
             SetAnimations();
 
             _animationManager.Update(gameTime);
-
+            current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
         }
