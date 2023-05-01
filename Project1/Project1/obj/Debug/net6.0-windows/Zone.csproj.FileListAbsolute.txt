@@ -39,3 +39,6 @@ C:\Users\ksupo\GitHub\GameZone\Project1\Project1\obj\Debug\net6.0-windows\ref\Zo
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Controls\play_button.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Controls\exit_button.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Controls\rules_button.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\bg_level1.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Player\player_go_right.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Player\player_go_left.xnb

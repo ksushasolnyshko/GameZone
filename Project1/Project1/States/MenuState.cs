@@ -26,19 +26,19 @@ namespace Zone.States
 
             var playButton = new Button(playButtomTexture)
             {
-                Position = new Vector2(640, 148),
+                Position = new Vector2(1300, 350),
             };
             playButton.Click += PlayButton_Click;
 
             var rulesButton = new Button(rulesButtomTexture)
             {
-                Position = new Vector2(623, 264),
+                Position = new Vector2(1290, 500),
             };
             rulesButton.Click += RulesButton_Click;
 
             var quitGameButton = new Button(exitButtonTexture)
             {
-                Position = new Vector2(630, 384),
+                Position = new Vector2(1300, 665),
             };
             quitGameButton.Click += QuitGameButton_Click;
 
@@ -53,7 +53,7 @@ namespace Zone.States
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
-            spriteBatch.Draw(background, new Vector2(0, 0), Color.White);
+            spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
             foreach (var component in _components)
                 component.Draw(gameTime, spriteBatch);
 

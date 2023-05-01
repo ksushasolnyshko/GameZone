@@ -30,8 +30,8 @@ namespace Zone
         protected override void Initialize()
         {
             IsMouseVisible = true;
-            graphics.PreferredBackBufferWidth = 1024;
-            graphics.PreferredBackBufferHeight = 576;
+            graphics.PreferredBackBufferWidth = 2000;
+            graphics.PreferredBackBufferHeight = 980;
             graphics.ApplyChanges();
             base.Initialize();
         }
