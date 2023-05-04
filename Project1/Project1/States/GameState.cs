@@ -19,7 +19,7 @@ namespace Zone.States
         Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private List<Sprite> _sprites;
+        private Sprite _sprites;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
@@ -33,19 +33,18 @@ namespace Zone.States
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
-            _sprites = new List<Sprite>()
-            {
+            _sprites =
                 new Sprite(animations)
                 {
-                    Position = new Vector2(100, 755),
+                    Size = new Point(78, 146),
+                    Position = new Vector2(100, 745),
                     Input = new Input()
                     {
                         Right = Keys.D,
                         Left = Keys.A,
                         Up = Keys.W,
                     }
-                }
-            };
+                };
 
             map = new int[,]
             {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -85,8 +84,8 @@ namespace Zone.States
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
 
-            foreach (var sprite in _sprites)
-                sprite.Draw(spriteBatch);
+          
+            _sprites.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -100,8 +99,21 @@ namespace Zone.States
 
         public override void Update(GameTime gameTime)
         {
-            foreach (var sprite in _sprites)
-                sprite.Update(gameTime, _sprites);
+        
+            foreach (var b in boxes)
+                if (Collide(_sprites, b))
+                    _sprites.Velocity.Y = 0;
+            _sprites.Update(gameTime, _sprites);
+        }
+
+        protected static bool Collide(Sprite firstObj, Box secondObj)
+        {
+            Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
+                (int)firstObj.Position.Y, firstObj.Size.X, firstObj.Size.Y);
+            Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
+                (int)secondObj.Position.Y, secondObj.Position.Width, secondObj.Position.Height);
+
+            return secondObjRect.Intersects(firstObjRect);
         }
     }
 }

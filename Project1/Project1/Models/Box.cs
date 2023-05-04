@@ -7,10 +7,10 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zone.Models
 {
-    class Box
+    public class Box
     {
         Texture2D Texture;
-        Rectangle Position;
+        public Rectangle Position;
 
         public Box(Texture2D texture, Rectangle rect)
         {

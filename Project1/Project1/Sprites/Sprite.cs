@@ -23,16 +23,16 @@ namespace Zone.Sprites
 
         KeyboardState state;
         KeyboardState Oldstate = Keyboard.GetState();
-        bool isJump = false;
+        public bool isJump = false;
         float _TotalSeconds = 0;
         float seconds = 0.8f;
 
         #endregion
 
         #region Properties
-
+        public Point Size;
         public Input Input;
-
+      
         public Vector2 Position
         {
             get { return _position; }
@@ -114,7 +114,7 @@ namespace Zone.Sprites
             _texture = texture;
         }
 
-        public virtual void Update(GameTime gameTime, List<Sprite> sprites)
+        public virtual void Update(GameTime gameTime, Sprite sprites)
         {
             state = Keyboard.GetState();
             Oldstate = state;
@@ -126,7 +126,7 @@ namespace Zone.Sprites
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
-            if (Position.Y < 700)
+            if (Position.Y < 745)
             {
                 Velocity.Y += 5;
             }
