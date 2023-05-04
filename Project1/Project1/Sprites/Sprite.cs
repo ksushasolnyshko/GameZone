@@ -25,7 +25,7 @@ namespace Zone.Sprites
         KeyboardState Oldstate = Keyboard.GetState();
         bool isJump = false;
         float _TotalSeconds = 0;
-        float seconds = 0.3f;
+        float seconds = 0.8f;
 
         #endregion
 
@@ -45,7 +45,7 @@ namespace Zone.Sprites
             }
         }
 
-        public float Speed = 1f;
+        public float Speed = 4f;
 
         public Vector2 Velocity;
 
@@ -64,32 +64,31 @@ namespace Zone.Sprites
 
         public virtual void Move(GameTime gameTime)
         {
-            //if (Keyboard.GetState().IsKeyDown(Input.Up))
-            //    Velocity.Y = -Speed;
-            //else if (Keyboard.GetState().IsKeyDown(Input.Down))
-            //    Velocity.Y = Speed;
             if (Keyboard.GetState().IsKeyDown(Input.Left))
-                Velocity.X = -Speed;
-            else if (Keyboard.GetState().IsKeyDown(Input.Right))
-                Velocity.X = Speed;
-            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Oldstate.IsKeyDown(Keys.W))
             {
+                Velocity.X = -Speed;
+                isJump = true;  
+            }
+            else if (Keyboard.GetState().IsKeyDown(Input.Right))
+            {
+                Velocity.X = Speed;
                 isJump = true;
             }
-            if (isJump && seconds > _TotalSeconds)
+
+            else if ((Keyboard.GetState().IsKeyDown(Input.Up)))
             {
-                _TotalSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                Velocity.Y = -7;
-                Velocity.X = Speed;
-            }
-            else
-            {
-                if (Position.Y < 30)
-                {  
-                    Velocity.Y += 7;
-                    _TotalSeconds = 0;//Если герой упал, обнуляем счетчик.
+                Speed = 6f;
+                if (isJump && seconds > _TotalSeconds)
+                {
+                    _TotalSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
+                    Velocity.Y = (float)(-Speed * (0.8));
+                    Velocity.X = (float)(Speed / 2);
                 }
-                isJump = false;
+                else
+                {
+                    isJump = false;
+                    _TotalSeconds = 0;
+                }
             }
         }
 
@@ -99,8 +98,6 @@ namespace Zone.Sprites
                 _animationManager.Play(_animations["WalkRight"]);
             else if (Velocity.X < 0)
                 _animationManager.Play(_animations["WalkLeft"]);
-            //else if (Velocity.Y > 0)
-            //    _animationManager.Play(_animations["WalkDown"]);
             else if (Velocity.Y < 0)
                _animationManager.Play(_animations["WalkRight"]);
             else _animationManager.Stop();
@@ -129,6 +126,10 @@ namespace Zone.Sprites
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
+            if (Position.Y < 700)
+            {
+                Velocity.Y += 5;
+            }
         }
 
         #endregion

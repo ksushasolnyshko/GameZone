@@ -20,6 +20,9 @@ namespace Zone.States
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private List<Sprite> _sprites;
+        private int[,] map;
+        private Box box;
+        private List<Box> boxes;
 
         public GameState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -34,7 +37,7 @@ namespace Zone.States
             {
                 new Sprite(animations)
                 {
-                    Position = new Vector2(100, 800),
+                    Position = new Vector2(100, 755),
                     Input = new Input()
                     {
                         Right = Keys.D,
@@ -43,8 +46,40 @@ namespace Zone.States
                     }
                 }
             };
-        }
 
+            map = new int[,]
+            {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+             {1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1},
+             {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+            };
+
+            var x = 0;
+            var y = 0;
+            boxes = new List<Box>();
+            for (var i = 0; i < map.GetLength(0); i++)
+            {
+                for (var j = 0; j < map.GetLength(1); j++)
+                {
+                    Rectangle rect = new Rectangle(x, y, 128, 110);
+                    var a = map[i, j];
+                    if (a == 1)
+                    {
+                        box = new Box(_content.Load<Texture2D>("Map/platform"), rect);
+                        boxes.Add(box);
+                    }
+                    x += 117;
+                }
+
+                x = 0;
+                y += 128;
+            }
+        }
+      
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
@@ -52,7 +87,8 @@ namespace Zone.States
 
             foreach (var sprite in _sprites)
                 sprite.Draw(spriteBatch);
-
+            foreach (var b in boxes)
+                b.Draw(spriteBatch);
             spriteBatch.End();
 
         }
