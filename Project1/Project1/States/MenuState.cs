@@ -61,11 +61,11 @@ namespace Zone.States
         }
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+            _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new GameState(_game, _graphicsDevice, _content));
+            _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
         }
 
         public override void PostUpdate(GameTime gameTime)

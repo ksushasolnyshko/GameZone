@@ -7,20 +7,14 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Zone.Models
 {
-    public class Box
+    public class Box : Sprite
     {
-        Texture2D Texture;
-        public Rectangle Position;
-
-        public Box(Texture2D texture, Rectangle rect)
+        public Box(Dictionary<string, Animation> animations) : base(animations)
         {
-            this.Texture = texture;
-            this.Position = rect;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public Box(Texture2D texture) : base(texture)
         {
-            spriteBatch.Draw(Texture, Position, Color.White);
         }
     }
 }
