@@ -13,7 +13,7 @@
 
 #---------------------------------- Content ---------------------------------#
 
-#begin Artifacts/book.png
+#begin Artifacts/пустышка 2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -23,9 +23,9 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Artifacts/book.png
+/build:Artifacts/пустышка 2.png;Artifacts/empty2.png
 
-#begin Artifacts/empty.png
+#begin Artifacts/секретная книга 2.png
 /importer:TextureImporter
 /processor:TextureProcessor
 /processorParam:ColorKeyColor=255,0,255,255
@@ -35,7 +35,7 @@
 /processorParam:ResizeToPowerOfTwo=False
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
-/build:Artifacts/empty.png
+/build:Artifacts/секретная книга 2.png;Artifacts/book2.png
 
 #begin bg_level1.png
 /importer:TextureImporter

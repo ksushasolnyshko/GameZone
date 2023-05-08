@@ -13,6 +13,7 @@ namespace Zone.Models
     {  
         public PlayerModel(Dictionary<string, Animation> animations) : base(animations)
         {
+            isPlayer = true;
         }
 
         public PlayerModel(Texture2D texture) : base(texture)

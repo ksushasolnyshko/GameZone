@@ -4,8 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/book.png</File>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/empty.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/пустышка 2.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/секретная книга 2.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/exit_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/play_button.png</File>
@@ -16,8 +16,8 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
   </SourceFiles>
   <DestFiles>
-    <File xsi:nil="true" />
-    <File xsi:nil="true" />
+    <File>Artifacts/empty2.png</File>
+    <File>Artifacts/book2.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

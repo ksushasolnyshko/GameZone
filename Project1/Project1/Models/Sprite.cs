@@ -24,12 +24,13 @@ namespace Zone.Models
         KeyboardState state;
         public bool isJump = false;
         public bool isFall = false;
+        public bool isPlayer = false;
         public float _TotalSeconds = 0;
         public float seconds = 0.8f;
         #endregion
 
         #region Properties
-        public Point Size;
+        public Vector2 Size;
         public Input Input;
 
         public Vector2 Position
@@ -89,7 +90,7 @@ namespace Zone.Models
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
-            if (Position.Y < 745)
+            if (Position.Y < 745 && isPlayer)
             {
                 isFall = true;
                 Velocity.Y += 5;

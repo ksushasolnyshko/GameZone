@@ -13,21 +13,17 @@ using Zone.Managers;
 
 namespace Zone.States
 {
-   public class Level1: State
+    public class Level2 : State
     {
         Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private PlayerModel player;
-        private ArtifactModel secretBook;
-        private ArtifactModel emptyArt;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
-        private bool isBook = true;
-        private bool isEmpty = true;
 
-        public Level1(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
+        public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
             background = _content.Load<Texture2D>("bg_level1");
@@ -37,33 +33,11 @@ namespace Zone.States
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
 
-            var emptyAnimation = new Dictionary<string, Animation>
-            {
-                {"Up", new Animation(_content.Load<Texture2D>("Artifacts/empty2"), 7) }
-            };
-
-            var bookAnimation = new Dictionary<string, Animation>
-            {
-                {"Up", new Animation(_content.Load<Texture2D>("Artifacts/book2"), 5) }
-            };
-
-            secretBook = new ArtifactModel(bookAnimation)
-            {
-                Size = new Vector2(57, 61),
-                Position = new Vector2(815, 270)
-             };
-
-            emptyArt = new ArtifactModel(emptyAnimation)
-            {
-                Size = new Vector2(64, 62),
-                Position = new Vector2(20, 165)
-            };
-
             player =
                 new PlayerModel(animations)
                 {
-                    Size = new Vector2(78, 144),
-                    Position = new Vector2(100, 750),
+                    Size = new Vector2(78, 146),
+                    Position = new Vector2(100, 745),
                     Input = new Input()
                     {
                         Right = Keys.D,
@@ -74,11 +48,11 @@ namespace Zone.States
 
             map = new int[,]
             {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1},
+             {0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1},
              {1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1},
-             {0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+             {0, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0},
+             {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
              {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
             };
@@ -95,7 +69,7 @@ namespace Zone.States
                     {
                         box = new Box(_content.Load<Texture2D>("Map/platform"))
                         {
-                            Size = new Vector2(116, 97),
+                            Size = new Vector2(117, 97),
                             Position = new Vector2(x, y),
                         };
                         boxes.Add(box);
@@ -107,7 +81,7 @@ namespace Zone.States
                 y += 128;
             }
         }
-      
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
@@ -115,8 +89,6 @@ namespace Zone.States
 
 
             player.Draw(spriteBatch);
-            if (isBook) secretBook.Draw(spriteBatch);
-            if (isEmpty) emptyArt.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -133,18 +105,9 @@ namespace Zone.States
 
             foreach (var b in boxes)
                 if (Collide(player, b))
-                {
-                    if (player.Velocity.Y >= b.Velocity.Y + b.Size.Y)
-                        player.Velocity.Y = -5;
-                    else player.Velocity.Y = 0;
-                }
+                    player.Velocity.Y = 0;
 
-            if (Collide(player, secretBook)) isBook = false;
-            if (Collide(player, emptyArt)) isEmpty = false;
-            if (!isEmpty && !isBook) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
             player.Update(gameTime, player);
-            emptyArt.Update(gameTime, emptyArt);
-            secretBook.Update(gameTime, secretBook);
         }
 
         protected static bool Collide(Sprite firstObj, Sprite secondObj)
@@ -153,8 +116,8 @@ namespace Zone.States
                 (int)firstObj.Position.Y, (int)firstObj.Size.X, (int)firstObj.Size.Y);
             Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
                 (int)secondObj.Position.Y, (int)secondObj.Size.X, (int)secondObj.Size.Y);
+
             return firstObjRect.Intersects(secondObjRect);
         }
     }
 }
-

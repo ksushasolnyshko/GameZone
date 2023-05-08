@@ -20,5 +20,10 @@ namespace Zone.Models
         public ArtifactModel(Texture2D texture) : base(texture)
         {
         }
+
+        protected override void SetAnimations()
+        {
+            if (_animations.ContainsKey("Up")) _animationManager.Play(_animations["Up"]);
+        }
     }
 }
