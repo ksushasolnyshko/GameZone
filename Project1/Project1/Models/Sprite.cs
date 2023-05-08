@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using Zone.Models;
 using Zone.Managers;
 
-namespace Zone.Sprites
+namespace Zone.Models
 {
     public class Sprite
     {
@@ -23,9 +23,9 @@ namespace Zone.Sprites
 
         KeyboardState state;
         public bool isJump = false;
+        public bool isFall = false;
         public float _TotalSeconds = 0;
         public float seconds = 0.8f;
-
         #endregion
 
         #region Properties
@@ -44,7 +44,7 @@ namespace Zone.Sprites
             }
         }
 
-        public float Speed = 4f;
+        public float Speed = 0f;
 
         public Vector2 Velocity = new Vector2(0, 0);
 
@@ -85,14 +85,16 @@ namespace Zone.Sprites
 
             SetAnimations();
 
-            _animationManager.Update(gameTime);
+            if (_animationManager != null) _animationManager.Update(gameTime);
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
             if (Position.Y < 745)
             {
+                isFall = true;
                 Velocity.Y += 5;
             }
+            else isFall = false;
         }
 
         #endregion

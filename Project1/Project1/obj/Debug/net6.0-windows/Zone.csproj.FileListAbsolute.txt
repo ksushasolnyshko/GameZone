@@ -43,3 +43,5 @@ C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Conten
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Player\player_go_right.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Player\player_go_left.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Map\platform.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\book.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\empty.xnb

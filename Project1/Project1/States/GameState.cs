@@ -19,6 +19,8 @@ namespace Zone.States
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private PlayerModel player;
+        private ArtifactModel secretBook;
+        private ArtifactModel emptyArt;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
@@ -32,6 +34,18 @@ namespace Zone.States
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
+            secretBook = new ArtifactModel(_content.Load<Texture2D>("Artifacts/book"))
+            {
+                Size = new Point(57, 61),
+                Position = new Vector2(810, 305)
+             };
+
+            emptyArt = new ArtifactModel(_content.Load<Texture2D>("Artifacts/empty"))
+            {
+                Size = new Point(64, 62),
+                Position = new Vector2(20, 195)
+            };
+
             player =
                 new PlayerModel(animations)
                 {
@@ -85,6 +99,8 @@ namespace Zone.States
 
 
             player.Draw(spriteBatch);
+            secretBook.Draw(spriteBatch);
+            emptyArt.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -105,7 +121,7 @@ namespace Zone.States
             player.Update(gameTime, player);
         }
 
-        protected static bool Collide(Sprites.Sprite firstObj, Box secondObj)
+        protected static bool Collide(Sprite firstObj, Box secondObj)
         {
             Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
                 (int)firstObj.Position.Y, firstObj.Size.X, firstObj.Size.Y);
