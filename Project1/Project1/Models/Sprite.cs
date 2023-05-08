@@ -22,17 +22,16 @@ namespace Zone.Sprites
         protected Texture2D _texture;
 
         KeyboardState state;
-        KeyboardState Oldstate = Keyboard.GetState();
         public bool isJump = false;
-        float _TotalSeconds = 0;
-        float seconds = 0.8f;
+        public float _TotalSeconds = 0;
+        public float seconds = 0.8f;
 
         #endregion
 
         #region Properties
         public Point Size;
         public Input Input;
-      
+
         public Vector2 Position
         {
             get { return _position; }
@@ -47,7 +46,7 @@ namespace Zone.Sprites
 
         public float Speed = 4f;
 
-        public Vector2 Velocity;
+        public Vector2 Velocity = new Vector2(0, 0);
 
         #endregion
 
@@ -62,46 +61,9 @@ namespace Zone.Sprites
             else throw new Exception("This ain't right..!");
         }
 
-        public virtual void Move(GameTime gameTime)
-        {
-            if (Keyboard.GetState().IsKeyDown(Input.Left))
-            {
-                Velocity.X = -Speed;
-                isJump = true;  
-            }
-            else if (Keyboard.GetState().IsKeyDown(Input.Right))
-            {
-                Velocity.X = Speed;
-                isJump = true;
-            }
 
-            else if ((Keyboard.GetState().IsKeyDown(Input.Up)))
-            {
-                Speed = 6f;
-                if (isJump && seconds > _TotalSeconds)
-                {
-                    _TotalSeconds += (float)gameTime.ElapsedGameTime.TotalSeconds;
-                    Velocity.Y = (float)(-Speed * (0.8));
-                    Velocity.X = (float)(Speed / 2);
-                }
-                else
-                {
-                    isJump = false;
-                    _TotalSeconds = 0;
-                }
-            }
-        }
 
-        protected virtual void SetAnimations()
-        {
-            if (Velocity.X > 0)
-                _animationManager.Play(_animations["WalkRight"]);
-            else if (Velocity.X < 0)
-                _animationManager.Play(_animations["WalkLeft"]);
-            else if (Velocity.Y < 0)
-               _animationManager.Play(_animations["WalkRight"]);
-            else _animationManager.Stop();
-        }
+        protected virtual void SetAnimations() { }
 
         public Sprite(Dictionary<string, Animation> animations)
         {
@@ -114,10 +76,11 @@ namespace Zone.Sprites
             _texture = texture;
         }
 
+        public virtual void Move(GameTime gameTime) { }
+
         public virtual void Update(GameTime gameTime, Sprite sprites)
         {
             state = Keyboard.GetState();
-            Oldstate = state;
             Move(gameTime);
 
             SetAnimations();

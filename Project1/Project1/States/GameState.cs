@@ -10,7 +10,6 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Zone.Models;
 using Zone.Managers;
-using Zone.Sprites;
 
 namespace Zone.States
 {
@@ -19,7 +18,7 @@ namespace Zone.States
         Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Sprite _sprites;
+        private PlayerModel player;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
@@ -33,8 +32,8 @@ namespace Zone.States
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
-            _sprites =
-                new Sprite(animations)
+            player =
+                new PlayerModel(animations)
                 {
                     Size = new Point(78, 146),
                     Position = new Vector2(100, 745),
@@ -84,8 +83,8 @@ namespace Zone.States
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
 
-          
-            _sprites.Draw(spriteBatch);
+
+            player.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -101,17 +100,17 @@ namespace Zone.States
         {
         
             foreach (var b in boxes)
-                if (Collide(_sprites, b))
-                    _sprites.Velocity.Y = 0;
-            _sprites.Update(gameTime, _sprites);
+                if (Collide(player, b))
+                    player.Velocity.Y = 0;
+            player.Update(gameTime, player);
         }
 
-        protected static bool Collide(Sprite firstObj, Box secondObj)
+        protected static bool Collide(Sprites.Sprite firstObj, Box secondObj)
         {
             Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
                 (int)firstObj.Position.Y, firstObj.Size.X, firstObj.Size.Y);
-            Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
-                (int)secondObj.Position.Y, secondObj.Position.Width, secondObj.Position.Height);
+            Rectangle secondObjRect = new Rectangle(secondObj.Position.X,
+                secondObj.Position.Y, secondObj.Position.Width, secondObj.Position.Height);
 
             return secondObjRect.Intersects(firstObjRect);
         }
