@@ -13,6 +13,18 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin Artifacts/spring.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Artifacts/spring.png
+
 #begin Artifacts/пустышка 2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -48,6 +60,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:bg_level1.png
+
+#begin bg_level2.jpg
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:bg_level2.jpg
 
 #begin Controls/exit_button.png
 /importer:TextureImporter

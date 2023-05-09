@@ -19,18 +19,30 @@ namespace Zone.States
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         private PlayerModel player;
+        private ArtifactModel spring;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
+        private bool isSpring = false;
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level1");
+            background = _content.Load<Texture2D>("bg_level2");
             var animations = new Dictionary<string, Animation>(){
                 {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
+            };
+            var springAnimation = new Dictionary<string, Animation>()
+            {
+                { "Spring", new Animation(_content.Load<Texture2D>("Artifacts/spring"), 7)},
+            };
+
+            spring = new ArtifactModel(springAnimation)
+            {
+                Size = new Vector2(66, 95),
+                Position = new Vector2(1615, 785)
             };
 
             player =
@@ -86,9 +98,10 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-
+             
 
             player.Draw(spriteBatch);
+            if (!isSpring) spring.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -106,8 +119,11 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b))
                     player.Velocity.Y = 0;
-
+            if (Collide(player, spring)) isSpring = true;
+            if (isSpring) player.isJump = true;
+            else player.isJump = false;
             player.Update(gameTime, player);
+            spring.Update(gameTime, spring);
         }
 
         protected static bool Collide(Sprite firstObj, Sprite secondObj)
