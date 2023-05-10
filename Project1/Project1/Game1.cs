@@ -52,7 +52,6 @@ namespace Zone
             }
 
             _currentState.Update(gameTime);
-            _currentState.PostUpdate(gameTime);
             base.Update(gameTime);
         }
 

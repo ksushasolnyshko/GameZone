@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Zone.Models;
+using System.Collections.Generic;
 using Zone.Managers;
+using Zone.Models;
 
 namespace Zone.States
 {
-   public class Level1: State
+    public class Level1 : State
     {
         Texture2D background;
         GraphicsDeviceManager graphics;
@@ -51,7 +46,7 @@ namespace Zone.States
             {
                 Size = new Vector2(57, 61),
                 Position = new Vector2(815, 270)
-             };
+            };
 
             emptyArt = new ArtifactModel(emptyAnimation)
             {
@@ -107,24 +102,17 @@ namespace Zone.States
                 y += 128;
             }
         }
-      
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-
-
             player.Draw(spriteBatch);
             if (isBook) secretBook.Draw(spriteBatch);
             if (isEmpty) emptyArt.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
-
-        }
-
-        public override void PostUpdate(GameTime gameTime)
-        {
 
         }
 

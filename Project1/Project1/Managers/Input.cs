@@ -9,7 +9,7 @@ namespace Zone.Managers
 {
     public class Input
     {
-        public Keys Down { get; set; }
+        public Keys UpAndLeft { get; set; }
 
         public Keys Left { get; set; }
 

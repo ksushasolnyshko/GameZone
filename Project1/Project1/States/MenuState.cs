@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 using Zone.Controls;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.TrayNotify;
 
 namespace Zone.States
 {
@@ -66,10 +61,6 @@ namespace Zone.States
         private void RulesButton_Click(object sender, EventArgs e)
         {
             _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
-        }
-
-        public override void PostUpdate(GameTime gameTime)
-        {
         }
 
         public override void Update(GameTime gameTime)

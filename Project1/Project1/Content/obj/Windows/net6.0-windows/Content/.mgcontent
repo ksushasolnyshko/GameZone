@@ -18,6 +18,7 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/player_go_left.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/player_go_right.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
   <DestFiles>
     <File>Anomalyes/eyeLeft</File>
@@ -34,5 +35,6 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>background</File>
+    <File>health</File>
   </DestFiles>
 </SourceFileCollection>

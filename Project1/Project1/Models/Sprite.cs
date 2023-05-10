@@ -64,7 +64,10 @@ namespace Zone.Models
 
 
 
-        protected virtual void SetAnimations() { }
+        protected virtual void SetAnimations() 
+        {
+            _animationManager.Play(_animations[_animations.Keys.First()]);
+        }
 
         public Sprite(Dictionary<string, Animation> animations)
         {

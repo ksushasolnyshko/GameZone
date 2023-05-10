@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Zone.Models;
+using System.Collections.Generic;
 using Zone.Managers;
+using Zone.Models;
 
 namespace Zone.States
 {
@@ -18,6 +13,7 @@ namespace Zone.States
         Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        private Sprite healthForm;
         private PlayerModel player;
         private ArtifactModel spring;
         private AnomalyModel eye;
@@ -25,6 +21,7 @@ namespace Zone.States
         private Box box;
         private List<Box> boxes;
         private bool isSpring = false;
+        private int playerHealth = 7;
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -47,16 +44,29 @@ namespace Zone.States
                 { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/eyeLeft"), 3)}
             };
 
+            var healthAnimation = new Dictionary<string, Animation>()
+            {
+                {"health", new Animation(_content.Load<Texture2D>("health"), 7)}
+            };
+
+            healthForm = new Sprite(healthAnimation)
+            {
+                Size = new Vector2(285, 72),
+                Position = new Vector2(10, 10)
+            };
+
             spring = new ArtifactModel(springAnimation)
             {
                 Size = new Vector2(66, 95),
                 Position = new Vector2(1615, 785)
             };
+
             eye = new AnomalyModel(eyeAnimation)
             {
                 Size = new Vector2(95, 62),
                 Position = new Vector2(400, 156)
             };
+
             player =
                 new PlayerModel(animations)
                 {
@@ -112,15 +122,11 @@ namespace Zone.States
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
             player.Draw(spriteBatch);
             eye.Draw(spriteBatch);
+            healthForm.Draw(spriteBatch);
             if (!isSpring) spring.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
-
-        }
-
-        public override void PostUpdate(GameTime gameTime)
-        {
 
         }
 
@@ -133,6 +139,13 @@ namespace Zone.States
             if (Collide(player, spring)) isSpring = true;
             if (isSpring) player.isJump = true;
             else player.isJump = false;
+            if (Collide(player, eye))
+            {
+                playerHealth -= 1;
+                healthForm.Update(gameTime, healthForm);
+                player.Velocity.X = 20 * player.Speed;
+            }
+  
             player.Update(gameTime, player);
             spring.Update(gameTime, spring);
             eye.Update(gameTime, eye);
