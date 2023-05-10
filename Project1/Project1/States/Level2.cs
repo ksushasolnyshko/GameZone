@@ -20,6 +20,7 @@ namespace Zone.States
         SpriteBatch spriteBatch;
         private PlayerModel player;
         private ArtifactModel spring;
+        private AnomalyModel eye;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
@@ -34,9 +35,16 @@ namespace Zone.States
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
+
             var springAnimation = new Dictionary<string, Animation>()
             {
                 { "Spring", new Animation(_content.Load<Texture2D>("Artifacts/spring"), 7)},
+            };
+
+            var eyeAnimation = new Dictionary<string, Animation>()
+            {
+                { "goright", new Animation(_content.Load<Texture2D>("Anomalyes/eyeRight"), 3)},
+                { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/eyeLeft"), 3)}
             };
 
             spring = new ArtifactModel(springAnimation)
@@ -44,7 +52,11 @@ namespace Zone.States
                 Size = new Vector2(66, 95),
                 Position = new Vector2(1615, 785)
             };
-
+            eye = new AnomalyModel(eyeAnimation)
+            {
+                Size = new Vector2(95, 62),
+                Position = new Vector2(400, 156)
+            };
             player =
                 new PlayerModel(animations)
                 {
@@ -98,9 +110,8 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-             
-
             player.Draw(spriteBatch);
+            eye.Draw(spriteBatch);
             if (!isSpring) spring.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
@@ -124,6 +135,7 @@ namespace Zone.States
             else player.isJump = false;
             player.Update(gameTime, player);
             spring.Update(gameTime, spring);
+            eye.Update(gameTime, eye);
         }
 
         protected static bool Collide(Sprite firstObj, Sprite secondObj)

@@ -47,3 +47,5 @@ C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Conten
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\book2.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\spring.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\bg_level2.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Anomalyes\eyeLeft.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Anomalyes\eyeRight.xnb

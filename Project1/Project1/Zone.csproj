@@ -16,7 +16,6 @@
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.1.303" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Content\Anomalyes\" />
     <Folder Include="Content\Artifacts\" />
     <Folder Include="Content\Controls\" />
     <Folder Include="Content\Map\" />

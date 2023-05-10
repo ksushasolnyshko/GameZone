@@ -4,6 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвлево 1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвправо 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/spring.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/пустышка 2.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/секретная книга 2.png</File>
@@ -18,6 +20,8 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Anomalyes/eyeLeft</File>
+    <File>Anomalyes/eyeRight</File>
     <File xsi:nil="true" />
     <File>Artifacts/empty2.png</File>
     <File>Artifacts/book2.png</File>
