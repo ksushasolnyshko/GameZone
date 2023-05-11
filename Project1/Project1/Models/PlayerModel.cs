@@ -1,16 +1,14 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System;
+using SharpDX.Direct3D9;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Security.Policy;
 
 namespace Zone.Models
 {
     internal class PlayerModel : Sprite
-    {  
+    {
         public PlayerModel(Dictionary<string, Animation> animations) : base(animations)
         {
             isPlayer = true;
@@ -76,7 +74,63 @@ namespace Zone.Models
                 Velocity.X = Speed;
                 isJump = true;
             }
-            
+        }
+
+        #region Colloision
+        public bool IsTouchingLeft(Sprite sprite)
+        {
+            return Rectangle.Right + Velocity.X > sprite.Rectangle.Left &&
+              Rectangle.Left < sprite.Rectangle.Left &&
+              Rectangle.Bottom > sprite.Rectangle.Top &&
+              Rectangle.Top < sprite.Rectangle.Bottom;
+        }
+
+        public bool IsTouchingRight(Sprite sprite)
+        {
+            return Rectangle.Left + Velocity.X < sprite.Rectangle.Right &&
+              Rectangle.Right > sprite.Rectangle.Right &&
+              Rectangle.Bottom > sprite.Rectangle.Top &&
+              Rectangle.Top < sprite.Rectangle.Bottom;
+        }
+
+        public bool IsTouchingTop(Sprite sprite)
+        {
+            return Rectangle.Bottom + Velocity.Y > Rectangle.Top &&
+              Rectangle.Top < sprite.Rectangle.Top &&
+              Rectangle.Right > sprite.Rectangle.Left &&
+              Rectangle.Left < sprite.Rectangle.Right;
+        }
+
+        public bool IsTouchingBottom(Sprite sprite)
+        {
+            return Rectangle.Top + Velocity.Y < sprite.Rectangle.Bottom &&
+              Rectangle.Bottom > sprite.Rectangle.Bottom &&
+              Rectangle.Right > sprite.Rectangle.Left &&
+              Rectangle.Left < sprite.Rectangle.Right;
+        }
+
+        #endregion
+        public override void Update(GameTime gameTime, Sprite sprites, List<Box> platforms = null)
+        {
+            Move(gameTime);
+            foreach (var b in platforms)
+            {
+               //if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b))) Velocity.X = 0;
+                //if (Velocity.Y > 0 && IsTouchingTop(b)) Velocity.Y = 0;
+                if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 5;
+            }
+
+            SetAnimations();
+            if (_animationManager != null) _animationManager.Update(gameTime);
+            current_position = Position;
+            Position += Velocity;
+            Velocity = Vector2.Zero;
+            if (Position.Y < 745)
+            {
+                isFall = true;
+                Velocity.Y += 5;
+            }
+            else isFall = false;
         }
     }
 }

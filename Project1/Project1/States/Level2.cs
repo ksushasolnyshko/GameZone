@@ -70,7 +70,7 @@ namespace Zone.States
             player =
                 new PlayerModel(animations)
                 {
-                    Size = new Vector2(78, 146),
+                    Size = new Vector2(56, 144),
                     Position = new Vector2(100, 745),
                     Input = new Input()
                     {
@@ -103,7 +103,7 @@ namespace Zone.States
                     {
                         box = new Box(_content.Load<Texture2D>("Map/platform"))
                         {
-                            Size = new Vector2(117, 97),
+                            Size = new Vector2(116, 97),
                             Position = new Vector2(x, y),
                         };
                         boxes.Add(box);
@@ -134,8 +134,8 @@ namespace Zone.States
         {
 
             foreach (var b in boxes)
-                if (Collide(player, b))
-                    player.Velocity.Y = 0;
+                if (Collide(player, b)) player.Velocity.Y = 0;
+                
             if (Collide(player, spring)) isSpring = true;
             if (isSpring) player.isJump = true;
             else player.isJump = false;
@@ -145,8 +145,8 @@ namespace Zone.States
                 healthForm.Update(gameTime, healthForm);
                 player.Velocity.X = 20 * player.Speed;
             }
-  
-            player.Update(gameTime, player);
+           
+            player.Update(gameTime, player, boxes);
             spring.Update(gameTime, spring);
             eye.Update(gameTime, eye);
         }

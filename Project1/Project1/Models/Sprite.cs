@@ -45,6 +45,14 @@ namespace Zone.Models
             }
         }
 
+        public Rectangle Rectangle
+        {
+            get
+            {
+                return new Rectangle((int)Position.X, (int)Position.Y, (int)Size.X, (int)Size.Y);
+            }
+        }
+
         public float Speed = 0f;
 
         public Vector2 Velocity = new Vector2(0, 0);
@@ -82,7 +90,7 @@ namespace Zone.Models
 
         public virtual void Move(GameTime gameTime) { }
 
-        public virtual void Update(GameTime gameTime, Sprite sprites)
+        public virtual void Update(GameTime gameTime, Sprite sprites, List<Box> platforms = null)
         {
             state = Keyboard.GetState();
             Move(gameTime);
