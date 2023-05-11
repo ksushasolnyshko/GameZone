@@ -50,3 +50,5 @@ C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Conten
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Anomalyes\eyeLeft.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Anomalyes\eyeRight.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\health.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\flask.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Artifacts\medal.xnb

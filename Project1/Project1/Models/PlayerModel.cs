@@ -113,12 +113,12 @@ namespace Zone.Models
         public override void Update(GameTime gameTime, Sprite sprites, List<Box> platforms = null)
         {
             Move(gameTime);
-            foreach (var b in platforms)
-            {
-               //if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b))) Velocity.X = 0;
-                //if (Velocity.Y > 0 && IsTouchingTop(b)) Velocity.Y = 0;
-                if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 5;
-            }
+            if (platforms != null)
+                foreach (var b in platforms)
+                {
+                    if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b))) Velocity.X = 0;
+                    if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 5;
+                }
 
             SetAnimations();
             if (_animationManager != null) _animationManager.Update(gameTime);

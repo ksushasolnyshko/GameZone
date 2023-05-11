@@ -16,12 +16,14 @@ namespace Zone.States
         private Sprite healthForm;
         private PlayerModel player;
         private ArtifactModel spring;
+        private ArtifactModel flask;
+        private ArtifactModel medal;
         private AnomalyModel eye;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
         private bool isSpring = false;
-        private int playerHealth = 7;
+        private int playerHealth = 7; 
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -49,6 +51,28 @@ namespace Zone.States
                 {"health", new Animation(_content.Load<Texture2D>("health"), 7)}
             };
 
+            var flaskAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/flask"), 3 )}
+            };
+
+            var medalAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/medal"), 5 )}
+            };
+
+            flask = new ArtifactModel(flaskAnimation)
+            {
+                Size = new Vector2(103, 110),
+                Position = new Vector2(960, 390)
+            };
+
+            medal = new ArtifactModel(medalAnimation)
+            {
+                Size = new Vector2(63, 120),
+                Position = new Vector2(30, 520)
+            };
+
             healthForm = new Sprite(healthAnimation)
             {
                 Size = new Vector2(285, 72),
@@ -64,7 +88,7 @@ namespace Zone.States
             eye = new AnomalyModel(eyeAnimation)
             {
                 Size = new Vector2(95, 62),
-                Position = new Vector2(400, 156)
+                Position = new Vector2(400, 578)
             };
 
             player =
@@ -103,7 +127,7 @@ namespace Zone.States
                     {
                         box = new Box(_content.Load<Texture2D>("Map/platform"))
                         {
-                            Size = new Vector2(116, 97),
+                            Size = new Vector2(117, 97),
                             Position = new Vector2(x, y),
                         };
                         boxes.Add(box);
@@ -123,11 +147,12 @@ namespace Zone.States
             player.Draw(spriteBatch);
             eye.Draw(spriteBatch);
             healthForm.Draw(spriteBatch);
+            flask.Draw(spriteBatch);
+            medal.Draw(spriteBatch);
             if (!isSpring) spring.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
-
         }
 
         public override void Update(GameTime gameTime)
@@ -149,16 +174,8 @@ namespace Zone.States
             player.Update(gameTime, player, boxes);
             spring.Update(gameTime, spring);
             eye.Update(gameTime, eye);
-        }
-
-        protected static bool Collide(Sprite firstObj, Sprite secondObj)
-        {
-            Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
-                (int)firstObj.Position.Y, (int)firstObj.Size.X, (int)firstObj.Size.Y);
-            Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
-                (int)secondObj.Position.Y, (int)secondObj.Size.X, (int)secondObj.Size.Y);
-
-            return firstObjRect.Intersects(secondObjRect);
+            flask.Update(gameTime, flask);
+            medal.Update(gameTime, medal);
         }
     }
 }

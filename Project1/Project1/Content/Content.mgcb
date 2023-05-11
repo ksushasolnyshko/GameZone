@@ -49,6 +49,30 @@
 /processorParam:TextureFormat=Color
 /build:Artifacts/spring.png
 
+#begin Artifacts/колба.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Artifacts/колба.png;Artifacts/flask
+
+#begin Artifacts/медальон.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Artifacts/медальон.png;Artifacts/medal
+
 #begin Artifacts/пустышка 2.png
 /importer:TextureImporter
 /processor:TextureProcessor

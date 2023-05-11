@@ -97,7 +97,6 @@ namespace Zone.States
                     }
                     x += 117;
                 }
-
                 x = 0;
                 y += 128;
             }
@@ -113,7 +112,6 @@ namespace Zone.States
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
-
         }
 
         public override void Update(GameTime gameTime)
@@ -133,15 +131,6 @@ namespace Zone.States
             player.Update(gameTime, player);
             emptyArt.Update(gameTime, emptyArt);
             secretBook.Update(gameTime, secretBook);
-        }
-
-        protected static bool Collide(Sprite firstObj, Sprite secondObj)
-        {
-            Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
-                (int)firstObj.Position.Y, (int)firstObj.Size.X, (int)firstObj.Size.Y);
-            Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
-                (int)secondObj.Position.Y, (int)secondObj.Size.X, (int)secondObj.Size.Y);
-            return firstObjRect.Intersects(secondObjRect);
         }
     }
 }

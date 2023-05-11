@@ -26,7 +26,7 @@ namespace Zone.Models
         public override void Move(GameTime gameTime)
         {
             if (Position.X < 10) isGoLeft = false;
-            else if (Position.X > 500) isGoLeft = true;
+            else if (Position.X > 400) isGoLeft = true;
             if (isGoLeft) Velocity.X = -Speed;
             else Velocity.X = Speed;
         }

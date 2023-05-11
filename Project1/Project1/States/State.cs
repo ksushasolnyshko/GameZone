@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Zone.Models;
 
 namespace Zone.States
 {
@@ -38,6 +39,14 @@ namespace Zone.States
 
         public abstract void Update(GameTime gameTime);
 
+        protected static bool Collide(Sprite firstObj, Sprite secondObj)
+        {
+            Rectangle firstObjRect = new Rectangle((int)firstObj.Position.X,
+                (int)firstObj.Position.Y, (int)firstObj.Size.X, (int)firstObj.Size.Y);
+            Rectangle secondObjRect = new Rectangle((int)secondObj.Position.X,
+                (int)secondObj.Position.Y, (int)secondObj.Size.X, (int)secondObj.Size.Y);
+            return firstObjRect.Intersects(secondObjRect);
+        }
         #endregion
     }
 }
