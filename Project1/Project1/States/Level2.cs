@@ -23,6 +23,8 @@ namespace Zone.States
         private Box box;
         private List<Box> boxes;
         private bool isSpring = false;
+        private bool isFlask = false;
+        private bool isMedal = false;
         private int playerHealth = 7; 
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
@@ -147,8 +149,8 @@ namespace Zone.States
             player.Draw(spriteBatch);
             eye.Draw(spriteBatch);
             healthForm.Draw(spriteBatch);
-            flask.Draw(spriteBatch);
-            medal.Draw(spriteBatch);
+            if (!isFlask) flask.Draw(spriteBatch);
+            if(!isMedal) medal.Draw(spriteBatch);
             if (!isSpring) spring.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
@@ -160,8 +162,9 @@ namespace Zone.States
 
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
-                
             if (Collide(player, spring)) isSpring = true;
+            if (Collide(player, medal)) isMedal = true;
+            if (Collide(player, flask)) isFlask = true;
             if (isSpring) player.isJump = true;
             else player.isJump = false;
             if (Collide(player, eye))

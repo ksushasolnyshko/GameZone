@@ -116,10 +116,10 @@ namespace Zone.Models
             if (platforms != null)
                 foreach (var b in platforms)
                 {
-                    if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b))) Velocity.X = 0;
+                    if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b)))
+                        if (Velocity.Y != 0) Velocity.X = 0;
                     if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 5;
                 }
-
             SetAnimations();
             if (_animationManager != null) _animationManager.Update(gameTime);
             current_position = Position;

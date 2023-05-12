@@ -57,7 +57,7 @@ namespace Zone.States
             player =
                 new PlayerModel(animations)
                 {
-                    Size = new Vector2(78, 144),
+                    Size = new Vector2(56, 144),
                     Position = new Vector2(100, 750),
                     Input = new Input()
                     {
@@ -90,7 +90,7 @@ namespace Zone.States
                     {
                         box = new Box(_content.Load<Texture2D>("Map/platform"))
                         {
-                            Size = new Vector2(116, 97),
+                            Size = new Vector2(117, 97),
                             Position = new Vector2(x, y),
                         };
                         boxes.Add(box);
@@ -118,17 +118,12 @@ namespace Zone.States
         {
 
             foreach (var b in boxes)
-                if (Collide(player, b))
-                {
-                    if (player.Velocity.Y >= b.Velocity.Y + b.Size.Y)
-                        player.Velocity.Y = -5;
-                    else player.Velocity.Y = 0;
-                }
-
+                if (Collide(player, b)) player.Velocity.Y = 0;
+            player.isJump = true;
             if (Collide(player, secretBook)) isBook = false;
             if (Collide(player, emptyArt)) isEmpty = false;
             if (!isEmpty && !isBook) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
-            player.Update(gameTime, player);
+            player.Update(gameTime, player, boxes);
             emptyArt.Update(gameTime, emptyArt);
             secretBook.Update(gameTime, secretBook);
         }
