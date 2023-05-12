@@ -35,7 +35,7 @@ namespace Zone.States
             {
                 Position = new Vector2(1300, 665),
             };
-            quitGameButton.Click += QuitGameButton_Click;
+            quitGameButton.Click += QuitGame;
 
             _components = new List<Component>()
             {
@@ -56,7 +56,7 @@ namespace Zone.States
         }
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
+            _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
@@ -67,11 +67,6 @@ namespace Zone.States
         {
             foreach (var component in _components)
                 component.Update(gameTime);
-        }
-
-        private void QuitGameButton_Click(object sender, EventArgs e)
-        {
-            _game.Exit();
         }
     }
 }

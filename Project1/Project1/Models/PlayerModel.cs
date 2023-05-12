@@ -9,6 +9,7 @@ namespace Zone.Models
 {
     internal class PlayerModel : Sprite
     {
+        public int health = 7;
         public PlayerModel(Dictionary<string, Animation> animations) : base(animations)
         {
             isPlayer = true;

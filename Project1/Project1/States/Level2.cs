@@ -25,7 +25,6 @@ namespace Zone.States
         private bool isSpring = false;
         private bool isFlask = false;
         private bool isMedal = false;
-        private int playerHealth = 7; 
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -89,7 +88,7 @@ namespace Zone.States
 
             eye = new AnomalyModel(eyeAnimation)
             {
-                Size = new Vector2(95, 62),
+                Size = new Vector2(98, 62),
                 Position = new Vector2(400, 578)
             };
 
@@ -169,11 +168,11 @@ namespace Zone.States
             else player.isJump = false;
             if (Collide(player, eye))
             {
-                playerHealth -= 1;
                 healthForm.Update(gameTime, healthForm);
                 player.Velocity.X = 20 * player.Speed;
+                player.health -= 1;
             }
-           
+            if (player.health == 0) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             player.Update(gameTime, player, boxes);
             spring.Update(gameTime, spring);
             eye.Update(gameTime, eye);

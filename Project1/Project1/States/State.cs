@@ -47,6 +47,11 @@ namespace Zone.States
                 (int)secondObj.Position.Y, (int)secondObj.Size.X, (int)secondObj.Size.Y);
             return firstObjRect.Intersects(secondObjRect);
         }
+
+        public void QuitGame(object sender, EventArgs e)
+        {
+            _game.Exit();
+        }
         #endregion
     }
 }
