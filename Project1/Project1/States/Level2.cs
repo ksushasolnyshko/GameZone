@@ -13,7 +13,6 @@ namespace Zone.States
         Texture2D background;
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        private Sprite healthForm;
         private PlayerModel player;
         private ArtifactModel spring;
         private ArtifactModel flask;
@@ -47,11 +46,6 @@ namespace Zone.States
                 { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/eyeLeft"), 3)}
             };
 
-            var healthAnimation = new Dictionary<string, Animation>()
-            {
-                {"health", new Animation(_content.Load<Texture2D>("health"), 7)}
-            };
-
             var flaskAnimation = new Dictionary<string, Animation>()
             {
                 { "Up", new Animation(_content.Load<Texture2D>("Artifacts/flask"), 3 )}
@@ -72,12 +66,6 @@ namespace Zone.States
             {
                 Size = new Vector2(63, 120),
                 Position = new Vector2(30, 520)
-            };
-
-            healthForm = new Sprite(healthAnimation)
-            {
-                Size = new Vector2(285, 72),
-                Position = new Vector2(10, 10)
             };
 
             spring = new ArtifactModel(springAnimation)
@@ -147,7 +135,6 @@ namespace Zone.States
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
             player.Draw(spriteBatch);
             eye.Draw(spriteBatch);
-            healthForm.Draw(spriteBatch);
             if (!isFlask) flask.Draw(spriteBatch);
             if(!isMedal) medal.Draw(spriteBatch);
             if (!isSpring) spring.Draw(spriteBatch);
@@ -166,13 +153,11 @@ namespace Zone.States
             if (Collide(player, flask)) isFlask = true;
             if (isSpring) player.isJump = true;
             else player.isJump = false;
+            if (isSpring && isFlask && isMedal) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
             if (Collide(player, eye))
             {
-                healthForm.Update(gameTime, healthForm);
-                player.Velocity.X = 20 * player.Speed;
-                player.health -= 1;
+                _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             }
-            if (player.health == 0) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             player.Update(gameTime, player, boxes);
             spring.Update(gameTime, spring);
             eye.Update(gameTime, eye);

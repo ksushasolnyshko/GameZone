@@ -119,7 +119,7 @@ namespace Zone.Models
                 {
                     if ((Velocity.X > 0 && IsTouchingLeft(b)) || (Velocity.X < 0 & IsTouchingRight(b)))
                         if (Velocity.Y != 0) Velocity.X = 0;
-                    if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 5;
+                    if (Velocity.Y < 0 & IsTouchingBottom(b)) Velocity.Y = 0;
                 }
             SetAnimations();
             if (_animationManager != null) _animationManager.Update(gameTime);

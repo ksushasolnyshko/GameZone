@@ -181,6 +181,18 @@
 /processorParam:TextureFormat=Color
 /build:gameover 1 (1).png;GameOverBackground.png
 
+#begin kamni_les_mrak_69204_1280x720 1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:kamni_les_mrak_69204_1280x720 1.png;bg_level3.png
+
 #begin Map/platform.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -192,6 +204,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:Map/platform.png
+
+#begin Map/снежная платформа 1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:Map/снежная платформа 1.png;Map/snow_platform.png
 
 #begin Player/player_go_left.png
 /importer:TextureImporter
