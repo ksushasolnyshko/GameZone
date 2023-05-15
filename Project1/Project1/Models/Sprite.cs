@@ -101,12 +101,6 @@ namespace Zone.Models
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
-            if (Position.Y < 745 && isPlayer)
-            {
-                isFall = true;
-                Velocity.Y += 5;
-            }
-            else isFall = false;
         }
 
         #endregion

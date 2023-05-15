@@ -4,10 +4,10 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/аномалия3 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвлево 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвправо 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/spring.png</File>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/аномалия3 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/бабочка 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/звезда 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/колба.png</File>
@@ -31,10 +31,10 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Anomalyes/brain.png</File>
     <File>Anomalyes/eyeLeft</File>
     <File>Anomalyes/eyeRight</File>
     <File xsi:nil="true" />
-    <File>Artifacts/brain.png</File>
     <File>Artifacts/fly.png</File>
     <File>Artifacts/star.png</File>
     <File>Artifacts/flask</File>

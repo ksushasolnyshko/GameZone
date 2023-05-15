@@ -39,7 +39,7 @@ namespace Zone.Models
 
         public override void Move(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Right) && isUp)
+            if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Right) && isUp && isRight)
             {
                 Speed = 6f;
                 if (isJump && seconds > _TotalSeconds)
@@ -54,7 +54,7 @@ namespace Zone.Models
                     _TotalSeconds = 0;
                 }
             }
-            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Left) && isUp)
+            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Left) && isUp && isLeft)
             {
                 Speed = 6f;
                 if (isJump && seconds > _TotalSeconds)
@@ -139,7 +139,7 @@ namespace Zone.Models
             else isUp = true;
             if(Position.X >= 1930)
             {
-                Velocity.X = 0;
+                Velocity.X = 5;
                 isRight = false;
             }
             else isRight = true;

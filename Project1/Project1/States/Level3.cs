@@ -17,9 +17,14 @@ namespace Zone.States
         private int[,] map;
         private Box box;
         private List<Box> boxes;
+        private Sprite health;
         private ArtifactModel star;
         private ArtifactModel crystal;
         private ArtifactModel fly;
+        private AnomalyModel brain;
+        private bool isStar = false;
+        private bool isFly = false;
+        private bool isCrystal = false;
 
         public Level3(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -46,6 +51,11 @@ namespace Zone.States
                 { "Up", new Animation(_content.Load<Texture2D>("Artifacts/fly"), 2 )}
             };
 
+            var healthAnimation = new Dictionary<string, Animation>()
+            {
+                { "health", new Animation(_content.Load<Texture2D>("health"), 7 )}
+            };
+
             crystal = new ArtifactModel(crystalAnimation)
             {
                 Size = new Vector2(86, 85),
@@ -64,6 +74,18 @@ namespace Zone.States
                 Position = new Vector2(960, 430)
             };
 
+            brain = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain"))
+            {
+                Size = new Vector2(60, 90),
+                Position = new Vector2(1800, 790)
+            };
+
+            health = new ArtifactModel(healthAnimation)
+            {
+                Size = new Vector2(285, 72),
+                Position = new Vector2(10, 10)
+            };
+
             player =
                 new PlayerModel(animations)
                 {
@@ -79,7 +101,7 @@ namespace Zone.States
 
             map = new int[,]
             {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0},
+             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
              {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0},
              {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
              {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0},
@@ -116,10 +138,12 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-            star.Draw(spriteBatch);
-            crystal.Draw(spriteBatch);
-            fly.Draw(spriteBatch);
+            if (!isStar) star.Draw(spriteBatch);
+            if (!isCrystal)crystal.Draw(spriteBatch);
+            if (!isFly) fly.Draw(spriteBatch);
             player.Draw(spriteBatch);
+            brain.Draw(spriteBatch);
+            health.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -130,10 +154,16 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
+            if (Collide(player, brain)) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
+            if (Collide(player, crystal)) isCrystal = true;
+            if (Collide(player, star)) isStar = true;
+            if (Collide(player, fly)) isFly = true;
+            if (isStar && isFly && isCrystal) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             player.Update(gameTime, player, boxes);
             fly.Update(gameTime, fly);
             crystal.Update(gameTime, crystal);
             star.Update(gameTime, star);
+            brain.Update(gameTime, brain);
         }
     }
 }

@@ -7,6 +7,7 @@ namespace Zone.Models
     internal class AnomalyModel : Sprite
     {
         private bool isGoLeft = true;
+        public Vector2 MoveBorder = new Vector2(5, 1940);
 
         public AnomalyModel(Dictionary<string, Animation> animations) : base(animations)
         {
@@ -15,18 +16,20 @@ namespace Zone.Models
 
         public AnomalyModel(Texture2D texture) : base(texture)
         {
+            Speed = 2f;
         }
 
         protected override void SetAnimations()
         {
-            if (!isGoLeft) _animationManager.Play(_animations["goright"]);
-            else _animationManager.Play(_animations["goleft"]);
+            if (_animationManager != null)
+                if (!isGoLeft) _animationManager.Play(_animations["goright"]);
+                else _animationManager.Play(_animations["goleft"]);
         }
 
         public override void Move(GameTime gameTime)
         {
-            if (Position.X < 10) isGoLeft = false;
-            else if (Position.X > 400) isGoLeft = true;
+            if (Position.X < MoveBorder.X) isGoLeft = false;
+            else if (Position.X > MoveBorder.Y) isGoLeft = true;
             if (isGoLeft) Velocity.X = -Speed;
             else Velocity.X = Speed;
         }

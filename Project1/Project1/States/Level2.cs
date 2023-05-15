@@ -79,6 +79,7 @@ namespace Zone.States
                 Size = new Vector2(98, 62),
                 Position = new Vector2(400, 578)
             };
+            eye.MoveBorder = new Vector2(10, 400);
 
             player =
                 new PlayerModel(animations)
