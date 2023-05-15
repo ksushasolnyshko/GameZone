@@ -7,7 +7,11 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвлево 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвправо 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/spring.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/аномалия3 1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/бабочка 1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/звезда 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/колба.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/кристалл 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/медальон.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/пустышка 2.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/секретная книга 2.png</File>
@@ -30,7 +34,11 @@
     <File>Anomalyes/eyeLeft</File>
     <File>Anomalyes/eyeRight</File>
     <File xsi:nil="true" />
+    <File>Artifacts/brain.png</File>
+    <File>Artifacts/fly.png</File>
+    <File>Artifacts/star.png</File>
     <File>Artifacts/flask</File>
+    <File>Artifacts/crystal.png</File>
     <File>Artifacts/medal</File>
     <File>Artifacts/empty2.png</File>
     <File>Artifacts/book2.png</File>

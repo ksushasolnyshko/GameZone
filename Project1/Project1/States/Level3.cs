@@ -17,6 +17,9 @@ namespace Zone.States
         private int[,] map;
         private Box box;
         private List<Box> boxes;
+        private ArtifactModel star;
+        private ArtifactModel crystal;
+        private ArtifactModel fly;
 
         public Level3(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -26,6 +29,39 @@ namespace Zone.States
                 {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
+            };
+
+            var starAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/star"), 3 )}
+            };
+
+            var crystalAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/crystal"), 5 )}
+            };
+
+            var flyAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/fly"), 2 )}
+            };
+
+            crystal = new ArtifactModel(crystalAnimation)
+            {
+                Size = new Vector2(86, 85),
+                Position = new Vector2(1800, 170)
+            };
+
+            fly = new ArtifactModel(flyAnimation)
+            {
+                Size = new Vector2(86, 85),
+                Position = new Vector2(500, 170)
+            };
+
+            star = new ArtifactModel(starAnimation)
+            {
+                Size = new Vector2(74, 66),
+                Position = new Vector2(960, 430)
             };
 
             player =
@@ -80,6 +116,9 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
+            star.Draw(spriteBatch);
+            crystal.Draw(spriteBatch);
+            fly.Draw(spriteBatch);
             player.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
@@ -92,6 +131,9 @@ namespace Zone.States
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
             player.Update(gameTime, player, boxes);
+            fly.Update(gameTime, fly);
+            crystal.Update(gameTime, crystal);
+            star.Update(gameTime, star);
         }
     }
 }

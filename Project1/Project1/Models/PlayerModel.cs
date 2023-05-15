@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SharpDX.Direct3D9;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Security.Policy;
 
 namespace Zone.Models
@@ -10,6 +11,10 @@ namespace Zone.Models
     internal class PlayerModel : Sprite
     {
         public int health = 7;
+        private bool isUp = true;
+        private bool isRight = true;
+        private bool isLeft = true;
+
         public PlayerModel(Dictionary<string, Animation> animations) : base(animations)
         {
             isPlayer = true;
@@ -34,7 +39,7 @@ namespace Zone.Models
 
         public override void Move(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Right))
+            if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Right) && isUp)
             {
                 Speed = 6f;
                 if (isJump && seconds > _TotalSeconds)
@@ -49,7 +54,7 @@ namespace Zone.Models
                     _TotalSeconds = 0;
                 }
             }
-            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Left))
+            else if (Keyboard.GetState().IsKeyDown(Input.Up) && Keyboard.GetState().IsKeyDown(Input.Left) && isUp)
             {
                 Speed = 6f;
                 if (isJump && seconds > _TotalSeconds)
@@ -64,13 +69,13 @@ namespace Zone.Models
                     _TotalSeconds = 0;
                 }
             }
-            else if (Keyboard.GetState().IsKeyDown(Input.Left))
+            else if (Keyboard.GetState().IsKeyDown(Input.Left) && isLeft)
             {
                 Velocity.X = -Speed;
                 isJump = true;
             }
 
-            else if (Keyboard.GetState().IsKeyDown(Input.Right))
+            else if (Keyboard.GetState().IsKeyDown(Input.Right) && isRight)
             {
                 Velocity.X = Speed;
                 isJump = true;
@@ -126,6 +131,26 @@ namespace Zone.Models
             current_position = Position;
             Position += Velocity;
             Velocity = Vector2.Zero;
+            if (Position.Y <= 10)
+            {
+                Velocity.Y = 0;
+                isUp = false;
+            }
+            else isUp = true;
+            if(Position.X >= 1930)
+            {
+                Velocity.X = 0;
+                isRight = false;
+            }
+            else isRight = true;
+
+            if (Position.X <= 5)
+            {
+                Velocity.X = 0;
+                isLeft= false;
+            }
+            else isLeft = true;
+
             if (Position.Y < 745)
             {
                 isFall = true;
