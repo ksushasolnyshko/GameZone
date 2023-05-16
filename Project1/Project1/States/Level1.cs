@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Zone.Managers;
 using Zone.Models;
 
@@ -11,16 +12,13 @@ namespace Zone.States
     public class Level1 : State
     {
         Texture2D background;
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         private PlayerModel player;
         private ArtifactModel secretBook;
         private ArtifactModel emptyArt;
         private int[,] map;
         private Box box;
         private List<Box> boxes;
-        private bool isBook = true;
-        private bool isEmpty = true;
+        private Dictionary<Sprite, bool> sprites;
 
         public Level1(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -42,17 +40,9 @@ namespace Zone.States
                 {"Up", new Animation(_content.Load<Texture2D>("Artifacts/book2"), 5) }
             };
 
-            secretBook = new ArtifactModel(bookAnimation)
-            {
-                Size = new Vector2(57, 61),
-                Position = new Vector2(815, 270)
-            };
+            secretBook = new ArtifactModel(bookAnimation){Size = new Vector2(57, 61), Position = new Vector2(815, 270)};
 
-            emptyArt = new ArtifactModel(emptyAnimation)
-            {
-                Size = new Vector2(64, 62),
-                Position = new Vector2(20, 165)
-            };
+            emptyArt = new ArtifactModel(emptyAnimation){Size = new Vector2(64, 62), Position = new Vector2(20, 165)};
 
             player =
                 new PlayerModel(animations)
@@ -66,6 +56,13 @@ namespace Zone.States
                         Up = Keys.W,
                     }
                 };
+
+            sprites = new Dictionary<Sprite, bool>()
+            {
+                {emptyArt, true},
+                {secretBook, true},
+                {player, true},
+            };
 
             map = new int[,]
             {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -106,9 +103,8 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-            player.Draw(spriteBatch);
-            if (isBook) secretBook.Draw(spriteBatch);
-            if (isEmpty) emptyArt.Draw(spriteBatch);
+            foreach (var sprite in sprites.Keys)
+                if (sprites[sprite]) sprite.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -120,12 +116,12 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
-            if (Collide(player, secretBook)) isBook = false;
-            if (Collide(player, emptyArt)) isEmpty = false;
-            if (!isEmpty && !isBook) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
-            player.Update(gameTime, player, boxes);
-            emptyArt.Update(gameTime, emptyArt);
-            secretBook.Update(gameTime, secretBook);
+            if (Collide(player, secretBook)) sprites[secretBook] = false;
+            if (Collide(player, emptyArt)) sprites[emptyArt] = false;
+            if (!sprites[secretBook] && !sprites[emptyArt]) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
+            foreach (var sprite in sprites.Keys)
+                if (sprite == player) sprite.Update(gameTime, sprite, boxes);
+                else sprite.Update(gameTime, sprite);
         }
     }
 }

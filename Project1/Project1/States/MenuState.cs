@@ -54,9 +54,10 @@ namespace Zone.States
 
             spriteBatch.End();
         }
+
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
+            _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {

@@ -11,8 +11,6 @@ namespace Zone.States
     public class Level2 : State
     {
         Texture2D background;
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
         private PlayerModel player;
         private ArtifactModel spring;
         private ArtifactModel flask;
@@ -21,9 +19,7 @@ namespace Zone.States
         private int[,] map;
         private Box box;
         private List<Box> boxes;
-        private bool isSpring = false;
-        private bool isFlask = false;
-        private bool isMedal = false;
+        private Dictionary<Sprite, bool> sprites;
 
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -56,29 +52,13 @@ namespace Zone.States
                 { "Up", new Animation(_content.Load<Texture2D>("Artifacts/medal"), 5 )}
             };
 
-            flask = new ArtifactModel(flaskAnimation)
-            {
-                Size = new Vector2(103, 110),
-                Position = new Vector2(960, 390)
-            };
+            flask = new ArtifactModel(flaskAnimation){Size = new Vector2(103, 110), Position = new Vector2(960, 390)};
 
-            medal = new ArtifactModel(medalAnimation)
-            {
-                Size = new Vector2(63, 120),
-                Position = new Vector2(30, 520)
-            };
+            medal = new ArtifactModel(medalAnimation){Size = new Vector2(63, 120), Position = new Vector2(30, 520)};
 
-            spring = new ArtifactModel(springAnimation)
-            {
-                Size = new Vector2(66, 95),
-                Position = new Vector2(1615, 785)
-            };
+            spring = new ArtifactModel(springAnimation){Size = new Vector2(66, 95), Position = new Vector2(1615, 785)};
 
-            eye = new AnomalyModel(eyeAnimation)
-            {
-                Size = new Vector2(98, 62),
-                Position = new Vector2(400, 578)
-            };
+            eye = new AnomalyModel(eyeAnimation){Size = new Vector2(98, 62), Position = new Vector2(400, 578)};
             eye.MoveBorder = new Vector2(10, 400);
 
             player =
@@ -93,6 +73,15 @@ namespace Zone.States
                         Up = Keys.W,
                     }
                 };
+
+            sprites = new Dictionary<Sprite, bool>()
+            {
+                {spring, true},
+                {medal, true},
+                {flask, true},
+                {player, true},
+                {eye, true}
+            };
 
             map = new int[,]
             {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
@@ -134,11 +123,8 @@ namespace Zone.States
         {
             spriteBatch.Begin();
             spriteBatch.Draw(background, new Rectangle(0, 0, 2048, 1024), Color.White);
-            player.Draw(spriteBatch);
-            eye.Draw(spriteBatch);
-            if (!isFlask) flask.Draw(spriteBatch);
-            if(!isMedal) medal.Draw(spriteBatch);
-            if (!isSpring) spring.Draw(spriteBatch);
+            foreach (var sprite in sprites.Keys)
+                if (sprites[sprite]) sprite.Draw(spriteBatch);
             foreach (var b in boxes)
                 b.Draw(spriteBatch);
             spriteBatch.End();
@@ -149,21 +135,22 @@ namespace Zone.States
 
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
-            if (Collide(player, spring)) isSpring = true;
-            if (Collide(player, medal)) isMedal = true;
-            if (Collide(player, flask)) isFlask = true;
-            if (isSpring) player.isJump = true;
+
+            if (Collide(player, spring)) sprites[spring] = false;
+            if (Collide(player, medal)) sprites[medal] = false;
+            if (Collide(player, flask)) sprites[flask] = false;
+
+            if (!sprites[spring]) player.isJump = true;
             else player.isJump = false;
-            if (isSpring && isFlask && isMedal) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
+
+            if (!sprites[spring] && !sprites[medal] && !sprites[flask]) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
             if (Collide(player, eye))
             {
                 _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             }
-            player.Update(gameTime, player, boxes);
-            spring.Update(gameTime, spring);
-            eye.Update(gameTime, eye);
-            flask.Update(gameTime, flask);
-            medal.Update(gameTime, medal);
+            foreach (var sprite in sprites.Keys)
+                if (sprite == player) sprite.Update(gameTime, sprite, boxes);
+                else sprite.Update(gameTime, sprite);
         }
     }
 }
