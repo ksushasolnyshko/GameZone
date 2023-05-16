@@ -15,8 +15,9 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/медальон.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/пустышка 2.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/секретная книга 2.png</File>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level1 (2).png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level2.jpg</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level4.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/exit_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/play_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/rules_button.png</File>
@@ -24,9 +25,12 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/gameover 1 (1).png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/kamni_les_mrak_69204_1280x720 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Map/platform.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Map/small_box.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Map/снежная платформа 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/player_go_left.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/player_go_right.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_left.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_right.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
@@ -42,6 +46,7 @@
     <File>Artifacts/medal</File>
     <File>Artifacts/empty2.png</File>
     <File>Artifacts/book2.png</File>
+    <File>bg_level1.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
@@ -51,7 +56,10 @@
     <File>GameOverBackground.png</File>
     <File>bg_level3.png</File>
     <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>Map/snow_platform.png</File>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>background</File>

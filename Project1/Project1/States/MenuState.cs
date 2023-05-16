@@ -57,7 +57,7 @@ namespace Zone.States
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
+            _game.ChangeState(new Level4(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
