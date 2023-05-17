@@ -29,11 +29,11 @@ namespace Zone.States
         public Level4(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level4");
+            background = _content.Load<Texture2D>("bg_level3");
             var animations = new Dictionary<string, Animation>(){
-                {"WalkRight", new Animation(_content.Load<Texture2D>("Player/small_player_go_right"), 8) },
-                {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/small_player_go_left"), 8) },
-                {"WalkUp", new Animation(_content.Load<Texture2D>("Player/small_player_go_right"), 8) },
+                {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
+                {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
+                {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
 
             var starAnimation = new Dictionary<string, Animation>()
@@ -66,7 +66,7 @@ namespace Zone.States
                 new PlayerModel(animations)
                 {
                     Size = new Vector2(56, 144),
-                    Position = new Vector2(100, 880),
+                    Position = new Vector2(100, 750),
                     Input = new Input()
                     {
                         Right = Keys.D,
@@ -83,7 +83,7 @@ namespace Zone.States
 
             brain = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(1800, 790) };
 
-            health = new ArtifactModel(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(10, 10) };
+            health = new ArtifactModel(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(0, 10) };
 
             eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(400, 170) };
             eye.MoveBorder = new Vector2(250, 600);
@@ -100,22 +100,14 @@ namespace Zone.States
             };
 
             map = new int[,]
-            {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+            {{0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 1},
+             {1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {0, 0, 0, 0, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 0, 0},
+             {0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1},
+             {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+             {1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
             };
 
             var x = 0;
@@ -128,17 +120,17 @@ namespace Zone.States
                     var a = map[i, j];
                     if (a == 1)
                     {
-                        box = new Box(_content.Load<Texture2D>("Map/small_box"))
+                        box = new Box(_content.Load<Texture2D>("Map/snow_platform"))
                         {
-                            Size = new Vector2(64, 48),
+                            Size = new Vector2(117, 97),
                             Position = new Vector2(x, y),
                         };
                         boxes.Add(box);
                     }
-                    x += 57;
+                    x += 117;
                 }
                 x = 0;
-                y += 64;
+                y += 128;
             }
         }
 
