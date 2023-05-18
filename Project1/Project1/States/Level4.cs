@@ -21,7 +21,9 @@ namespace Zone.States
         private ArtifactModel star;
         private ArtifactModel crystal;
         private ArtifactModel fly;
+        private ArtifactModel heart;
         private AnomalyModel brain;
+        private AnomalyModel brain2;
         private AnomalyModel eye;
         private Dictionary<Sprite, bool> sprites;
         private Dictionary<string, Animation> healthAnimation;
@@ -62,6 +64,17 @@ namespace Zone.States
                 { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/eyeLeft"), 3)}
             };
 
+            var coreAnimation = new Dictionary<string, Animation>()
+            {
+                { "goright", new Animation(_content.Load<Texture2D>("Anomalyes/coreRight"), 5)},
+                { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/coreLeft"), 5)}
+            };
+
+            var heartAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/heart"), 3 )}
+            };
+
             player =
                 new PlayerModel(animations)
                 {
@@ -77,15 +90,19 @@ namespace Zone.States
 
             crystal = new ArtifactModel(crystalAnimation) { Size = new Vector2(86, 85), Position = new Vector2(1800, 170) };
 
-            fly = new ArtifactModel(flyAnimation) { Size = new Vector2(86, 85), Position = new Vector2(500, 170) };
+            fly = new ArtifactModel(flyAnimation) { Size = new Vector2(86, 85), Position = new Vector2(500, 430) };
 
-            star = new ArtifactModel(starAnimation) { Size = new Vector2(74, 66), Position = new Vector2(960, 430) };
+            star = new ArtifactModel(starAnimation) { Size = new Vector2(74, 66), Position = new Vector2(1100, 430) };
 
             brain = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(1800, 790) };
 
-            health = new ArtifactModel(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(0, 10) };
+            brain2 = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(900, 430) };
 
-            eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(400, 170) };
+            health = new Sprite(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(0, 10) };
+
+            heart = new ArtifactModel(heartAnimation) { Size = new Vector2(84, 68), Position = new Vector2(120, 300) };
+
+            eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(400, 430) };
             eye.MoveBorder = new Vector2(250, 600);
 
             sprites = new Dictionary<Sprite, bool>()
@@ -96,7 +113,9 @@ namespace Zone.States
                 {player, true },
                 {brain, true},
                 {health, true},
-                {eye, true}
+                {eye, true},
+                {heart, true},
+                {brain2, true }
             };
 
             map = new int[,]

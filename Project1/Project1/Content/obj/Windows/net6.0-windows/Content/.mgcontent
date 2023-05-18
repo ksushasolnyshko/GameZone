@@ -4,6 +4,8 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/coreLeft.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/coreRight.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/аномалия3 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвлево 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвправо 1.png</File>
@@ -15,6 +17,7 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/медальон.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/пустышка 2.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/секретная книга 2.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/сердце.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level1 (2).png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level2.jpg</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level4.png</File>
@@ -35,6 +38,8 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File>Anomalyes/brain.png</File>
     <File>Anomalyes/eyeLeft</File>
     <File>Anomalyes/eyeRight</File>
@@ -46,6 +51,7 @@
     <File>Artifacts/medal</File>
     <File>Artifacts/empty2.png</File>
     <File>Artifacts/book2.png</File>
+    <File>Artifacts/heart.png</File>
     <File>bg_level1.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
