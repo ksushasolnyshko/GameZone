@@ -4,11 +4,14 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/coreLeft.png</File>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/coreRight.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/16136-risovanie-temnota-teplo-ad-formirovanie-x750 1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/leftCote.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/rightCore.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/scull.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/аномалия3 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвлево 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Anomalyes/глазвправо 1.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/ball.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/spring.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/бабочка 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Artifacts/звезда 1.png</File>
@@ -38,11 +41,14 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>bg_level5.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Anomalyes/brain.png</File>
     <File>Anomalyes/eyeLeft</File>
     <File>Anomalyes/eyeRight</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Artifacts/fly.png</File>
     <File>Artifacts/star.png</File>

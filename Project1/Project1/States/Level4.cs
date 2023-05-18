@@ -66,12 +66,6 @@ namespace Zone.States
                 { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/eyeLeft"), 3)}
             };
 
-            var coreAnimation = new Dictionary<string, Animation>()
-            {
-                { "goright", new Animation(_content.Load<Texture2D>("Anomalyes/coreRight"), 5)},
-                { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/coreLeft"), 5)}
-            };
-
             var heartAnimation = new Dictionary<string, Animation>()
             {
                 { "Up", new Animation(_content.Load<Texture2D>("Artifacts/heart"), 3 )}
@@ -182,7 +176,7 @@ namespace Zone.States
             if (Collide(player, fly)) sprites[fly] = false;
             if (Collide(player, heart)) sprites[heart] = false;
 
-            if (!sprites[crystal] && !sprites[star] && !sprites[fly]) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
+            if (!sprites[crystal] && !sprites[star] && !sprites[fly] && !sprites[heart]) _game.ChangeState(new Level5(_game, _graphicsDevice, _content));
             foreach (var sprite in sprites.Keys)
                 if (sprite == player) sprite.Update(gameTime, sprite, boxes);
                 else if (sprite != health)
