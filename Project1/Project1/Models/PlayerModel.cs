@@ -8,7 +8,7 @@ using System.Security.Policy;
 
 namespace Zone.Models
 {
-    internal class PlayerModel : Sprite
+    public class PlayerModel : Sprite
     {
         public int health = 7;
         private bool isUp = true;

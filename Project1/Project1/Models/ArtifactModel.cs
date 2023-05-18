@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Zone.Models
 {
-    internal class ArtifactModel : Sprite
+    public class ArtifactModel : Sprite
     {
         public ArtifactModel(Dictionary<string, Animation> animations) : base(animations)
         {

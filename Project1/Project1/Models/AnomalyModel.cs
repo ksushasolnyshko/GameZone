@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Zone.Models
 {
-    internal class AnomalyModel : Sprite
+    public class AnomalyModel : Sprite
     {
         private bool isGoLeft = true;
         public Vector2 MoveBorder = new Vector2(5, 1940);
