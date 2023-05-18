@@ -11,12 +11,12 @@ namespace Zone.Models
 
         public AnomalyModel(Dictionary<string, Animation> animations) : base(animations)
         {
-            Speed = 1f;
+            Speed = 2f;
         }
 
         public AnomalyModel(Texture2D texture) : base(texture)
         {
-            Speed = 2f;
+            Speed = 3f;
         }
 
         protected override void SetAnimations()

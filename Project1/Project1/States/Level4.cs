@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using SharpDX.DirectWrite;
 using System.Collections.Generic;
 using Zone.Managers;
 using Zone.Models;
@@ -27,6 +28,7 @@ namespace Zone.States
         private AnomalyModel eye;
         private Dictionary<Sprite, bool> sprites;
         private Dictionary<string, Animation> healthAnimation;
+        private bool isHeart = false;
 
         public Level4(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
@@ -90,20 +92,20 @@ namespace Zone.States
 
             crystal = new ArtifactModel(crystalAnimation) { Size = new Vector2(86, 85), Position = new Vector2(1800, 170) };
 
-            fly = new ArtifactModel(flyAnimation) { Size = new Vector2(86, 85), Position = new Vector2(500, 430) };
+            fly = new ArtifactModel(flyAnimation) { Size = new Vector2(86, 85), Position = new Vector2(1200, 160) };
 
-            star = new ArtifactModel(starAnimation) { Size = new Vector2(74, 66), Position = new Vector2(1100, 430) };
+            star = new ArtifactModel(starAnimation) { Size = new Vector2(74, 66), Position = new Vector2(1100, 425) };
 
             brain = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(1800, 790) };
 
-            brain2 = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(900, 430) };
+            brain2 = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(900, 150) };
 
             health = new Sprite(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(0, 10) };
 
             heart = new ArtifactModel(heartAnimation) { Size = new Vector2(84, 68), Position = new Vector2(120, 300) };
 
-            eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(400, 430) };
-            eye.MoveBorder = new Vector2(250, 600);
+            eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(600, 430) };
+            eye.MoveBorder = new Vector2(600, 1700);
 
             sprites = new Dictionary<Sprite, bool>()
             {
@@ -169,7 +171,7 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
-            if (Collide(player, brain))
+            if (Collide(player, brain) || Collide(player, brain2))
             {
                 health.Update(gameTime, health);
             }
@@ -178,6 +180,7 @@ namespace Zone.States
             if (Collide(player, crystal)) sprites[crystal] = false;
             if (Collide(player, star)) sprites[star] = false;
             if (Collide(player, fly)) sprites[fly] = false;
+            if (Collide(player, heart)) sprites[heart] = false;
 
             if (!sprites[crystal] && !sprites[star] && !sprites[fly]) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             foreach (var sprite in sprites.Keys)
