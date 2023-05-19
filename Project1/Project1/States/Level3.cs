@@ -11,14 +11,12 @@ namespace Zone.States
     public class Level3 : Level
     {
         Texture2D background;
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
 
         public Level3(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level3");
-          
+            SetBackGround("bg_level3");
+
             var eyeAnimation = new Dictionary<string, Animation>()
             {
                 { "goright", new Animation(_content.Load<Texture2D>("Anomalyes/eyeRight"), 3)},

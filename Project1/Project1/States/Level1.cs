@@ -16,7 +16,7 @@ namespace Zone.States
         public Level1(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level1");
+            SetBackGround("bg_level1");
             var animations = new Dictionary<string, Animation>(){
                 {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },

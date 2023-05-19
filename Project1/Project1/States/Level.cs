@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
+using System.IO;
 using System.Threading.Tasks;
 using Zone.Managers;
 using Zone.Models;
@@ -25,8 +26,12 @@ namespace Zone.States
         public ArtifactModel star;
         public ArtifactModel crystal;
         public ArtifactModel fly;
+        public ArtifactModel ball;
+        public ArtifactModel heart;
         public AnomalyModel brain;
+        public AnomalyModel brain2;
         public AnomalyModel eye;
+        public AnomalyModel scull;
         public Dictionary<string, Animation> healthAnimation;
         public Sprite health;
 
@@ -34,7 +39,7 @@ namespace Zone.States
         public Level(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level1");
+            SetBackGround("bg_level1");
             var animations = new Dictionary<string, Animation>(){
                 {"WalkRight", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
@@ -87,7 +92,7 @@ namespace Zone.States
             eye = new AnomalyModel(eyeAnimation) { Size = new Vector2(98, 62), Position = new Vector2(400, 578) };
             eye.MoveBorder = new Vector2(10, 400);
 
-            // Level4
+            // Level3
             var starAnimation = new Dictionary<string, Animation>()
             {
                 { "Up", new Animation(_content.Load<Texture2D>("Artifacts/star"), 3 )}
@@ -118,6 +123,32 @@ namespace Zone.States
 
             health = new ArtifactModel(healthAnimation) { Size = new Vector2(285, 72), Position = new Vector2(10, 10) };
 
+            // Level4
+            var heartAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/heart"), 3 )}
+            };
+
+            heart = new ArtifactModel(heartAnimation) { Size = new Vector2(84, 68), Position = new Vector2(120, 300) };
+            brain2 = new AnomalyModel(_content.Load<Texture2D>("Anomalyes/brain")) { Size = new Vector2(60, 90), Position = new Vector2(900, 150) };
+
+            // Level5
+
+            var scullAnimation = new Dictionary<string, Animation>()
+            {
+                { "goright", new Animation(_content.Load<Texture2D>("Anomalyes/scull"), 3 )},
+                { "goleft", new Animation(_content.Load<Texture2D>("Anomalyes/scull"), 3 )}
+            };
+
+            scull = new AnomalyModel(scullAnimation) { Size = new Vector2(73, 100), Position = new Vector2(600, 530) };
+            scull.MoveBorder = new Vector2(500, 800);
+
+            var ballAnimation = new Dictionary<string, Animation>()
+            {
+                { "Up", new Animation(_content.Load<Texture2D>("Artifacts/ball"), 3 )}
+            };
+            ball = new ArtifactModel(ballAnimation) { Size = new Vector2(177, 155), Position = new Vector2(1800, 200) };
+
             player =
                 new PlayerModel(animations)
                 {
@@ -143,6 +174,11 @@ namespace Zone.States
             };
 
             CreateMap(map, "Map/platform");   
+        }
+
+        public void SetBackGround(string path)
+        {
+            background = _content.Load<Texture2D>(path);
         }
 
         public void CreateMap(int[,] map, string path)

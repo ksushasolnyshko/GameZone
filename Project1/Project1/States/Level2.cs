@@ -15,7 +15,7 @@ namespace Zone.States
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
-            background = _content.Load<Texture2D>("bg_level2");            
+            SetBackGround("bg_level2");         
             sprites = new Dictionary<Sprite, bool>()
             {
                 {spring, true},
