@@ -37,6 +37,7 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/player_go_right.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_left.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_right.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/rules.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
@@ -70,6 +71,7 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Map/snow_platform.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -61,7 +61,7 @@ namespace Zone.States
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
+            _game.ChangeState(new RulesState(_game, _graphicsDevice, _content));
         }
 
         public override void Update(GameTime gameTime)
