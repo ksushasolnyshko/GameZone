@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <SourceFile>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/начать заново 1.png</SourceFile>
-  <SourceTime>2023-05-12T18:09:35.4100163+05:00</SourceTime>
+  <SourceFile>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/replay_button.png</SourceFile>
+  <SourceTime>2023-05-19T15:19:23.7726417+05:00</SourceTime>
   <DestFile>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bin/Windows/Content/Controls/replay_button.xnb</DestFile>
-  <DestTime>2023-05-12T18:42:40.2661403+05:00</DestTime>
+  <DestTime>2023-05-19T15:24:20.9494881+05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2022-07-26T16:44:56+05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

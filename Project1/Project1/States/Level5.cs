@@ -104,7 +104,7 @@ namespace Zone.States
             if (Collide(player, medal)) sprites[medal] = false;
             if (Collide(player, flask)) sprites[flask] = false;
 
-            if (!sprites[crystal] && !sprites[fly] && !sprites[medal] && !sprites[flask] && Collide(player, ball)) _game.ChangeState(new Level5(_game, _graphicsDevice, _content));
+            if (!sprites[crystal] && !sprites[fly] && !sprites[medal] && !sprites[flask] && Collide(player, ball)) _game.ChangeState(new WinnState(_game, _graphicsDevice, _content));
             foreach (var sprite in sprites.Keys)
                 if (sprite == player) sprite.Update(gameTime, sprite, boxes);
                 else if (sprite != health)

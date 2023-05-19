@@ -26,8 +26,8 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level4.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/exit_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/play_button.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/replay_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/rules_button.png</File>
-    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/начать заново 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/gameover 1 (1).png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/kamni_les_mrak_69204_1280x720 1.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Map/platform.png</File>
@@ -38,6 +38,7 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_left.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Player/small_player_go_right.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/rules.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/win.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/заставка.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/здоровье 1.png</File>
   </SourceFiles>
@@ -65,12 +66,13 @@
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
-    <File>Controls/replay_button.png</File>
+    <File xsi:nil="true" />
     <File>GameOverBackground.png</File>
     <File>bg_level3.png</File>
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File>Map/snow_platform.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
