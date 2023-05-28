@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -11,6 +12,9 @@ namespace Zone.States
     {
         private List<Component> _components;
         Texture2D background;
+        public SoundEffect levelSound;
+        public SoundEffectInstance levelsSoundInstance;
+
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
           : base(game, graphicsDevice, content)
         {
@@ -18,6 +22,10 @@ namespace Zone.States
             var rulesButtomTexture = _content.Load<Texture2D>("Controls/rules_button");
             var exitButtonTexture = _content.Load<Texture2D>("Controls/exit_button");
             background = _content.Load<Texture2D>("background");
+            levelSound = _content.Load<SoundEffect>("Sounds/level_sound");
+            levelsSoundInstance = levelSound.CreateInstance();
+            levelsSoundInstance.IsLooped = true;
+            levelsSoundInstance.Volume = 0.1f;
 
             var playButton = new Button(playButtomTexture)
             {
@@ -66,6 +74,7 @@ namespace Zone.States
 
         public override void Update(GameTime gameTime)
         {
+            levelsSoundInstance.Play();
             foreach (var component in _components)
                 component.Update(gameTime);
         }

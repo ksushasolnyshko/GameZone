@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
@@ -34,6 +35,10 @@ namespace Zone.States
         public AnomalyModel scull;
         public Dictionary<string, Animation> healthAnimation;
         public Sprite health;
+        public SoundEffect artifactSound;
+        public SoundEffect anomalySound;
+        public SoundEffectInstance anomalySoundInstance;
+        public SoundEffectInstance artifactSoundInstance;
 
 
         public Level(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
@@ -45,6 +50,16 @@ namespace Zone.States
                 {"WalkLeft", new Animation(_content.Load<Texture2D>("Player/player_go_left"), 8) },
                 {"WalkUp", new Animation(_content.Load<Texture2D>("Player/player_go_right"), 8) },
             };
+
+            artifactSound = _content.Load<SoundEffect>("Sounds/artifact_sound");
+            artifactSoundInstance = artifactSound.CreateInstance();
+            artifactSoundInstance.IsLooped = false;
+            artifactSoundInstance.Volume = 0.6f;
+
+            anomalySound = _content.Load<SoundEffect>("Sounds/anomaly_sound");
+            anomalySoundInstance = anomalySound.CreateInstance();
+            anomalySoundInstance.IsLooped = false;
+            anomalySoundInstance.Volume = 0.6f;
 
             // Level1
             var emptyAnimation = new Dictionary<string, Animation>

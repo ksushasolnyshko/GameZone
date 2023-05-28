@@ -72,3 +72,9 @@ C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Conten
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\bg_level5.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\rules.xnb
 C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\win.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\level_sound.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\anomaly_sound.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\artifact_sound.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\gameOver_sound.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\level_sound2.xnb
+C:\Users\ksupo\GitHub\GameZone\Project1\Project1\bin\Debug\net6.0-windows\Content\Sounds\win_sound.xnb

@@ -11,8 +11,6 @@ namespace Zone.States
 {
     public class Level4 : Level
     {
-        Texture2D background;
-
         public Level4(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
@@ -83,10 +81,17 @@ namespace Zone.States
             player.isJump = true;
             if (Collide(player, brain) || Collide(player, brain2))
             {
+                anomalySoundInstance.Play();
                 health.Update(gameTime, health);
             }
 
-            if (Collide(player, eye) || healthAnimation["health"].CurrentFrame >= 6) _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
+            if (Collide(player, eye) || healthAnimation["health"].CurrentFrame >= 6)
+            {
+                if (Collide(player, eye)) anomalySoundInstance.Play();
+                _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
+            }
+            if (Collide(player, crystal) || Collide(player, star) || Collide(player, fly) || Collide(player, heart))
+                artifactSoundInstance.Play();
             if (Collide(player, crystal)) sprites[crystal] = false;
             if (Collide(player, star)) sprites[star] = false;
             if (Collide(player, fly)) sprites[fly] = false;

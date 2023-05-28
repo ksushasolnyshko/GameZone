@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -11,12 +12,19 @@ namespace Zone.States
     {
         private List<Component> _components;
         Texture2D background;
+        public SoundEffect gameOverSound;
+        public SoundEffectInstance gameOverInstance;
+
         public GameOverState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
           : base(game, graphicsDevice, content)
-        {
+        {   
             var playButtomTexture = _content.Load<Texture2D>("Controls/replay_button");
             var exitButtonTexture = _content.Load<Texture2D>("Controls/exit_button");
             background = _content.Load<Texture2D>("GameOverBackground");
+
+            gameOverSound = _content.Load<SoundEffect>("Sounds/gameOver_sound");
+            gameOverInstance = gameOverSound.CreateInstance();
+            gameOverInstance.IsLooped = false;
 
             var replayButton = new Button(playButtomTexture)
             {
@@ -48,10 +56,12 @@ namespace Zone.States
         private void ReplayButton_Click(object sender, EventArgs e)
         {
             _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
+            gameOverInstance.Stop();
         }
 
         public override void Update(GameTime gameTime)
         {
+            gameOverInstance.Play();
             foreach (var component in _components)
                 component.Update(gameTime);
         }

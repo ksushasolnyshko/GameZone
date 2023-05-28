@@ -421,6 +421,42 @@
 /processorParam:TextureFormat=Color
 /build:rules.png
 
+#begin Sounds/anomaly_sound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/anomaly_sound.mp3
+
+#begin Sounds/artifact_sound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/artifact_sound.mp3
+
+#begin Sounds/gameOver_sound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/gameOver_sound.mp3
+
+#begin Sounds/level_sound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/level_sound.mp3
+
+#begin Sounds/level_sound2.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/level_sound2.mp3
+
+#begin Sounds/win_sound.mp3
+/importer:Mp3Importer
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:Sounds/win_sound.mp3
+
 #begin win.png
 /importer:TextureImporter
 /processor:TextureProcessor

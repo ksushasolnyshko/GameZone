@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Zone.Managers;
@@ -11,8 +12,6 @@ namespace Zone.States
 {
     public class Level1 : Level
     {
-        Texture2D background;
-
         public Level1(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
@@ -49,8 +48,13 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
-            if (Collide(player, secretBook)) sprites[secretBook] = false;
-            if (Collide(player, emptyArt)) sprites[emptyArt] = false;
+            if (Collide(player, secretBook) || Collide(player, emptyArt))
+            {
+                artifactSoundInstance.Play();
+                if (Collide(player, emptyArt)) sprites[emptyArt] = false;
+                if (Collide(player, secretBook)) sprites[secretBook] = false;
+            }
+
             if (!sprites[secretBook] && !sprites[emptyArt]) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
             foreach (var sprite in sprites.Keys)
                 if (sprite == player) sprite.Update(gameTime, sprite, boxes);

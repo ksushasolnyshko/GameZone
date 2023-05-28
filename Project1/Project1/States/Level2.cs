@@ -10,8 +10,6 @@ namespace Zone.States
 {
     public class Level2 : Level
     {
-        private Texture2D background;
-
         public Level2(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
@@ -45,9 +43,13 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
 
-            if (Collide(player, spring)) sprites[spring] = false;
-            if (Collide(player, medal)) sprites[medal] = false;
-            if (Collide(player, flask)) sprites[flask] = false;
+            if (Collide(player, spring) || Collide(player, medal) || Collide(player, flask))
+            {
+                artifactSoundInstance.Play();
+                if (Collide(player, spring)) sprites[spring] = false;
+                if (Collide(player, medal)) sprites[medal] = false;
+                if (Collide(player, flask)) sprites[flask] = false;
+            }
 
             if (!sprites[spring]) player.isJump = true;
             else player.isJump = false;
@@ -55,6 +57,7 @@ namespace Zone.States
             if (!sprites[spring] && !sprites[medal] && !sprites[flask]) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
             if (Collide(player, eye))
             {
+                anomalySoundInstance.Play();
                 _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             }
             foreach (var sprite in sprites.Keys)
