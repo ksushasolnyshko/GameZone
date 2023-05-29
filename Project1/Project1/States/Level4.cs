@@ -90,12 +90,11 @@ namespace Zone.States
                 if (Collide(player, eye)) anomalySoundInstance.Play();
                 _game.ChangeState(new GameOverState(_game, _graphicsDevice, _content));
             }
-            if (Collide(player, crystal) || Collide(player, star) || Collide(player, fly) || Collide(player, heart))
-                artifactSoundInstance.Play();
-            if (Collide(player, crystal)) sprites[crystal] = false;
-            if (Collide(player, star)) sprites[star] = false;
-            if (Collide(player, fly)) sprites[fly] = false;
-            if (Collide(player, heart)) sprites[heart] = false;
+
+            foreach (var art in new List<ArtifactModel> { crystal, star, fly, heart })
+            {
+                CheckCollision(art);
+            }
 
             if (!sprites[crystal] && !sprites[star] && !sprites[fly] && !sprites[heart]) _game.ChangeState(new ContinueState(_game, _graphicsDevice, _content, 4));
             foreach (var sprite in sprites.Keys)

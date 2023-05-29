@@ -43,13 +43,10 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
 
-            if (Collide(player, spring) || Collide(player, medal) || Collide(player, flask))
+            foreach (var art in new List<ArtifactModel> { spring, medal, flask })
             {
-                artifactSoundInstance.Play();
-                if (Collide(player, spring)) sprites[spring] = false;
-                if (Collide(player, medal)) sprites[medal] = false;
-                if (Collide(player, flask)) sprites[flask] = false;
-            }
+                CheckCollision(art);
+            } 
 
             if (!sprites[spring]) player.isJump = true;
             else player.isJump = false;

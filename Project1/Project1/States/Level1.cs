@@ -11,7 +11,7 @@ using Zone.Models;
 namespace Zone.States
 {
     public class Level1 : Level
-    {
+    {   
         public Level1(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
         : base(game, graphicsDevice, content)
         {
@@ -48,16 +48,9 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
-            if (Collide(player, emptyArt) && sprites[emptyArt])
+            foreach (var art in new List<ArtifactModel> {emptyArt, secretBook })
             {
-                artifactSoundInstance.Play();
-                sprites[emptyArt] = false;
-            }
-
-            if (Collide(player, secretBook) && sprites[secretBook])
-            {
-                artifactSoundInstance.Play();
-                sprites[secretBook] = false;
+                CheckCollision(art);
             }
 
             if (!sprites[secretBook] && !sprites[emptyArt]) _game.ChangeState(new ContinueState(_game, _graphicsDevice, _content, 1));

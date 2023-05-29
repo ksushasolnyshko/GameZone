@@ -196,6 +196,15 @@ namespace Zone.States
             background = _content.Load<Texture2D>(path);
         }
 
+        public void CheckCollision (ArtifactModel art)
+        {
+            if (Collide(player, art) && sprites[art])
+            {
+                artifactSoundInstance.Play();
+                sprites[art] = false;
+            }
+        }
+
         public void CreateMap(int[,] map, string path)
         {
             var x = 0;
