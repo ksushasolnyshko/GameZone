@@ -14,9 +14,13 @@
     <SourceRoot Include="C:\Program Files (x86)\Microsoft Visual Studio\Shared\NuGetPackages\" />
   </ItemGroup>
   <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)uno.fonts.fluent\2.0.0\buildTransitive\Uno.Fonts.Fluent.props" Condition="Exists('$(NuGetPackageRoot)uno.fonts.fluent\2.0.0\buildTransitive\Uno.Fonts.Fluent.props')" />
+    <Import Project="$(NuGetPackageRoot)nunit3testadapter\4.4.2\build\netcoreapp3.1\NUnit3TestAdapter.props" Condition="Exists('$(NuGetPackageRoot)nunit3testadapter\4.4.2\build\netcoreapp3.1\NUnit3TestAdapter.props')" />
+    <Import Project="$(NuGetPackageRoot)nunit\3.13.3\build\NUnit.props" Condition="Exists('$(NuGetPackageRoot)nunit\3.13.3\build\NUnit.props')" />
     <Import Project="$(NuGetPackageRoot)monogame.content.builder.task\3.8.1.303\build\MonoGame.Content.Builder.Task.props" Condition="Exists('$(NuGetPackageRoot)monogame.content.builder.task\3.8.1.303\build\MonoGame.Content.Builder.Task.props')" />
   </ImportGroup>
   <PropertyGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <PkgUno_UI Condition=" '$(PkgUno_UI)' == '' ">C:\Users\ksupo\.nuget\packages\uno.ui\4.8.39</PkgUno_UI>
     <PkgMicrosoft_CodeAnalysis_Analyzers Condition=" '$(PkgMicrosoft_CodeAnalysis_Analyzers)' == '' ">C:\Users\ksupo\.nuget\packages\microsoft.codeanalysis.analyzers\1.1.0</PkgMicrosoft_CodeAnalysis_Analyzers>
   </PropertyGroup>
 </Project>

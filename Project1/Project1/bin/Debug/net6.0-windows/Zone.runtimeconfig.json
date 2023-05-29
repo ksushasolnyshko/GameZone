@@ -13,6 +13,7 @@
       }
     ],
     "configProperties": {
+      "Windows.ApplicationModel.DataTransfer.DragDrop.ExternalSupport": true,
       "System.Runtime.TieredCompilation": false
     }
   }

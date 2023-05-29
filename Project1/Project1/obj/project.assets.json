@@ -233,7 +233,7 @@
       "Microsoft.NETCore.Jit/1.0.7": {
         "type": "package"
       },
-      "Microsoft.NETCore.Platforms/1.0.2": {
+      "Microsoft.NETCore.Platforms/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -249,7 +249,7 @@
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
         }
       },
-      "Microsoft.NETCore.Targets/1.0.3": {
+      "Microsoft.NETCore.Targets/1.1.0": {
         "type": "package",
         "compile": {
           "lib/netstandard1.0/_._": {}
@@ -298,7 +298,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.3/Microsoft.Win32.Primitives.dll": {
+          "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
         }
@@ -362,69 +362,47 @@
           "build/MonoGame.Framework.WindowsDX.targets": {}
         }
       },
-      "NETStandard.Library/1.6.0": {
+      "NETStandard.Library/2.0.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.Win32.Primitives": "4.0.1",
-          "System.AppContext": "4.1.0",
-          "System.Collections": "4.0.11",
-          "System.Collections.Concurrent": "4.0.12",
-          "System.Console": "4.0.0",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Diagnostics.Tools": "4.0.1",
-          "System.Diagnostics.Tracing": "4.1.0",
-          "System.Globalization": "4.0.11",
-          "System.Globalization.Calendars": "4.0.1",
-          "System.IO": "4.1.0",
-          "System.IO.Compression": "4.1.0",
-          "System.IO.Compression.ZipFile": "4.0.1",
-          "System.IO.FileSystem": "4.0.1",
-          "System.IO.FileSystem.Primitives": "4.0.1",
-          "System.Linq": "4.1.0",
-          "System.Linq.Expressions": "4.1.0",
-          "System.Net.Http": "4.1.0",
-          "System.Net.Primitives": "4.0.11",
-          "System.Net.Sockets": "4.1.0",
-          "System.ObjectModel": "4.0.12",
-          "System.Reflection": "4.1.0",
-          "System.Reflection.Extensions": "4.0.1",
-          "System.Reflection.Primitives": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.Handles": "4.0.1",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Runtime.InteropServices.RuntimeInformation": "4.0.0",
-          "System.Runtime.Numerics": "4.0.1",
-          "System.Security.Cryptography.Algorithms": "4.2.0",
-          "System.Security.Cryptography.Encoding": "4.0.0",
-          "System.Security.Cryptography.Primitives": "4.0.0",
-          "System.Security.Cryptography.X509Certificates": "4.1.0",
-          "System.Text.Encoding": "4.0.11",
-          "System.Text.Encoding.Extensions": "4.0.11",
-          "System.Text.RegularExpressions": "4.1.0",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11",
-          "System.Threading.Timer": "4.0.1",
-          "System.Xml.ReaderWriter": "4.0.11",
-          "System.Xml.XDocument": "4.0.11"
-        }
-      },
-      "runtime.native.System/4.0.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1"
+          "Microsoft.NETCore.Platforms": "1.1.0"
         },
         "compile": {
           "lib/netstandard1.0/_._": {}
         },
         "runtime": {
           "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/netstandard2.0/NETStandard.Library.targets": {}
         }
       },
-      "runtime.native.System.IO.Compression/4.1.0": {
+      "NUnit/3.13.3": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "build/NUnit.props": {}
+        }
+      },
+      "NUnit3TestAdapter/4.4.2": {
+        "type": "package",
+        "build": {
+          "build/netcoreapp3.1/NUnit3TestAdapter.props": {}
+        }
+      },
+      "runtime.native.System/4.0.0": {
         "type": "package",
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.0.1",
@@ -639,7 +617,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.6/System.AppContext.dll": {
+          "ref/netstandard1.6/_._": {
             "related": ".xml"
           }
         },
@@ -663,12 +641,12 @@
           "lib/netstandard1.1/System.Buffers.dll": {}
         }
       },
-      "System.Collections/4.0.11": {
+      "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Collections.dll": {
@@ -699,17 +677,17 @@
           "lib/netstandard1.3/System.Collections.Concurrent.dll": {}
         }
       },
-      "System.Collections.Immutable/1.2.0": {
+      "System.Collections.Immutable/1.3.1": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Globalization": "4.0.11",
-          "System.Linq": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Threading": "4.0.11"
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Threading": "4.3.0"
         },
         "compile": {
           "lib/netstandard1.0/System.Collections.Immutable.dll": {
@@ -770,17 +748,17 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/System.Console.dll": {
+          "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
         }
       },
-      "System.Diagnostics.Debug/4.0.11": {
+      "System.Diagnostics.Debug/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Diagnostics.Debug.dll": {
@@ -909,7 +887,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.0/System.Diagnostics.Tools.dll": {
+          "ref/netstandard1.0/_._": {
             "related": ".xml"
           }
         }
@@ -955,12 +933,12 @@
           "lib/netstandard1.3/System.Dynamic.Runtime.dll": {}
         }
       },
-      "System.Globalization/4.0.11": {
+      "System.Globalization/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Globalization.dll": {
@@ -977,7 +955,7 @@
           "System.Runtime": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Globalization.Calendars.dll": {
+          "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
         }
@@ -1008,75 +986,19 @@
           }
         }
       },
-      "System.IO/4.1.0": {
+      "System.IO/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Text.Encoding": "4.0.11",
-          "System.Threading.Tasks": "4.0.11"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.5/System.IO.dll": {
             "related": ".xml"
           }
-        }
-      },
-      "System.IO.Compression/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.IO": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Runtime.Handles": "4.0.1",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Text.Encoding": "4.0.11",
-          "System.Threading": "4.0.11",
-          "System.Threading.Tasks": "4.0.11",
-          "runtime.native.System": "4.0.0",
-          "runtime.native.System.IO.Compression": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.IO.Compression.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.3/System.IO.Compression.dll": {
-            "assetType": "runtime",
-            "rid": "win"
-          }
-        }
-      },
-      "System.IO.Compression.ZipFile/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "System.Buffers": "4.0.0",
-          "System.IO": "4.1.0",
-          "System.IO.Compression": "4.1.0",
-          "System.IO.FileSystem": "4.0.1",
-          "System.IO.FileSystem.Primitives": "4.0.1",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0",
-          "System.Text.Encoding": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.IO.Compression.ZipFile.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard1.3/System.IO.Compression.ZipFile.dll": {}
         }
       },
       "System.IO.FileSystem/4.0.1": {
@@ -1204,14 +1126,14 @@
           "lib/netstandard1.3/System.IO.UnmanagedMemoryStream.dll": {}
         }
       },
-      "System.Linq/4.1.0": {
+      "System.Linq/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Collections": "4.0.11",
-          "System.Diagnostics.Debug": "4.0.11",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0"
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.6/System.Linq.dll": {
@@ -1294,6 +1216,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Linq.Queryable.dll": {}
+        }
+      },
+      "System.Memory/4.5.2": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.1/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.1/_._": {}
         }
       },
       "System.Net.Http/4.1.2": {
@@ -1471,22 +1402,6 @@
           }
         }
       },
-      "System.Net.Sockets/4.1.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.IO": "4.1.0",
-          "System.Net.Primitives": "4.0.11",
-          "System.Runtime": "4.1.0",
-          "System.Threading.Tasks": "4.0.11"
-        },
-        "compile": {
-          "ref/netstandard1.3/System.Net.Sockets.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.Net.WebHeaderCollection/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -1504,23 +1419,13 @@
           "lib/netstandard1.3/System.Net.WebHeaderCollection.dll": {}
         }
       },
-      "System.Numerics.Vectors/4.1.1": {
+      "System.Numerics.Vectors/4.5.0": {
         "type": "package",
-        "dependencies": {
-          "System.Globalization": "4.0.11",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.Extensions": "4.1.0"
-        },
         "compile": {
-          "ref/netstandard1.0/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
+          "ref/netcoreapp2.0/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.0/System.Numerics.Vectors.dll": {
-            "related": ".xml"
-          }
+          "lib/netcoreapp2.0/_._": {}
         }
       },
       "System.ObjectModel/4.0.12": {
@@ -1541,14 +1446,14 @@
           "lib/netstandard1.3/System.ObjectModel.dll": {}
         }
       },
-      "System.Reflection/4.1.0": {
+      "System.Reflection/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.IO": "4.1.0",
-          "System.Reflection.Primitives": "4.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.IO": "4.3.0",
+          "System.Reflection.Primitives": "4.3.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Reflection.dll": {
@@ -1674,12 +1579,12 @@
           }
         }
       },
-      "System.Reflection.Primitives/4.0.1": {
+      "System.Reflection.Primitives/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.0/System.Reflection.Primitives.dll": {
@@ -1718,14 +1623,14 @@
           "lib/netstandard1.0/System.Resources.Reader.dll": {}
         }
       },
-      "System.Resources.ResourceManager/4.0.1": {
+      "System.Resources.ResourceManager/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Globalization": "4.0.11",
-          "System.Reflection": "4.1.0",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Globalization": "4.3.0",
+          "System.Reflection": "4.3.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.0/System.Resources.ResourceManager.dll": {
@@ -1733,11 +1638,11 @@
           }
         }
       },
-      "System.Runtime/4.1.0": {
+      "System.Runtime/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.dll": {
@@ -1745,12 +1650,12 @@
           }
         }
       },
-      "System.Runtime.Extensions/4.1.0": {
+      "System.Runtime.Extensions/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.5/System.Runtime.Extensions.dll": {
@@ -1787,29 +1692,18 @@
           }
         }
       },
-      "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
+      "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "System.Reflection": "4.1.0",
-          "System.Resources.ResourceManager": "4.0.1",
-          "System.Runtime": "4.1.0",
-          "System.Runtime.InteropServices": "4.1.0",
-          "System.Threading": "4.0.11",
-          "runtime.native.System": "4.0.0"
+          "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {}
-        },
-        "runtimeTargets": {
-          "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
-            "assetType": "runtime",
-            "rid": "unix"
-          },
-          "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll": {
-            "assetType": "runtime",
-            "rid": "win"
+          "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll": {
+            "related": ".xml"
           }
+        },
+        "runtime": {
+          "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll": {}
         }
       },
       "System.Runtime.Loader/4.0.0": {
@@ -1837,7 +1731,7 @@
           "System.Runtime.Extensions": "4.1.0"
         },
         "compile": {
-          "ref/netstandard1.1/System.Runtime.Numerics.dll": {
+          "ref/netstandard1.1/_._": {
             "related": ".xml"
           }
         },
@@ -2129,12 +2023,12 @@
           }
         }
       },
-      "System.Text.Encoding/4.0.11": {
+      "System.Text.Encoding/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Text.Encoding.dll": {
@@ -2199,7 +2093,7 @@
           "System.Threading": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/System.Text.RegularExpressions.dll": {
+          "ref/netstandard1.6/_._": {
             "related": ".xml"
           }
         },
@@ -2207,11 +2101,11 @@
           "lib/netstandard1.6/System.Text.RegularExpressions.dll": {}
         }
       },
-      "System.Threading/4.0.11": {
+      "System.Threading/4.3.0": {
         "type": "package",
         "dependencies": {
-          "System.Runtime": "4.1.0",
-          "System.Threading.Tasks": "4.0.11"
+          "System.Runtime": "4.3.0",
+          "System.Threading.Tasks": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.dll": {
@@ -2246,12 +2140,12 @@
           }
         }
       },
-      "System.Threading.Tasks/4.0.11": {
+      "System.Threading.Tasks/4.3.0": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
+          "Microsoft.NETCore.Platforms": "1.1.0",
+          "Microsoft.NETCore.Targets": "1.1.0",
+          "System.Runtime": "4.3.0"
         },
         "compile": {
           "ref/netstandard1.3/System.Threading.Tasks.dll": {
@@ -2353,19 +2247,6 @@
           "lib/netstandard1.3/System.Threading.ThreadPool.dll": {}
         }
       },
-      "System.Threading.Timer/4.0.1": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "1.0.1",
-          "Microsoft.NETCore.Targets": "1.0.1",
-          "System.Runtime": "4.1.0"
-        },
-        "compile": {
-          "ref/netstandard1.2/System.Threading.Timer.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "System.Xml.ReaderWriter/4.0.11": {
         "type": "package",
         "dependencies": {
@@ -2386,7 +2267,7 @@
           "System.Threading.Tasks.Extensions": "4.0.0"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.ReaderWriter.dll": {
+          "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
         },
@@ -2411,7 +2292,7 @@
           "System.Xml.ReaderWriter": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.3/System.Xml.XDocument.dll": {
+          "ref/netstandard1.3/_._": {
             "related": ".xml"
           }
         },
@@ -2484,6 +2365,126 @@
         },
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
+        }
+      },
+      "Uno.Diagnostics.Eventing/2.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0/Uno.Diagnostics.Eventing.dll": {
+            "related": ".pdb"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Uno.Diagnostics.Eventing.dll": {
+            "related": ".pdb"
+          }
+        }
+      },
+      "Uno.Fonts.Fluent/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/Uno.Fonts.Fluent.dll": {
+            "related": ".uprimarker"
+          }
+        },
+        "runtime": {
+          "lib/netstandard1.0/Uno.Fonts.Fluent.dll": {
+            "related": ".uprimarker"
+          }
+        },
+        "build": {
+          "buildTransitive/Uno.Fonts.Fluent.props": {}
+        }
+      },
+      "Uno.Foundation.Logging/4.8.39": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Uno.Foundation.Logging.dll": {
+            "related": ".deps.json;.dll.config;.pdb"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Uno.Foundation.Logging.dll": {
+            "related": ".deps.json;.dll.config;.pdb"
+          }
+        }
+      },
+      "Uno.SourceGenerationTasks/4.2.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "runtime": {
+          "lib/netstandard1.0/_._": {}
+        },
+        "build": {
+          "build/netstandard1.0/Uno.SourceGenerationTasks.targets": {}
+        }
+      },
+      "Uno.UI/4.8.39": {
+        "type": "package",
+        "dependencies": {
+          "System.Collections.Immutable": "1.3.1",
+          "System.Memory": "4.5.2",
+          "System.Numerics.Vectors": "4.5.0",
+          "System.Runtime.InteropServices.WindowsRuntime": "4.3.0",
+          "Uno.Diagnostics.Eventing": "2.0.1",
+          "Uno.Fonts.Fluent": "2.0.0",
+          "Uno.Foundation.Logging": "4.8.39",
+          "Uno.SourceGenerationTasks": "4.2.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Uno.Foundation.Logging.dll": {},
+          "lib/netstandard2.0/Uno.Foundation.dll": {},
+          "lib/netstandard2.0/Uno.UI.Composition.dll": {},
+          "lib/netstandard2.0/Uno.UI.Dispatching.dll": {},
+          "lib/netstandard2.0/Uno.UI.FluentTheme.dll": {
+            "related": ".pdb;.v1.pdb;.v2.pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v1.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v2.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.Toolkit.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.dll": {
+            "related": ".FluentTheme.pdb;.FluentTheme.v1.pdb;.FluentTheme.v2.pdb;.Toolkit.pdb"
+          },
+          "lib/netstandard2.0/Uno.Xaml.dll": {},
+          "lib/netstandard2.0/Uno.dll": {
+            "related": ".UI.FluentTheme.pdb;.UI.FluentTheme.v1.pdb;.UI.FluentTheme.v2.pdb;.UI.Toolkit.pdb"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Uno.Foundation.Logging.dll": {},
+          "lib/netstandard2.0/Uno.Foundation.dll": {},
+          "lib/netstandard2.0/Uno.UI.Composition.dll": {},
+          "lib/netstandard2.0/Uno.UI.Dispatching.dll": {},
+          "lib/netstandard2.0/Uno.UI.FluentTheme.dll": {
+            "related": ".pdb;.v1.pdb;.v2.pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v1.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.FluentTheme.v2.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.Toolkit.dll": {
+            "related": ".pdb"
+          },
+          "lib/netstandard2.0/Uno.UI.dll": {
+            "related": ".FluentTheme.pdb;.FluentTheme.v1.pdb;.FluentTheme.v2.pdb;.Toolkit.pdb"
+          },
+          "lib/netstandard2.0/Uno.Xaml.dll": {},
+          "lib/netstandard2.0/Uno.dll": {
+            "related": ".UI.FluentTheme.pdb;.UI.FluentTheme.v1.pdb;.UI.FluentTheme.v2.pdb;.UI.Toolkit.pdb"
+          }
+        },
+        "build": {
+          "buildTransitive/net5.0-windows/Uno.UI.targets": {}
         }
       }
     }
@@ -2711,17 +2712,17 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Platforms/1.0.2": {
-      "sha512": "fRHBvQs9Z/ZSUAqaSotK1UPol/lwybTgdeTXR4eVw3rVDgzUnWGTUsK0A418oR7NrimNL1TQu/IM0RDa26s0qg==",
+    "Microsoft.NETCore.Platforms/1.1.0": {
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
-      "path": "microsoft.netcore.platforms/1.0.2",
+      "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.platforms.1.0.2.nupkg.sha512",
+        "microsoft.netcore.platforms.1.1.0.nupkg.sha512",
         "microsoft.netcore.platforms.nuspec",
         "runtime.json"
       ]
@@ -2740,17 +2741,17 @@
         "runtime.json"
       ]
     },
-    "Microsoft.NETCore.Targets/1.0.3": {
-      "sha512": "IRUVJ1jXkdvxokYfxw5o2+QCcWWVxLMzcwsRSpmNboslZR0WYhFgJihT53R/tkEDiBjlhb99XxYMWfb9Q6nyVw==",
+    "Microsoft.NETCore.Targets/1.1.0": {
+      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "type": "package",
-      "path": "microsoft.netcore.targets/1.0.3",
+      "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
-        "microsoft.netcore.targets.1.0.3.nupkg.sha512",
+        "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
       ]
@@ -2910,16 +2911,185 @@
         "monogame.framework.windowsdx.nuspec"
       ]
     },
-    "NETStandard.Library/1.6.0": {
-      "sha512": "ypsCvIdCZ4IoYASJHt6tF2fMo7N30NLgV1EbmC+snO490OMl9FvVxmumw14rhReWU3j3g7BYudG6YCrchwHJlA==",
+    "NETStandard.Library/2.0.0": {
+      "sha512": "7jnbRU+L08FXKMxqUflxEXtVymWvNOrS8yHgu9s6EM8Anr6T/wIX4nZ08j/u3Asz+tCufp3YVwFSEvFTPYmBPA==",
       "type": "package",
-      "path": "netstandard.library/1.6.0",
+      "path": "netstandard.library/2.0.0",
       "files": [
         ".nupkg.metadata",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "netstandard.library.1.6.0.nupkg.sha512",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "build/NETStandard.Library.targets",
+        "build/netstandard2.0/NETStandard.Library.targets",
+        "build/netstandard2.0/ref/Microsoft.Win32.Primitives.dll",
+        "build/netstandard2.0/ref/System.AppContext.dll",
+        "build/netstandard2.0/ref/System.Collections.Concurrent.dll",
+        "build/netstandard2.0/ref/System.Collections.NonGeneric.dll",
+        "build/netstandard2.0/ref/System.Collections.Specialized.dll",
+        "build/netstandard2.0/ref/System.Collections.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Composition.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.EventBasedAsync.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.Primitives.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.TypeConverter.dll",
+        "build/netstandard2.0/ref/System.ComponentModel.dll",
+        "build/netstandard2.0/ref/System.Console.dll",
+        "build/netstandard2.0/ref/System.Core.dll",
+        "build/netstandard2.0/ref/System.Data.Common.dll",
+        "build/netstandard2.0/ref/System.Data.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Contracts.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Debug.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.FileVersionInfo.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Process.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.StackTrace.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TextWriterTraceListener.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tools.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.TraceSource.dll",
+        "build/netstandard2.0/ref/System.Diagnostics.Tracing.dll",
+        "build/netstandard2.0/ref/System.Drawing.Primitives.dll",
+        "build/netstandard2.0/ref/System.Drawing.dll",
+        "build/netstandard2.0/ref/System.Dynamic.Runtime.dll",
+        "build/netstandard2.0/ref/System.Globalization.Calendars.dll",
+        "build/netstandard2.0/ref/System.Globalization.Extensions.dll",
+        "build/netstandard2.0/ref/System.Globalization.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.ZipFile.dll",
+        "build/netstandard2.0/ref/System.IO.Compression.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.DriveInfo.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Primitives.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.Watcher.dll",
+        "build/netstandard2.0/ref/System.IO.FileSystem.dll",
+        "build/netstandard2.0/ref/System.IO.IsolatedStorage.dll",
+        "build/netstandard2.0/ref/System.IO.MemoryMappedFiles.dll",
+        "build/netstandard2.0/ref/System.IO.Pipes.dll",
+        "build/netstandard2.0/ref/System.IO.UnmanagedMemoryStream.dll",
+        "build/netstandard2.0/ref/System.IO.dll",
+        "build/netstandard2.0/ref/System.Linq.Expressions.dll",
+        "build/netstandard2.0/ref/System.Linq.Parallel.dll",
+        "build/netstandard2.0/ref/System.Linq.Queryable.dll",
+        "build/netstandard2.0/ref/System.Linq.dll",
+        "build/netstandard2.0/ref/System.Net.Http.dll",
+        "build/netstandard2.0/ref/System.Net.NameResolution.dll",
+        "build/netstandard2.0/ref/System.Net.NetworkInformation.dll",
+        "build/netstandard2.0/ref/System.Net.Ping.dll",
+        "build/netstandard2.0/ref/System.Net.Primitives.dll",
+        "build/netstandard2.0/ref/System.Net.Requests.dll",
+        "build/netstandard2.0/ref/System.Net.Security.dll",
+        "build/netstandard2.0/ref/System.Net.Sockets.dll",
+        "build/netstandard2.0/ref/System.Net.WebHeaderCollection.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.Client.dll",
+        "build/netstandard2.0/ref/System.Net.WebSockets.dll",
+        "build/netstandard2.0/ref/System.Net.dll",
+        "build/netstandard2.0/ref/System.Numerics.dll",
+        "build/netstandard2.0/ref/System.ObjectModel.dll",
+        "build/netstandard2.0/ref/System.Reflection.Extensions.dll",
+        "build/netstandard2.0/ref/System.Reflection.Primitives.dll",
+        "build/netstandard2.0/ref/System.Reflection.dll",
+        "build/netstandard2.0/ref/System.Resources.Reader.dll",
+        "build/netstandard2.0/ref/System.Resources.ResourceManager.dll",
+        "build/netstandard2.0/ref/System.Resources.Writer.dll",
+        "build/netstandard2.0/ref/System.Runtime.CompilerServices.VisualC.dll",
+        "build/netstandard2.0/ref/System.Runtime.Extensions.dll",
+        "build/netstandard2.0/ref/System.Runtime.Handles.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "build/netstandard2.0/ref/System.Runtime.InteropServices.dll",
+        "build/netstandard2.0/ref/System.Runtime.Numerics.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Formatters.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Json.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Primitives.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.Xml.dll",
+        "build/netstandard2.0/ref/System.Runtime.Serialization.dll",
+        "build/netstandard2.0/ref/System.Runtime.dll",
+        "build/netstandard2.0/ref/System.Security.Claims.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Algorithms.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Csp.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Encoding.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.Primitives.dll",
+        "build/netstandard2.0/ref/System.Security.Cryptography.X509Certificates.dll",
+        "build/netstandard2.0/ref/System.Security.Principal.dll",
+        "build/netstandard2.0/ref/System.Security.SecureString.dll",
+        "build/netstandard2.0/ref/System.ServiceModel.Web.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.Extensions.dll",
+        "build/netstandard2.0/ref/System.Text.Encoding.dll",
+        "build/netstandard2.0/ref/System.Text.RegularExpressions.dll",
+        "build/netstandard2.0/ref/System.Threading.Overlapped.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.Parallel.dll",
+        "build/netstandard2.0/ref/System.Threading.Tasks.dll",
+        "build/netstandard2.0/ref/System.Threading.Thread.dll",
+        "build/netstandard2.0/ref/System.Threading.ThreadPool.dll",
+        "build/netstandard2.0/ref/System.Threading.Timer.dll",
+        "build/netstandard2.0/ref/System.Threading.dll",
+        "build/netstandard2.0/ref/System.Transactions.dll",
+        "build/netstandard2.0/ref/System.ValueTuple.dll",
+        "build/netstandard2.0/ref/System.Web.dll",
+        "build/netstandard2.0/ref/System.Windows.dll",
+        "build/netstandard2.0/ref/System.Xml.Linq.dll",
+        "build/netstandard2.0/ref/System.Xml.ReaderWriter.dll",
+        "build/netstandard2.0/ref/System.Xml.Serialization.dll",
+        "build/netstandard2.0/ref/System.Xml.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.XDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XPath.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlDocument.dll",
+        "build/netstandard2.0/ref/System.Xml.XmlSerializer.dll",
+        "build/netstandard2.0/ref/System.Xml.dll",
+        "build/netstandard2.0/ref/System.dll",
+        "build/netstandard2.0/ref/mscorlib.dll",
+        "build/netstandard2.0/ref/netstandard.dll",
+        "build/netstandard2.0/ref/netstandard.xml",
+        "lib/netstandard1.0/_._",
+        "netstandard.library.2.0.0.nupkg.sha512",
         "netstandard.library.nuspec"
+      ]
+    },
+    "NUnit/3.13.3": {
+      "sha512": "KNPDpls6EfHwC3+nnA67fh5wpxeLb3VLFAfLxrug6JMYDLHH6InaQIWR7Sc3y75d/9IKzMksH/gi08W7XWbmnQ==",
+      "type": "package",
+      "path": "nunit/3.13.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "CHANGES.md",
+        "LICENSE.txt",
+        "NOTICES.txt",
+        "build/NUnit.props",
+        "icon.png",
+        "lib/net35/nunit.framework.dll",
+        "lib/net35/nunit.framework.xml",
+        "lib/net40/nunit.framework.dll",
+        "lib/net40/nunit.framework.xml",
+        "lib/net45/nunit.framework.dll",
+        "lib/net45/nunit.framework.xml",
+        "lib/netstandard2.0/nunit.framework.dll",
+        "lib/netstandard2.0/nunit.framework.xml",
+        "nunit.3.13.3.nupkg.sha512",
+        "nunit.nuspec"
+      ]
+    },
+    "NUnit3TestAdapter/4.4.2": {
+      "sha512": "vA/iHYcR+LYw+pRWQugckC/zW2fXHaqMr2uA82NOBt8v4YK4wMJrQ7QC8XLc7PjetEZ96cPbBTWsDDtmQiRZTA==",
+      "type": "package",
+      "path": "nunit3testadapter/4.4.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/net462/NUnit3.TestAdapter.dll",
+        "build/net462/NUnit3.TestAdapter.pdb",
+        "build/net462/NUnit3TestAdapter.props",
+        "build/net462/nunit.engine.api.dll",
+        "build/net462/nunit.engine.core.dll",
+        "build/net462/nunit.engine.dll",
+        "build/net462/testcentric.engine.metadata.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.dll",
+        "build/netcoreapp3.1/NUnit3.TestAdapter.pdb",
+        "build/netcoreapp3.1/NUnit3TestAdapter.props",
+        "build/netcoreapp3.1/nunit.engine.api.dll",
+        "build/netcoreapp3.1/nunit.engine.core.dll",
+        "build/netcoreapp3.1/nunit.engine.dll",
+        "build/netcoreapp3.1/testcentric.engine.metadata.dll",
+        "docs/README.md",
+        "nunit3testadapter.4.4.2.nupkg.sha512",
+        "nunit3testadapter.nuspec",
+        "nunit_256.png"
       ]
     },
     "runtime.native.System/4.0.0": {
@@ -2933,20 +3103,6 @@
         "lib/netstandard1.0/_._",
         "runtime.native.system.4.0.0.nupkg.sha512",
         "runtime.native.system.nuspec"
-      ]
-    },
-    "runtime.native.System.IO.Compression/4.1.0": {
-      "sha512": "Ob7nvnJBox1aaB222zSVZSkf4WrebPG4qFscfK7vmD7P7NxoSxACQLtO7ytWpqXDn2wcd/+45+EAZ7xjaPip8A==",
-      "type": "package",
-      "path": "runtime.native.system.io.compression/4.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/netstandard1.0/_._",
-        "runtime.native.system.io.compression.4.1.0.nupkg.sha512",
-        "runtime.native.system.io.compression.nuspec"
       ]
     },
     "runtime.native.System.Net.Http/4.0.1": {
@@ -3255,10 +3411,10 @@
         "system.buffers.nuspec"
       ]
     },
-    "System.Collections/4.0.11": {
-      "sha512": "YUJGz6eFKqS0V//mLt25vFGrrCvOnsXjlvFQs+KimpwNxug9x0Pzy4PlFMU3Q2IzqAa9G2L4LsK3+9vCBK7oTg==",
+    "System.Collections/4.3.0": {
+      "sha512": "3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
       "type": "package",
-      "path": "system.collections/4.0.11",
+      "path": "system.collections/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3319,7 +3475,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.collections.4.0.11.nupkg.sha512",
+        "system.collections.4.3.0.nupkg.sha512",
         "system.collections.nuspec"
       ]
     },
@@ -3391,10 +3547,10 @@
         "system.collections.concurrent.nuspec"
       ]
     },
-    "System.Collections.Immutable/1.2.0": {
-      "sha512": "Cma8cBW6di16ZLibL8LYQ+cLjGzoKxpOTu/faZfDcx94ZjAGq6Nv5RO7+T1YZXqEXTZP9rt1wLVEONVpURtUqw==",
+    "System.Collections.Immutable/1.3.1": {
+      "sha512": "n+AGX7zmiZumW9aggOkXaHzUeAS3EfeTErnkKCusyONUozbTv+kMb8VE36m+ldV6kF9g57G2c641KCdgH9E0pg==",
       "type": "package",
-      "path": "system.collections.immutable/1.2.0",
+      "path": "system.collections.immutable/1.3.1",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3404,7 +3560,7 @@
         "lib/netstandard1.0/System.Collections.Immutable.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Collections.Immutable.xml",
-        "system.collections.immutable.1.2.0.nupkg.sha512",
+        "system.collections.immutable.1.3.1.nupkg.sha512",
         "system.collections.immutable.nuspec"
       ]
     },
@@ -3583,10 +3739,10 @@
         "system.console.nuspec"
       ]
     },
-    "System.Diagnostics.Debug/4.0.11": {
-      "sha512": "w5U95fVKHY4G8ASs/K5iK3J5LY+/dLFd4vKejsnI/ZhBsWS9hQakfx3Zr7lRWKg4tAw9r4iktyvsTagWkqYCiw==",
+    "System.Diagnostics.Debug/4.3.0": {
+      "sha512": "ZUhUOdqmaG5Jk3Xdb8xi5kIyQYAA4PnTNlHx1mu9ZY3qv4ELIdKbnL/akbGaKi2RnNUWaZsAs31rvzFdewTj2g==",
       "type": "package",
-      "path": "system.diagnostics.debug/4.0.11",
+      "path": "system.diagnostics.debug/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -3647,7 +3803,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.diagnostics.debug.4.0.11.nupkg.sha512",
+        "system.diagnostics.debug.4.3.0.nupkg.sha512",
         "system.diagnostics.debug.nuspec"
       ]
     },
@@ -4029,10 +4185,10 @@
         "system.dynamic.runtime.nuspec"
       ]
     },
-    "System.Globalization/4.0.11": {
-      "sha512": "B95h0YLEL2oSnwF/XjqSWKnwKOy/01VWkNlsCeMTFJLLabflpGV26nK164eRs5GiaRSBGpOxQ3pKoSnnyZN5pg==",
+    "System.Globalization/4.3.0": {
+      "sha512": "kYdVd2f2PAdFGblzFswE4hkNANJBKRmsfa2X5LG2AcWE1c7/4t0pYae1L8vfZ5xvE2nK/R9JprtToA61OSHWIg==",
       "type": "package",
-      "path": "system.globalization/4.0.11",
+      "path": "system.globalization/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4093,7 +4249,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.globalization.4.0.11.nupkg.sha512",
+        "system.globalization.4.3.0.nupkg.sha512",
         "system.globalization.nuspec"
       ]
     },
@@ -4176,10 +4332,10 @@
         "system.globalization.extensions.nuspec"
       ]
     },
-    "System.IO/4.1.0": {
-      "sha512": "3KlTJceQc3gnGIaHZ7UBZO26SHL1SHE4ddrmiwumFnId+CEHP+O8r386tZKaE6zlk5/mF8vifMBzHj9SaXN+mQ==",
+    "System.IO/4.3.0": {
+      "sha512": "3qjaHvxQPDpSOYICjUoTsmoq5u6QJAFRUITgeT/4gqkF1bajbSmb1kwSxEA8AHlofqgcKJcM8udgieRNhaJ5Cg==",
       "type": "package",
-      "path": "system.io/4.1.0",
+      "path": "system.io/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4253,118 +4409,8 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.io.4.1.0.nupkg.sha512",
+        "system.io.4.3.0.nupkg.sha512",
         "system.io.nuspec"
-      ]
-    },
-    "System.IO.Compression/4.1.0": {
-      "sha512": "TjnBS6eztThSzeSib+WyVbLzEdLKUcEHN69VtS3u8aAsSc18FU6xCZlNWWsEd8SKcXAE+y1sOu7VbU8sUeM0sg==",
-      "type": "package",
-      "path": "system.io.compression/4.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net45/_._",
-        "lib/net46/System.IO.Compression.dll",
-        "lib/portable-net45+win8+wpa81/_._",
-        "lib/win8/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net45/_._",
-        "ref/net46/System.IO.Compression.dll",
-        "ref/netcore50/System.IO.Compression.dll",
-        "ref/netcore50/System.IO.Compression.xml",
-        "ref/netcore50/de/System.IO.Compression.xml",
-        "ref/netcore50/es/System.IO.Compression.xml",
-        "ref/netcore50/fr/System.IO.Compression.xml",
-        "ref/netcore50/it/System.IO.Compression.xml",
-        "ref/netcore50/ja/System.IO.Compression.xml",
-        "ref/netcore50/ko/System.IO.Compression.xml",
-        "ref/netcore50/ru/System.IO.Compression.xml",
-        "ref/netcore50/zh-hans/System.IO.Compression.xml",
-        "ref/netcore50/zh-hant/System.IO.Compression.xml",
-        "ref/netstandard1.1/System.IO.Compression.dll",
-        "ref/netstandard1.1/System.IO.Compression.xml",
-        "ref/netstandard1.1/de/System.IO.Compression.xml",
-        "ref/netstandard1.1/es/System.IO.Compression.xml",
-        "ref/netstandard1.1/fr/System.IO.Compression.xml",
-        "ref/netstandard1.1/it/System.IO.Compression.xml",
-        "ref/netstandard1.1/ja/System.IO.Compression.xml",
-        "ref/netstandard1.1/ko/System.IO.Compression.xml",
-        "ref/netstandard1.1/ru/System.IO.Compression.xml",
-        "ref/netstandard1.1/zh-hans/System.IO.Compression.xml",
-        "ref/netstandard1.1/zh-hant/System.IO.Compression.xml",
-        "ref/netstandard1.3/System.IO.Compression.dll",
-        "ref/netstandard1.3/System.IO.Compression.xml",
-        "ref/netstandard1.3/de/System.IO.Compression.xml",
-        "ref/netstandard1.3/es/System.IO.Compression.xml",
-        "ref/netstandard1.3/fr/System.IO.Compression.xml",
-        "ref/netstandard1.3/it/System.IO.Compression.xml",
-        "ref/netstandard1.3/ja/System.IO.Compression.xml",
-        "ref/netstandard1.3/ko/System.IO.Compression.xml",
-        "ref/netstandard1.3/ru/System.IO.Compression.xml",
-        "ref/netstandard1.3/zh-hans/System.IO.Compression.xml",
-        "ref/netstandard1.3/zh-hant/System.IO.Compression.xml",
-        "ref/portable-net45+win8+wpa81/_._",
-        "ref/win8/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "runtimes/unix/lib/netstandard1.3/System.IO.Compression.dll",
-        "runtimes/win/lib/net46/System.IO.Compression.dll",
-        "runtimes/win/lib/netstandard1.3/System.IO.Compression.dll",
-        "system.io.compression.4.1.0.nupkg.sha512",
-        "system.io.compression.nuspec"
-      ]
-    },
-    "System.IO.Compression.ZipFile/4.0.1": {
-      "sha512": "hBQYJzfTbQURF10nLhd+az2NHxsU6MU7AB8RUf4IolBP5lOAm4Luho851xl+CqslmhI5ZH/el8BlngEk4lBkaQ==",
-      "type": "package",
-      "path": "system.io.compression.zipfile/4.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.IO.Compression.ZipFile.dll",
-        "lib/netstandard1.3/System.IO.Compression.ZipFile.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.IO.Compression.ZipFile.dll",
-        "ref/netstandard1.3/System.IO.Compression.ZipFile.dll",
-        "ref/netstandard1.3/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/de/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/es/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/fr/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/it/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/ja/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/ko/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/ru/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/zh-hans/System.IO.Compression.ZipFile.xml",
-        "ref/netstandard1.3/zh-hant/System.IO.Compression.ZipFile.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.io.compression.zipfile.4.0.1.nupkg.sha512",
-        "system.io.compression.zipfile.nuspec"
       ]
     },
     "System.IO.FileSystem/4.0.1": {
@@ -4568,10 +4614,10 @@
         "system.io.unmanagedmemorystream.nuspec"
       ]
     },
-    "System.Linq/4.1.0": {
-      "sha512": "bQ0iYFOQI0nuTnt+NQADns6ucV4DUvMdwN6CbkB1yj8i7arTGiTN5eok1kQwdnnNWSDZfIUySQY+J3d5KjWn0g==",
+    "System.Linq/4.3.0": {
+      "sha512": "5DbqIUpsDp0dFftytzuMmc0oeMdQwjcP/EWxsksIz/w1TcFRkZ3yKKz0PqiYFMmEwPSWw+qNVqD7PJ889JzHbw==",
       "type": "package",
-      "path": "system.linq/4.1.0",
+      "path": "system.linq/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -4636,7 +4682,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.linq.4.1.0.nupkg.sha512",
+        "system.linq.4.3.0.nupkg.sha512",
         "system.linq.nuspec"
       ]
     },
@@ -4838,6 +4884,27 @@
         "ref/xamarinwatchos10/_._",
         "system.linq.queryable.4.0.1.nupkg.sha512",
         "system.linq.queryable.nuspec"
+      ]
+    },
+    "System.Memory/4.5.2": {
+      "sha512": "fvq1GNmUFwbKv+aLVYYdgu/+gc8Nu9oFujOxIjPrsf+meis9JBzTPDL6aP/eeGOz9yPj6rRLUbOjKMpsMEWpNg==",
+      "type": "package",
+      "path": "system.memory/4.5.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netcoreapp2.1/_._",
+        "lib/netstandard1.1/System.Memory.dll",
+        "lib/netstandard1.1/System.Memory.xml",
+        "lib/netstandard2.0/System.Memory.dll",
+        "lib/netstandard2.0/System.Memory.xml",
+        "ref/netcoreapp2.1/_._",
+        "system.memory.4.5.2.nupkg.sha512",
+        "system.memory.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.Http/4.1.2": {
@@ -5168,44 +5235,6 @@
         "system.net.security.nuspec"
       ]
     },
-    "System.Net.Sockets/4.1.0": {
-      "sha512": "xAz0N3dAV/aR/9g8r0Y5oEqU1JRsz29F5EGb/WVHmX3jVSLqi2/92M5hTad2aNWovruXrJpJtgZ9fccPMG9uSw==",
-      "type": "package",
-      "path": "system.net.sockets/4.1.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net46/System.Net.Sockets.dll",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net46/System.Net.Sockets.dll",
-        "ref/netstandard1.3/System.Net.Sockets.dll",
-        "ref/netstandard1.3/System.Net.Sockets.xml",
-        "ref/netstandard1.3/de/System.Net.Sockets.xml",
-        "ref/netstandard1.3/es/System.Net.Sockets.xml",
-        "ref/netstandard1.3/fr/System.Net.Sockets.xml",
-        "ref/netstandard1.3/it/System.Net.Sockets.xml",
-        "ref/netstandard1.3/ja/System.Net.Sockets.xml",
-        "ref/netstandard1.3/ko/System.Net.Sockets.xml",
-        "ref/netstandard1.3/ru/System.Net.Sockets.xml",
-        "ref/netstandard1.3/zh-hans/System.Net.Sockets.xml",
-        "ref/netstandard1.3/zh-hant/System.Net.Sockets.xml",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.net.sockets.4.1.0.nupkg.sha512",
-        "system.net.sockets.nuspec"
-      ]
-    },
     "System.Net.WebHeaderCollection/4.0.1": {
       "sha512": "XX2TIAN+wBSAIV51BU2FvvXMdstUa8b0FBSZmDWjZdwUMmggQSifpTOZ5fNH20z9ZCg2fkV1L5SsZnpO2RQDRQ==",
       "type": "package",
@@ -5245,39 +5274,51 @@
         "system.net.webheadercollection.nuspec"
       ]
     },
-    "System.Numerics.Vectors/4.1.1": {
-      "sha512": "Ex1NSKycC2wi5XBMWUGWPc3lumh6OQWFFmmpZFZz0oLht5lQ+wWPHVZumOrMJuckfUiVMd4p67BrkBos8lcF+Q==",
+    "System.Numerics.Vectors/4.5.0": {
+      "sha512": "QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
       "type": "package",
-      "path": "system.numerics.vectors/4.1.1",
+      "path": "system.numerics.vectors/4.5.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
         "lib/net46/System.Numerics.Vectors.dll",
         "lib/net46/System.Numerics.Vectors.xml",
+        "lib/netcoreapp2.0/_._",
         "lib/netstandard1.0/System.Numerics.Vectors.dll",
         "lib/netstandard1.0/System.Numerics.Vectors.xml",
+        "lib/netstandard2.0/System.Numerics.Vectors.dll",
+        "lib/netstandard2.0/System.Numerics.Vectors.xml",
         "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.dll",
         "lib/portable-net45+win8+wp8+wpa81/System.Numerics.Vectors.xml",
+        "lib/uap10.0.16299/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
+        "ref/net45/System.Numerics.Vectors.dll",
+        "ref/net45/System.Numerics.Vectors.xml",
         "ref/net46/System.Numerics.Vectors.dll",
         "ref/net46/System.Numerics.Vectors.xml",
+        "ref/netcoreapp2.0/_._",
         "ref/netstandard1.0/System.Numerics.Vectors.dll",
         "ref/netstandard1.0/System.Numerics.Vectors.xml",
+        "ref/netstandard2.0/System.Numerics.Vectors.dll",
+        "ref/netstandard2.0/System.Numerics.Vectors.xml",
+        "ref/uap10.0.16299/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.numerics.vectors.4.1.1.nupkg.sha512",
-        "system.numerics.vectors.nuspec"
+        "system.numerics.vectors.4.5.0.nupkg.sha512",
+        "system.numerics.vectors.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.ObjectModel/4.0.12": {
@@ -5350,10 +5391,10 @@
         "system.objectmodel.nuspec"
       ]
     },
-    "System.Reflection/4.1.0": {
-      "sha512": "JCKANJ0TI7kzoQzuwB/OoJANy1Lg338B6+JVacPl4TpUwi3cReg3nMLplMq2uqYfHFQpKIlHAUVAJlImZz/4ng==",
+    "System.Reflection/4.3.0": {
+      "sha512": "KMiAFoW7MfJGa9nDFNcfu+FpEdiHpWgTcS2HdMpDvt9saK3y/G4GwprPyzqjFH9NTaGPQeWNHU+iDlDILj96aQ==",
       "type": "package",
-      "path": "system.reflection/4.1.0",
+      "path": "system.reflection/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5427,7 +5468,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.reflection.4.1.0.nupkg.sha512",
+        "system.reflection.4.3.0.nupkg.sha512",
         "system.reflection.nuspec"
       ]
     },
@@ -5641,10 +5682,10 @@
         "system.reflection.metadata.nuspec"
       ]
     },
-    "System.Reflection.Primitives/4.0.1": {
-      "sha512": "4inTox4wTBaDhB7V3mPvp9XlCbeGYWVEM9/fXALd52vNEAVisc1BoVWQPuUuD0Ga//dNbA/WeMy9u9mzLxGTHQ==",
+    "System.Reflection.Primitives/4.3.0": {
+      "sha512": "5RXItQz5As4xN2/YUDxdpsEkMhvw3e6aNveFXUn4Hl/udNTCNhnKp8lT9fnc3MhvGKh1baak5CovpuQUXHAlIA==",
       "type": "package",
-      "path": "system.reflection.primitives/4.0.1",
+      "path": "system.reflection.primitives/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5694,7 +5735,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.reflection.primitives.4.0.1.nupkg.sha512",
+        "system.reflection.primitives.4.3.0.nupkg.sha512",
         "system.reflection.primitives.nuspec"
       ]
     },
@@ -5766,10 +5807,10 @@
         "system.resources.reader.nuspec"
       ]
     },
-    "System.Resources.ResourceManager/4.0.1": {
-      "sha512": "TxwVeUNoTgUOdQ09gfTjvW411MF+w9MBYL7AtNVc+HtBCFlutPLhUCdZjNkjbhj3bNQWMdHboF0KIWEOjJssbA==",
+    "System.Resources.ResourceManager/4.3.0": {
+      "sha512": "/zrcPkkWdZmI4F92gL/TPumP98AVDu/Wxr3CSJGQQ+XN6wbRZcyfSKVoPo17ilb3iOr0cCRqJInGwNMolqhS8A==",
       "type": "package",
-      "path": "system.resources.resourcemanager/4.0.1",
+      "path": "system.resources.resourcemanager/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5819,14 +5860,14 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.resources.resourcemanager.4.0.1.nupkg.sha512",
+        "system.resources.resourcemanager.4.3.0.nupkg.sha512",
         "system.resources.resourcemanager.nuspec"
       ]
     },
-    "System.Runtime/4.1.0": {
-      "sha512": "v6c/4Yaa9uWsq+JMhnOFewrYkgdNHNG2eMKuNqRn8P733rNXeRCGvV5FkkjBXn2dbVkPXOsO0xjsEeM1q2zC0g==",
+    "System.Runtime/4.3.0": {
+      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "type": "package",
-      "path": "system.runtime/4.1.0",
+      "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5911,14 +5952,14 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.runtime.4.1.0.nupkg.sha512",
+        "system.runtime.4.3.0.nupkg.sha512",
         "system.runtime.nuspec"
       ]
     },
-    "System.Runtime.Extensions/4.1.0": {
-      "sha512": "CUOHjTT/vgP0qGW22U4/hDlOqXmcPq5YicBaXdUR2UiUoLwBT+olO6we4DVbq57jeX5uXH2uerVZhf0qGj+sVQ==",
+    "System.Runtime.Extensions/4.3.0": {
+      "sha512": "guW0uK0fn5fcJJ1tJVXYd7/1h5F+pea1r7FLSOz/f8vPEqbR2ZAknuRDvTQ8PzAilDveOxNjSfr0CHfIQfFk8g==",
       "type": "package",
-      "path": "system.runtime.extensions/4.1.0",
+      "path": "system.runtime.extensions/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -5992,7 +6033,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.runtime.extensions.4.1.0.nupkg.sha512",
+        "system.runtime.extensions.4.3.0.nupkg.sha512",
         "system.runtime.extensions.nuspec"
       ]
     },
@@ -6124,37 +6165,65 @@
         "system.runtime.interopservices.nuspec"
       ]
     },
-    "System.Runtime.InteropServices.RuntimeInformation/4.0.0": {
-      "sha512": "hWPhJxc453RCa8Z29O91EmfGeZIHX1ZH2A8L6lYQVSaKzku2DfArSfMEb1/MYYzPQRJZeu0c9dmYeJKxW5Fgng==",
+    "System.Runtime.InteropServices.WindowsRuntime/4.3.0": {
+      "sha512": "J4GUi3xZQLUBasNwZnjrffN8i5wpHrBtZoLG+OhRyGo/+YunMRWWtwoMDlUAIdmX0uRfpHIBDSV6zyr3yf00TA==",
       "type": "package",
-      "path": "system.runtime.interopservices.runtimeinformation/4.0.0",
+      "path": "system.runtime.interopservices.windowsruntime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
         "lib/MonoTouch10/_._",
-        "lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "lib/win8/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "lib/wpa81/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "lib/net45/_._",
+        "lib/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "lib/netstandard1.3/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios1/_._",
         "lib/xamarinios10/_._",
         "lib/xamarinmac20/_._",
         "lib/xamarintvos10/_._",
         "lib/xamarinwatchos10/_._",
         "ref/MonoAndroid10/_._",
         "ref/MonoTouch10/_._",
-        "ref/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
+        "ref/net45/_._",
+        "ref/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "ref/netcore50/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/de/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/es/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/fr/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/it/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ja/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ko/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/ru/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/zh-hans/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netcore50/zh-hant/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "ref/netstandard1.0/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/de/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/es/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/fr/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/it/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ja/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ko/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/ru/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/zh-hans/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/netstandard1.0/zh-hant/System.Runtime.InteropServices.WindowsRuntime.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "runtimes/unix/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "runtimes/win/lib/net45/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "runtimes/win/lib/netcore50/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "runtimes/win/lib/netstandard1.1/System.Runtime.InteropServices.RuntimeInformation.dll",
-        "system.runtime.interopservices.runtimeinformation.4.0.0.nupkg.sha512",
-        "system.runtime.interopservices.runtimeinformation.nuspec"
+        "runtimes/aot/lib/netcore50/System.Runtime.InteropServices.WindowsRuntime.dll",
+        "system.runtime.interopservices.windowsruntime.4.3.0.nupkg.sha512",
+        "system.runtime.interopservices.windowsruntime.nuspec"
       ]
     },
     "System.Runtime.Loader/4.0.0": {
@@ -6606,10 +6675,10 @@
         "system.security.principal.windows.nuspec"
       ]
     },
-    "System.Text.Encoding/4.0.11": {
-      "sha512": "U3gGeMlDZXxCEiY4DwVLSacg+DFWCvoiX+JThA/rvw37Sqrku7sEFeVBBBMBnfB6FeZHsyDx85HlKL19x0HtZA==",
+    "System.Text.Encoding/4.3.0": {
+      "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
-      "path": "system.text.encoding/4.0.11",
+      "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6670,7 +6739,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.text.encoding.4.0.11.nupkg.sha512",
+        "system.text.encoding.4.3.0.nupkg.sha512",
         "system.text.encoding.nuspec"
       ]
     },
@@ -6864,10 +6933,10 @@
         "system.text.regularexpressions.nuspec"
       ]
     },
-    "System.Threading/4.0.11": {
-      "sha512": "N+3xqIcg3VDKyjwwCGaZ9HawG9aC6cSDI+s7ROma310GQo8vilFZa86hqKppwTHleR/G0sfOzhvgnUxWCR/DrQ==",
+    "System.Threading/4.3.0": {
+      "sha512": "VkUS0kOBcUf3Wwm0TSbrevDDZ6BlM+b/HRiapRFWjM5O0NS0LviG0glKmFK+hhPDd1XFeSdU1GmlLhb2CoVpIw==",
       "type": "package",
-      "path": "system.threading/4.0.11",
+      "path": "system.threading/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -6931,7 +7000,7 @@
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
         "runtimes/aot/lib/netcore50/System.Threading.dll",
-        "system.threading.4.0.11.nupkg.sha512",
+        "system.threading.4.3.0.nupkg.sha512",
         "system.threading.nuspec"
       ]
     },
@@ -6965,10 +7034,10 @@
         "system.threading.overlapped.nuspec"
       ]
     },
-    "System.Threading.Tasks/4.0.11": {
-      "sha512": "k1S4Gc6IGwtHGT8188RSeGaX86Qw/wnrgNLshJvsdNUOPP9etMmo8S07c+UlOAx4K/xLuN9ivA1bD0LVurtIxQ==",
+    "System.Threading.Tasks/4.3.0": {
+      "sha512": "LbSxKEdOUhVe8BezB/9uOGGppt+nZf6e1VFyw6v3DN6lqitm0OSn2uXMOdtP0M3W4iMcqcivm2J6UgqiwwnXiA==",
       "type": "package",
-      "path": "system.threading.tasks/4.0.11",
+      "path": "system.threading.tasks/4.3.0",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7029,7 +7098,7 @@
         "ref/xamarinmac20/_._",
         "ref/xamarintvos10/_._",
         "ref/xamarinwatchos10/_._",
-        "system.threading.tasks.4.0.11.nupkg.sha512",
+        "system.threading.tasks.4.3.0.nupkg.sha512",
         "system.threading.tasks.nuspec"
       ]
     },
@@ -7202,61 +7271,6 @@
         "ref/xamarinwatchos10/_._",
         "system.threading.threadpool.4.0.10.nupkg.sha512",
         "system.threading.threadpool.nuspec"
-      ]
-    },
-    "System.Threading.Timer/4.0.1": {
-      "sha512": "saGfUV8uqVW6LeURiqxcGhZ24PzuRNaUBtbhVeuUAvky1naH395A/1nY0P2bWvrw/BreRtIB/EzTDkGBpqCwEw==",
-      "type": "package",
-      "path": "system.threading.timer/4.0.1",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "ThirdPartyNotices.txt",
-        "dotnet_library_license.txt",
-        "lib/MonoAndroid10/_._",
-        "lib/MonoTouch10/_._",
-        "lib/net451/_._",
-        "lib/portable-net451+win81+wpa81/_._",
-        "lib/win81/_._",
-        "lib/wpa81/_._",
-        "lib/xamarinios10/_._",
-        "lib/xamarinmac20/_._",
-        "lib/xamarintvos10/_._",
-        "lib/xamarinwatchos10/_._",
-        "ref/MonoAndroid10/_._",
-        "ref/MonoTouch10/_._",
-        "ref/net451/_._",
-        "ref/netcore50/System.Threading.Timer.dll",
-        "ref/netcore50/System.Threading.Timer.xml",
-        "ref/netcore50/de/System.Threading.Timer.xml",
-        "ref/netcore50/es/System.Threading.Timer.xml",
-        "ref/netcore50/fr/System.Threading.Timer.xml",
-        "ref/netcore50/it/System.Threading.Timer.xml",
-        "ref/netcore50/ja/System.Threading.Timer.xml",
-        "ref/netcore50/ko/System.Threading.Timer.xml",
-        "ref/netcore50/ru/System.Threading.Timer.xml",
-        "ref/netcore50/zh-hans/System.Threading.Timer.xml",
-        "ref/netcore50/zh-hant/System.Threading.Timer.xml",
-        "ref/netstandard1.2/System.Threading.Timer.dll",
-        "ref/netstandard1.2/System.Threading.Timer.xml",
-        "ref/netstandard1.2/de/System.Threading.Timer.xml",
-        "ref/netstandard1.2/es/System.Threading.Timer.xml",
-        "ref/netstandard1.2/fr/System.Threading.Timer.xml",
-        "ref/netstandard1.2/it/System.Threading.Timer.xml",
-        "ref/netstandard1.2/ja/System.Threading.Timer.xml",
-        "ref/netstandard1.2/ko/System.Threading.Timer.xml",
-        "ref/netstandard1.2/ru/System.Threading.Timer.xml",
-        "ref/netstandard1.2/zh-hans/System.Threading.Timer.xml",
-        "ref/netstandard1.2/zh-hant/System.Threading.Timer.xml",
-        "ref/portable-net451+win81+wpa81/_._",
-        "ref/win81/_._",
-        "ref/wpa81/_._",
-        "ref/xamarinios10/_._",
-        "ref/xamarinmac20/_._",
-        "ref/xamarintvos10/_._",
-        "ref/xamarinwatchos10/_._",
-        "system.threading.timer.4.0.1.nupkg.sha512",
-        "system.threading.timer.nuspec"
       ]
     },
     "System.Xml.ReaderWriter/4.0.11": {
@@ -7515,12 +7529,1222 @@
         "system.xml.xpath.xdocument.4.0.1.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "Uno.Diagnostics.Eventing/2.0.1": {
+      "sha512": "Hd03em+Bga+w+ljCtiyc+713PQDtCB0Qkw3sBggvXXdDB2URwEc3N4TnM3vFeXpmHHZGM7dN7D8qxfiGoEEHzw==",
+      "type": "package",
+      "path": "uno.diagnostics.eventing/2.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net5.0/Uno.Diagnostics.Eventing.dll",
+        "lib/net5.0/Uno.Diagnostics.Eventing.pdb",
+        "lib/netstandard2.0/Uno.Diagnostics.Eventing.dll",
+        "lib/netstandard2.0/Uno.Diagnostics.Eventing.pdb",
+        "uno.diagnostics.eventing.2.0.1.nupkg.sha512",
+        "uno.diagnostics.eventing.nuspec"
+      ]
+    },
+    "Uno.Fonts.Fluent/2.0.0": {
+      "sha512": "9nbvrFrF+lvkd+Ub12xVorDhelMWXkJ7E23140D+WNT4BawwXpVp4zR38GzpRhxhv1T5eTn8kqr8wqeNQhze/w==",
+      "type": "package",
+      "path": "uno.fonts.fluent/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "buildTransitive/Uno.Fonts.Fluent.props",
+        "icon.png",
+        "lib/netstandard1.0/Uno.Fonts.Fluent.dll",
+        "lib/netstandard1.0/Uno.Fonts.Fluent.uprimarker",
+        "lib/netstandard1.0/Uno.Fonts.Fluent/Fonts/uno-fluentui-assets.ttf",
+        "uno.fonts.fluent.2.0.0.nupkg.sha512",
+        "uno.fonts.fluent.nuspec"
+      ]
+    },
+    "Uno.Foundation.Logging/4.8.39": {
+      "sha512": "Rvu6+jBY01qWSV03tjDJm1+OOXH3OVjl3tQQqbS/yyI6yEnwYpmVG3swcIVoD55zb9ycG9qWUc+DZ/vuXNi6TQ==",
+      "type": "package",
+      "path": "uno.foundation.logging/4.8.39",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid12.0/Uno.Foundation.Logging.dll",
+        "lib/MonoAndroid12.0/Uno.Foundation.Logging.pdb",
+        "lib/MonoAndroid13.0/Uno.Foundation.Logging.dll",
+        "lib/MonoAndroid13.0/Uno.Foundation.Logging.pdb",
+        "lib/net461/Uno.Foundation.Logging.dll",
+        "lib/net461/Uno.Foundation.Logging.pdb",
+        "lib/net6.0/Uno.Foundation.Logging.deps.json",
+        "lib/net6.0/Uno.Foundation.Logging.dll",
+        "lib/net6.0/Uno.Foundation.Logging.dll.config",
+        "lib/net6.0/Uno.Foundation.Logging.pdb",
+        "lib/net7.0/Uno.Foundation.Logging.deps.json",
+        "lib/net7.0/Uno.Foundation.Logging.dll",
+        "lib/net7.0/Uno.Foundation.Logging.dll.config",
+        "lib/net7.0/Uno.Foundation.Logging.pdb",
+        "lib/netstandard2.0/Uno.Foundation.Logging.deps.json",
+        "lib/netstandard2.0/Uno.Foundation.Logging.dll",
+        "lib/netstandard2.0/Uno.Foundation.Logging.pdb",
+        "lib/xamarinios10/Uno.Foundation.Logging.dll",
+        "lib/xamarinios10/Uno.Foundation.Logging.pdb",
+        "lib/xamarinmac20/Uno.Foundation.Logging.dll",
+        "lib/xamarinmac20/Uno.Foundation.Logging.pdb",
+        "uno.foundation.logging.4.8.39.nupkg.sha512",
+        "uno.foundation.logging.nuspec",
+        "uno.png"
+      ]
+    },
+    "Uno.SourceGenerationTasks/4.2.0": {
+      "sha512": "pQazuxoMofxLEzsDcrBnmEp1nB/N19IWKsq5Ffi+i9pAXXdoOR14MrMCuY9kXmnqnGFHRl5T2Z9kY0SUGsvdFA==",
+      "type": "package",
+      "path": "uno.sourcegenerationtasks/4.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "build/Dev15.0/net472/Esent.Interop.dll",
+        "build/Dev15.0/net472/Microsoft.Build.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Logging.Console.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Logging.Debug.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Logging.dll",
+        "build/Dev15.0/net472/Microsoft.Extensions.Primitives.dll",
+        "build/Dev15.0/net472/Microsoft.VisualStudio.Setup.Configuration.Interop.dll",
+        "build/Dev15.0/net472/NodaTime.dll",
+        "build/Dev15.0/net472/System.Buffers.dll",
+        "build/Dev15.0/net472/System.Collections.Immutable.dll",
+        "build/Dev15.0/net472/System.Diagnostics.DiagnosticSource.dll",
+        "build/Dev15.0/net472/System.IO.Pipes.AccessControl.dll",
+        "build/Dev15.0/net472/System.Memory.dll",
+        "build/Dev15.0/net472/System.Numerics.Vectors.dll",
+        "build/Dev15.0/net472/System.Reflection.Metadata.dll",
+        "build/Dev15.0/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/Dev15.0/net472/System.Security.AccessControl.dll",
+        "build/Dev15.0/net472/System.Security.Principal.Windows.dll",
+        "build/Dev15.0/net472/System.Threading.Tasks.Dataflow.dll",
+        "build/Dev15.0/net472/Uno.SampleGenerators.dll",
+        "build/Dev15.0/net472/Uno.SampleGenerators.pdb",
+        "build/Dev15.0/net472/Uno.SourceGeneration.dll",
+        "build/Dev15.0/net472/Uno.SourceGeneration.dll.config",
+        "build/Dev15.0/net472/Uno.SourceGeneration.pdb",
+        "build/Dev15.0/net472/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.dll",
+        "build/Dev15.0/net472/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.dll.config",
+        "build/Dev15.0/net472/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.pdb",
+        "build/Dev15.0/netcoreapp3.1/Esent.Interop.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Build.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.CodeAnalysis.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Logging.Debug.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Logging.dll",
+        "build/Dev15.0/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
+        "build/Dev15.0/netcoreapp3.1/NodaTime.dll",
+        "build/Dev15.0/netcoreapp3.1/System.Composition.AttributedModel.dll",
+        "build/Dev15.0/netcoreapp3.1/System.Composition.Convention.dll",
+        "build/Dev15.0/netcoreapp3.1/System.Composition.Hosting.dll",
+        "build/Dev15.0/netcoreapp3.1/System.Composition.Runtime.dll",
+        "build/Dev15.0/netcoreapp3.1/System.Composition.TypedParts.dll",
+        "build/Dev15.0/netcoreapp3.1/Uno.SampleGenerators.dll",
+        "build/Dev15.0/netcoreapp3.1/Uno.SampleGenerators.pdb",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneration.dll",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneration.dll.config",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneration.pdb",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.dll",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.dll.config",
+        "build/Dev15.0/netcoreapp3.1/Uno.SourceGeneratorTasks.v00e106d9e268ad1b1f239c8ac3c97663d0874511.pdb",
+        "build/Dev15.0/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/Dev15.0/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/Esent.Interop.dll",
+        "build/host/net472/Humanizer.dll",
+        "build/host/net472/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.CSharp.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/host/net472/Microsoft.CodeAnalysis.dll",
+        "build/host/net472/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/host/net472/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/host/net472/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/host/net472/Microsoft.Extensions.Logging.Console.dll",
+        "build/host/net472/Microsoft.Extensions.Logging.Debug.dll",
+        "build/host/net472/Microsoft.Extensions.Logging.dll",
+        "build/host/net472/Microsoft.Extensions.Primitives.dll",
+        "build/host/net472/Microsoft.VisualStudio.RemoteControl.dll",
+        "build/host/net472/Microsoft.VisualStudio.Utilities.Internal.dll",
+        "build/host/net472/Mono.Cecil.Mdb.dll",
+        "build/host/net472/Mono.Cecil.Pdb.dll",
+        "build/host/net472/Mono.Cecil.Rocks.dll",
+        "build/host/net472/Mono.Cecil.dll",
+        "build/host/net472/SQLitePCL.batteries.dll",
+        "build/host/net472/SQLitePCL.raw.dll",
+        "build/host/net472/SQLitePCLPlugin_esqlite3.dll",
+        "build/host/net472/SQLitePCLRaw.core.dll",
+        "build/host/net472/System.Buffers.dll",
+        "build/host/net472/System.Collections.Immutable.dll",
+        "build/host/net472/System.Composition.AttributedModel.dll",
+        "build/host/net472/System.Composition.Convention.dll",
+        "build/host/net472/System.Composition.Hosting.dll",
+        "build/host/net472/System.Composition.Runtime.dll",
+        "build/host/net472/System.Composition.TypedParts.dll",
+        "build/host/net472/System.Configuration.ConfigurationManager.dll",
+        "build/host/net472/System.Diagnostics.DiagnosticSource.dll",
+        "build/host/net472/System.IO.Pipelines.dll",
+        "build/host/net472/System.Memory.dll",
+        "build/host/net472/System.Numerics.Vectors.dll",
+        "build/host/net472/System.Reflection.Metadata.dll",
+        "build/host/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/host/net472/System.Security.AccessControl.dll",
+        "build/host/net472/System.Security.Permissions.dll",
+        "build/host/net472/System.Security.Principal.Windows.dll",
+        "build/host/net472/System.Text.Encoding.CodePages.dll",
+        "build/host/net472/System.Text.Encodings.Web.dll",
+        "build/host/net472/System.Text.Json.dll",
+        "build/host/net472/System.Threading.Tasks.Extensions.dll",
+        "build/host/net472/System.ValueTuple.dll",
+        "build/host/net472/Uno.SourceGeneration.Host.exe",
+        "build/host/net472/Uno.SourceGeneration.Host.exe.config",
+        "build/host/net472/Uno.SourceGeneration.Host.pdb",
+        "build/host/net472/Uno.SourceGeneration.dll",
+        "build/host/net472/Uno.SourceGeneration.dll.config",
+        "build/host/net472/Uno.SourceGeneration.pdb",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/x64/esqlite3.dll",
+        "build/host/net472/x86/esqlite3.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net472/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/Humanizer.dll",
+        "build/host/net5/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.CSharp.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/host/net5/Microsoft.CodeAnalysis.dll",
+        "build/host/net5/Microsoft.DiaSymReader.PortablePdb.dll",
+        "build/host/net5/Microsoft.DiaSymReader.dll",
+        "build/host/net5/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/host/net5/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/host/net5/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/host/net5/Microsoft.Extensions.Logging.Console.dll",
+        "build/host/net5/Microsoft.Extensions.Logging.Debug.dll",
+        "build/host/net5/Microsoft.Extensions.Logging.dll",
+        "build/host/net5/Microsoft.Extensions.Options.dll",
+        "build/host/net5/Microsoft.Extensions.Primitives.dll",
+        "build/host/net5/Mono.Cecil.Mdb.dll",
+        "build/host/net5/Mono.Cecil.Pdb.dll",
+        "build/host/net5/Mono.Cecil.Rocks.dll",
+        "build/host/net5/Mono.Cecil.dll",
+        "build/host/net5/System.Composition.AttributedModel.dll",
+        "build/host/net5/System.Composition.Convention.dll",
+        "build/host/net5/System.Composition.Hosting.dll",
+        "build/host/net5/System.Composition.Runtime.dll",
+        "build/host/net5/System.Composition.TypedParts.dll",
+        "build/host/net5/System.Configuration.ConfigurationManager.dll",
+        "build/host/net5/System.IO.Pipelines.dll",
+        "build/host/net5/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/net5/System.Security.Permissions.dll",
+        "build/host/net5/Uno.SourceGeneration.Host.deps.json",
+        "build/host/net5/Uno.SourceGeneration.Host.dll",
+        "build/host/net5/Uno.SourceGeneration.Host.dll.config",
+        "build/host/net5/Uno.SourceGeneration.Host.exe",
+        "build/host/net5/Uno.SourceGeneration.Host.pdb",
+        "build/host/net5/Uno.SourceGeneration.Host.runtimeconfig.dev.json",
+        "build/host/net5/Uno.SourceGeneration.Host.runtimeconfig.json",
+        "build/host/net5/Uno.SourceGeneration.dll",
+        "build/host/net5/Uno.SourceGeneration.dll.config",
+        "build/host/net5/Uno.SourceGeneration.pdb",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/ref/Uno.SourceGeneration.Host.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net5/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/Humanizer.dll",
+        "build/host/net6/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.CSharp.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/host/net6/Microsoft.CodeAnalysis.dll",
+        "build/host/net6/Microsoft.DiaSymReader.PortablePdb.dll",
+        "build/host/net6/Microsoft.DiaSymReader.dll",
+        "build/host/net6/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/host/net6/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/host/net6/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/host/net6/Microsoft.Extensions.Logging.Console.dll",
+        "build/host/net6/Microsoft.Extensions.Logging.Debug.dll",
+        "build/host/net6/Microsoft.Extensions.Logging.dll",
+        "build/host/net6/Microsoft.Extensions.Options.dll",
+        "build/host/net6/Microsoft.Extensions.Primitives.dll",
+        "build/host/net6/Mono.Cecil.Mdb.dll",
+        "build/host/net6/Mono.Cecil.Pdb.dll",
+        "build/host/net6/Mono.Cecil.Rocks.dll",
+        "build/host/net6/Mono.Cecil.dll",
+        "build/host/net6/System.Composition.AttributedModel.dll",
+        "build/host/net6/System.Composition.Convention.dll",
+        "build/host/net6/System.Composition.Hosting.dll",
+        "build/host/net6/System.Composition.Runtime.dll",
+        "build/host/net6/System.Composition.TypedParts.dll",
+        "build/host/net6/System.Configuration.ConfigurationManager.dll",
+        "build/host/net6/System.IO.Pipelines.dll",
+        "build/host/net6/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/net6/System.Security.Permissions.dll",
+        "build/host/net6/Uno.SourceGeneration.Host.deps.json",
+        "build/host/net6/Uno.SourceGeneration.Host.dll",
+        "build/host/net6/Uno.SourceGeneration.Host.dll.config",
+        "build/host/net6/Uno.SourceGeneration.Host.exe",
+        "build/host/net6/Uno.SourceGeneration.Host.pdb",
+        "build/host/net6/Uno.SourceGeneration.Host.runtimeconfig.json",
+        "build/host/net6/Uno.SourceGeneration.dll",
+        "build/host/net6/Uno.SourceGeneration.dll.config",
+        "build/host/net6/Uno.SourceGeneration.pdb",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/ref/Uno.SourceGeneration.Host.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/net6/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/Humanizer.dll",
+        "build/host/netcoreapp3.1/Microsoft.Bcl.AsyncInterfaces.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.Workspaces.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.CSharp.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.Workspaces.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.VisualBasic.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.MSBuild.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.Workspaces.dll",
+        "build/host/netcoreapp3.1/Microsoft.CodeAnalysis.dll",
+        "build/host/netcoreapp3.1/Microsoft.DiaSymReader.PortablePdb.dll",
+        "build/host/netcoreapp3.1/Microsoft.DiaSymReader.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Configuration.Abstractions.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Logging.Abstractions.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Logging.Console.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Logging.Debug.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Logging.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Options.dll",
+        "build/host/netcoreapp3.1/Microsoft.Extensions.Primitives.dll",
+        "build/host/netcoreapp3.1/Mono.Cecil.Mdb.dll",
+        "build/host/netcoreapp3.1/Mono.Cecil.Pdb.dll",
+        "build/host/netcoreapp3.1/Mono.Cecil.Rocks.dll",
+        "build/host/netcoreapp3.1/Mono.Cecil.dll",
+        "build/host/netcoreapp3.1/System.Collections.Immutable.dll",
+        "build/host/netcoreapp3.1/System.Composition.AttributedModel.dll",
+        "build/host/netcoreapp3.1/System.Composition.Convention.dll",
+        "build/host/netcoreapp3.1/System.Composition.Hosting.dll",
+        "build/host/netcoreapp3.1/System.Composition.Runtime.dll",
+        "build/host/netcoreapp3.1/System.Composition.TypedParts.dll",
+        "build/host/netcoreapp3.1/System.Configuration.ConfigurationManager.dll",
+        "build/host/netcoreapp3.1/System.IO.Pipelines.dll",
+        "build/host/netcoreapp3.1/System.Reflection.Metadata.dll",
+        "build/host/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll",
+        "build/host/netcoreapp3.1/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/netcoreapp3.1/System.Security.Permissions.dll",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.deps.json",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.dll",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.dll.config",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.exe",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.pdb",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.runtimeconfig.dev.json",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.Host.runtimeconfig.json",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.dll",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.dll.config",
+        "build/host/netcoreapp3.1/Uno.SourceGeneration.pdb",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/cs/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/de/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/es/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/fr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/it/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ja/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ko/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pl/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/pt-BR/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/ru/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/tr/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hans/Microsoft.CodeAnalysis.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.CSharp.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.VisualBasic.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.MSBuild.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll",
+        "build/host/netcoreapp3.1/zh-Hant/Microsoft.CodeAnalysis.resources.dll",
+        "build/netstandard1.0/Uno.SourceGenerationTasks.targets",
+        "lib/netstandard1.0/_._",
+        "uno.sourcegenerationtasks.4.2.0.nupkg.sha512",
+        "uno.sourcegenerationtasks.nuspec"
+      ]
+    },
+    "Uno.UI/4.8.39": {
+      "sha512": "2i8KAFmmhamB0+ekgjsITi7NuNfmBYeKoQ/IhVV/dNhC7Jurrua6h5QFa/rTzdi2ooL9iDLeK9po07jjCZAp4g==",
+      "type": "package",
+      "path": "uno.ui/4.8.39",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "analyzers/dotnet/cs/Microsoft.ApplicationInsights.dll",
+        "analyzers/dotnet/cs/Microsoft.DotNet.PlatformAbstractions.dll",
+        "analyzers/dotnet/cs/System.Diagnostics.DiagnosticSource.dll",
+        "analyzers/dotnet/cs/Uno.Analyzers.dll",
+        "analyzers/dotnet/cs/Uno.Analyzers.pdb",
+        "analyzers/dotnet/cs/Uno.UI.SourceGenerators.dll",
+        "analyzers/dotnet/cs/Uno.UI.SourceGenerators.pdb",
+        "analyzers/dotnet/cs/Uno.Xaml.dll",
+        "analyzers/dotnet/cs/Uno.Xaml.pdb",
+        "buildTransitive/MonoAndroid/Uno.UI.targets",
+        "buildTransitive/Uno.UI.SourceGenerators.props",
+        "buildTransitive/Uno.UI.Tasks.targets",
+        "buildTransitive/Uno.UI.Tasks/Mono.Cecil.Mdb.dll",
+        "buildTransitive/Uno.UI.Tasks/Mono.Cecil.Pdb.dll",
+        "buildTransitive/Uno.UI.Tasks/Mono.Cecil.Rocks.dll",
+        "buildTransitive/Uno.UI.Tasks/Mono.Cecil.dll",
+        "buildTransitive/Uno.UI.Tasks/Uno.UI.Tasks.v0.dll",
+        "buildTransitive/Uno.UI.Tasks/Uno.UI.Tasks.v0.pdb",
+        "buildTransitive/Uno.UI.Tasks/Uno.UI.Tasks.v0d8b42d8ee1dc4dc3c7344c49ec27acbb7727096.dll",
+        "buildTransitive/Uno.UI.Tasks/Uno.UI.Tasks.v0d8b42d8ee1dc4dc3c7344c49ec27acbb7727096.pdb",
+        "buildTransitive/net5.0-windows/Uno.UI.targets",
+        "buildTransitive/net6.0-android30.0/Uno.UI.targets",
+        "buildTransitive/net6.0-ios/Uno.UI.targets",
+        "buildTransitive/net6.0-maccatalyst/Uno.UI.targets",
+        "buildTransitive/net6.0-macos/Uno.UI.targets",
+        "buildTransitive/net7.0-android30.0/Uno.UI.targets",
+        "buildTransitive/net7.0-ios/Uno.UI.targets",
+        "buildTransitive/net7.0-maccatalyst/Uno.UI.targets",
+        "buildTransitive/net7.0-macos/Uno.UI.targets",
+        "buildTransitive/net7.0/Uno.UI.targets",
+        "buildTransitive/netstandard2.0/Uno.UI.targets",
+        "buildTransitive/uap10.0.16299/Uno.UI.targets",
+        "buildTransitive/uap10.0.16299/uno.winui.runtime-replace.targets",
+        "buildTransitive/uap10.0.17763/uno.winui.runtime-replace.targets",
+        "buildTransitive/uap10.0.17763/uno.winui.targets",
+        "buildTransitive/uap10.0.18362/Uno.UI.targets",
+        "buildTransitive/uap10.0.18362/uno.winui.runtime-replace.targets",
+        "buildTransitive/uno.ui.tasks.assets.targets",
+        "buildTransitive/uno.winui.common.targets",
+        "buildTransitive/uno.winui.cross-runtime.targets",
+        "buildTransitive/uno.winui.runtime-replace.targets",
+        "buildTransitive/uno.winui.single-project.targets",
+        "buildTransitive/uno.winui.winappsdk.targets",
+        "buildTransitive/xamarinios10/Uno.UI.targets",
+        "buildTransitive/xamarinmac20/Uno.UI.targets",
+        "lib/MonoAndroid12.0/Uno.Foundation.Logging.dll",
+        "lib/MonoAndroid12.0/Uno.Foundation.Logging.pdb",
+        "lib/MonoAndroid12.0/Uno.Foundation.dll",
+        "lib/MonoAndroid12.0/Uno.Foundation.pdb",
+        "lib/MonoAndroid12.0/Uno.UI.BindingHelper.Android.dll",
+        "lib/MonoAndroid12.0/Uno.UI.BindingHelper.Android.pdb",
+        "lib/MonoAndroid12.0/Uno.UI.BindingHelper.Android.xml",
+        "lib/MonoAndroid12.0/Uno.UI.Composition.dll",
+        "lib/MonoAndroid12.0/Uno.UI.Composition.pdb",
+        "lib/MonoAndroid12.0/Uno.UI.Dispatching.dll",
+        "lib/MonoAndroid12.0/Uno.UI.Dispatching.pdb",
+        "lib/MonoAndroid12.0/Uno.UI.FluentTheme.dll",
+        "lib/MonoAndroid12.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/MonoAndroid12.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/MonoAndroid12.0/Uno.UI.Toolkit.dll",
+        "lib/MonoAndroid12.0/Uno.UI.Toolkit.pdb",
+        "lib/MonoAndroid12.0/Uno.UI.dll",
+        "lib/MonoAndroid12.0/Uno.Xaml.dll",
+        "lib/MonoAndroid12.0/Uno.Xaml.pdb",
+        "lib/MonoAndroid12.0/Uno.dll",
+        "lib/MonoAndroid12.0/Uno.pdb",
+        "lib/MonoAndroid12.0/pdb_move_to_debug/Uno.UI.FluentTheme.pdb",
+        "lib/MonoAndroid12.0/pdb_move_to_debug/Uno.UI.FluentTheme.v1.pdb",
+        "lib/MonoAndroid12.0/pdb_move_to_debug/Uno.UI.FluentTheme.v2.pdb",
+        "lib/MonoAndroid12.0/pdb_move_to_debug/Uno.UI.pdb",
+        "lib/MonoAndroid13.0/Uno.Foundation.Logging.dll",
+        "lib/MonoAndroid13.0/Uno.Foundation.Logging.pdb",
+        "lib/MonoAndroid13.0/Uno.Foundation.dll",
+        "lib/MonoAndroid13.0/Uno.Foundation.pdb",
+        "lib/MonoAndroid13.0/Uno.UI.BindingHelper.Android.dll",
+        "lib/MonoAndroid13.0/Uno.UI.BindingHelper.Android.pdb",
+        "lib/MonoAndroid13.0/Uno.UI.BindingHelper.Android.xml",
+        "lib/MonoAndroid13.0/Uno.UI.Composition.dll",
+        "lib/MonoAndroid13.0/Uno.UI.Composition.pdb",
+        "lib/MonoAndroid13.0/Uno.UI.Dispatching.dll",
+        "lib/MonoAndroid13.0/Uno.UI.Dispatching.pdb",
+        "lib/MonoAndroid13.0/Uno.UI.FluentTheme.dll",
+        "lib/MonoAndroid13.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/MonoAndroid13.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/MonoAndroid13.0/Uno.UI.Toolkit.dll",
+        "lib/MonoAndroid13.0/Uno.UI.dll",
+        "lib/MonoAndroid13.0/Uno.Xaml.dll",
+        "lib/MonoAndroid13.0/Uno.Xaml.pdb",
+        "lib/MonoAndroid13.0/Uno.dll",
+        "lib/MonoAndroid13.0/Uno.pdb",
+        "lib/MonoAndroid13.0/pdb_move_to_debug/Uno.UI.FluentTheme.pdb",
+        "lib/MonoAndroid13.0/pdb_move_to_debug/Uno.UI.FluentTheme.v1.pdb",
+        "lib/MonoAndroid13.0/pdb_move_to_debug/Uno.UI.FluentTheme.v2.pdb",
+        "lib/MonoAndroid13.0/pdb_move_to_debug/Uno.UI.Toolkit.pdb",
+        "lib/MonoAndroid13.0/pdb_move_to_debug/Uno.UI.pdb",
+        "lib/UAP/Uno.UI.Toolkit.dll",
+        "lib/UAP/Uno.UI.Toolkit.pdb",
+        "lib/UAP/Uno.UI.Toolkit.pri",
+        "lib/UAP/Uno.UI.Toolkit/Themes/Generic.xaml",
+        "lib/UAP/Uno.UI.Toolkit/Uno.UI.Toolkit.xr.xml",
+        "lib/net6.0-android30.0/Uno.Foundation.Logging.dll",
+        "lib/net6.0-android30.0/Uno.Foundation.Logging.pdb",
+        "lib/net6.0-android30.0/Uno.Foundation.dll",
+        "lib/net6.0-android30.0/Uno.Foundation.pdb",
+        "lib/net6.0-android30.0/Uno.Foundation.xml",
+        "lib/net6.0-android30.0/Uno.UI.BindingHelper.Android.aar",
+        "lib/net6.0-android30.0/Uno.UI.BindingHelper.Android.dll",
+        "lib/net6.0-android30.0/Uno.UI.BindingHelper.Android.pdb",
+        "lib/net6.0-android30.0/Uno.UI.BindingHelper.Android.xml",
+        "lib/net6.0-android30.0/Uno.UI.Composition.dll",
+        "lib/net6.0-android30.0/Uno.UI.Composition.pdb",
+        "lib/net6.0-android30.0/Uno.UI.Composition.xml",
+        "lib/net6.0-android30.0/Uno.UI.Dispatching.dll",
+        "lib/net6.0-android30.0/Uno.UI.Dispatching.pdb",
+        "lib/net6.0-android30.0/Uno.UI.Dispatching.xml",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.dll",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.pdb",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/net6.0-android30.0/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net6.0-android30.0/Uno.UI.Toolkit.dll",
+        "lib/net6.0-android30.0/Uno.UI.Toolkit.pdb",
+        "lib/net6.0-android30.0/Uno.UI.dll",
+        "lib/net6.0-android30.0/Uno.UI.pdb",
+        "lib/net6.0-android30.0/Uno.UI.xml",
+        "lib/net6.0-android30.0/Uno.Xaml.dll",
+        "lib/net6.0-android30.0/Uno.Xaml.pdb",
+        "lib/net6.0-android30.0/Uno.Xaml.xml",
+        "lib/net6.0-android30.0/Uno.dll",
+        "lib/net6.0-android30.0/Uno.pdb",
+        "lib/net6.0-android30.0/Uno.xml",
+        "lib/net6.0-ios/Uno.Foundation.Logging.dll",
+        "lib/net6.0-ios/Uno.Foundation.Logging.pdb",
+        "lib/net6.0-ios/Uno.Foundation.dll",
+        "lib/net6.0-ios/Uno.Foundation.pdb",
+        "lib/net6.0-ios/Uno.UI.Composition.dll",
+        "lib/net6.0-ios/Uno.UI.Composition.pdb",
+        "lib/net6.0-ios/Uno.UI.Dispatching.dll",
+        "lib/net6.0-ios/Uno.UI.Dispatching.pdb",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.dll",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.pdb",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.v1.dll",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.v2.dll",
+        "lib/net6.0-ios/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net6.0-ios/Uno.UI.Toolkit.dll",
+        "lib/net6.0-ios/Uno.UI.Toolkit.pdb",
+        "lib/net6.0-ios/Uno.UI.dll",
+        "lib/net6.0-ios/Uno.UI.pdb",
+        "lib/net6.0-ios/Uno.Xaml.dll",
+        "lib/net6.0-ios/Uno.Xaml.pdb",
+        "lib/net6.0-ios/Uno.dll",
+        "lib/net6.0-ios/Uno.pdb",
+        "lib/net6.0-maccatalyst/Uno.Foundation.Logging.dll",
+        "lib/net6.0-maccatalyst/Uno.Foundation.Logging.pdb",
+        "lib/net6.0-maccatalyst/Uno.Foundation.dll",
+        "lib/net6.0-maccatalyst/Uno.Foundation.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.Composition.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.Composition.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.Dispatching.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.Dispatching.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.v1.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.v2.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.Toolkit.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.Toolkit.pdb",
+        "lib/net6.0-maccatalyst/Uno.UI.dll",
+        "lib/net6.0-maccatalyst/Uno.UI.pdb",
+        "lib/net6.0-maccatalyst/Uno.Xaml.dll",
+        "lib/net6.0-maccatalyst/Uno.Xaml.pdb",
+        "lib/net6.0-maccatalyst/Uno.dll",
+        "lib/net6.0-maccatalyst/Uno.pdb",
+        "lib/net6.0-macos/Uno.Foundation.Logging.dll",
+        "lib/net6.0-macos/Uno.Foundation.Logging.pdb",
+        "lib/net6.0-macos/Uno.Foundation.dll",
+        "lib/net6.0-macos/Uno.Foundation.pdb",
+        "lib/net6.0-macos/Uno.UI.Composition.dll",
+        "lib/net6.0-macos/Uno.UI.Composition.pdb",
+        "lib/net6.0-macos/Uno.UI.Dispatching.dll",
+        "lib/net6.0-macos/Uno.UI.Dispatching.pdb",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.dll",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.pdb",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.v1.dll",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.v2.dll",
+        "lib/net6.0-macos/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net6.0-macos/Uno.UI.Toolkit.dll",
+        "lib/net6.0-macos/Uno.UI.Toolkit.pdb",
+        "lib/net6.0-macos/Uno.UI.dll",
+        "lib/net6.0-macos/Uno.UI.pdb",
+        "lib/net6.0-macos/Uno.Xaml.dll",
+        "lib/net6.0-macos/Uno.Xaml.pdb",
+        "lib/net6.0-macos/Uno.dll",
+        "lib/net6.0-macos/Uno.pdb",
+        "lib/net7.0-android30.0/Uno.Foundation.Logging.dll",
+        "lib/net7.0-android30.0/Uno.Foundation.Logging.pdb",
+        "lib/net7.0-android30.0/Uno.Foundation.dll",
+        "lib/net7.0-android30.0/Uno.Foundation.pdb",
+        "lib/net7.0-android30.0/Uno.Foundation.xml",
+        "lib/net7.0-android30.0/Uno.UI.BindingHelper.Android.aar",
+        "lib/net7.0-android30.0/Uno.UI.BindingHelper.Android.dll",
+        "lib/net7.0-android30.0/Uno.UI.BindingHelper.Android.pdb",
+        "lib/net7.0-android30.0/Uno.UI.BindingHelper.Android.xml",
+        "lib/net7.0-android30.0/Uno.UI.Composition.dll",
+        "lib/net7.0-android30.0/Uno.UI.Composition.pdb",
+        "lib/net7.0-android30.0/Uno.UI.Composition.xml",
+        "lib/net7.0-android30.0/Uno.UI.Dispatching.dll",
+        "lib/net7.0-android30.0/Uno.UI.Dispatching.pdb",
+        "lib/net7.0-android30.0/Uno.UI.Dispatching.xml",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.dll",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.pdb",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/net7.0-android30.0/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net7.0-android30.0/Uno.UI.Toolkit.dll",
+        "lib/net7.0-android30.0/Uno.UI.Toolkit.pdb",
+        "lib/net7.0-android30.0/Uno.UI.dll",
+        "lib/net7.0-android30.0/Uno.UI.pdb",
+        "lib/net7.0-android30.0/Uno.UI.xml",
+        "lib/net7.0-android30.0/Uno.Xaml.dll",
+        "lib/net7.0-android30.0/Uno.Xaml.pdb",
+        "lib/net7.0-android30.0/Uno.Xaml.xml",
+        "lib/net7.0-android30.0/Uno.dll",
+        "lib/net7.0-android30.0/Uno.pdb",
+        "lib/net7.0-android30.0/Uno.xml",
+        "lib/net7.0-ios/Uno.Foundation.Logging.dll",
+        "lib/net7.0-ios/Uno.Foundation.Logging.pdb",
+        "lib/net7.0-ios/Uno.Foundation.dll",
+        "lib/net7.0-ios/Uno.Foundation.pdb",
+        "lib/net7.0-ios/Uno.UI.Composition.dll",
+        "lib/net7.0-ios/Uno.UI.Composition.pdb",
+        "lib/net7.0-ios/Uno.UI.Dispatching.dll",
+        "lib/net7.0-ios/Uno.UI.Dispatching.pdb",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.dll",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.pdb",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.v1.dll",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.v2.dll",
+        "lib/net7.0-ios/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net7.0-ios/Uno.UI.Toolkit.dll",
+        "lib/net7.0-ios/Uno.UI.Toolkit.pdb",
+        "lib/net7.0-ios/Uno.UI.dll",
+        "lib/net7.0-ios/Uno.UI.pdb",
+        "lib/net7.0-ios/Uno.Xaml.dll",
+        "lib/net7.0-ios/Uno.Xaml.pdb",
+        "lib/net7.0-ios/Uno.dll",
+        "lib/net7.0-ios/Uno.pdb",
+        "lib/net7.0-maccatalyst/Uno.Foundation.Logging.dll",
+        "lib/net7.0-maccatalyst/Uno.Foundation.Logging.pdb",
+        "lib/net7.0-maccatalyst/Uno.Foundation.dll",
+        "lib/net7.0-maccatalyst/Uno.Foundation.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.Composition.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.Composition.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.Dispatching.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.Dispatching.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.v1.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.v2.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.Toolkit.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.Toolkit.pdb",
+        "lib/net7.0-maccatalyst/Uno.UI.dll",
+        "lib/net7.0-maccatalyst/Uno.UI.pdb",
+        "lib/net7.0-maccatalyst/Uno.Xaml.dll",
+        "lib/net7.0-maccatalyst/Uno.Xaml.pdb",
+        "lib/net7.0-maccatalyst/Uno.dll",
+        "lib/net7.0-maccatalyst/Uno.pdb",
+        "lib/net7.0-macos/Uno.Foundation.Logging.dll",
+        "lib/net7.0-macos/Uno.Foundation.Logging.pdb",
+        "lib/net7.0-macos/Uno.Foundation.dll",
+        "lib/net7.0-macos/Uno.Foundation.pdb",
+        "lib/net7.0-macos/Uno.UI.Composition.dll",
+        "lib/net7.0-macos/Uno.UI.Composition.pdb",
+        "lib/net7.0-macos/Uno.UI.Dispatching.dll",
+        "lib/net7.0-macos/Uno.UI.Dispatching.pdb",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.dll",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.pdb",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.v1.dll",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.v2.dll",
+        "lib/net7.0-macos/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net7.0-macos/Uno.UI.Toolkit.dll",
+        "lib/net7.0-macos/Uno.UI.Toolkit.pdb",
+        "lib/net7.0-macos/Uno.UI.dll",
+        "lib/net7.0-macos/Uno.UI.pdb",
+        "lib/net7.0-macos/Uno.Xaml.dll",
+        "lib/net7.0-macos/Uno.Xaml.pdb",
+        "lib/net7.0-macos/Uno.dll",
+        "lib/net7.0-macos/Uno.pdb",
+        "lib/net7.0/Uno.Foundation.Logging.dll",
+        "lib/net7.0/Uno.Foundation.dll",
+        "lib/net7.0/Uno.UI.Composition.dll",
+        "lib/net7.0/Uno.UI.Dispatching.dll",
+        "lib/net7.0/Uno.UI.FluentTheme.dll",
+        "lib/net7.0/Uno.UI.FluentTheme.pdb",
+        "lib/net7.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/net7.0/Uno.UI.FluentTheme.v1.pdb",
+        "lib/net7.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/net7.0/Uno.UI.FluentTheme.v2.pdb",
+        "lib/net7.0/Uno.UI.Toolkit.dll",
+        "lib/net7.0/Uno.UI.Toolkit.pdb",
+        "lib/net7.0/Uno.UI.dll",
+        "lib/net7.0/Uno.Xaml.dll",
+        "lib/net7.0/Uno.dll",
+        "lib/netstandard2.0/Uno.Foundation.Logging.dll",
+        "lib/netstandard2.0/Uno.Foundation.dll",
+        "lib/netstandard2.0/Uno.UI.Composition.dll",
+        "lib/netstandard2.0/Uno.UI.Dispatching.dll",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.dll",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.pdb",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.v1.dll",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.v1.pdb",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.v2.dll",
+        "lib/netstandard2.0/Uno.UI.FluentTheme.v2.pdb",
+        "lib/netstandard2.0/Uno.UI.Toolkit.dll",
+        "lib/netstandard2.0/Uno.UI.Toolkit.pdb",
+        "lib/netstandard2.0/Uno.UI.dll",
+        "lib/netstandard2.0/Uno.Xaml.dll",
+        "lib/netstandard2.0/Uno.dll",
+        "lib/xamarinios10/Uno.Foundation.Logging.dll",
+        "lib/xamarinios10/Uno.Foundation.Logging.pdb",
+        "lib/xamarinios10/Uno.Foundation.dll",
+        "lib/xamarinios10/Uno.Foundation.pdb",
+        "lib/xamarinios10/Uno.UI.Composition.dll",
+        "lib/xamarinios10/Uno.UI.Composition.pdb",
+        "lib/xamarinios10/Uno.UI.Dispatching.dll",
+        "lib/xamarinios10/Uno.UI.Dispatching.pdb",
+        "lib/xamarinios10/Uno.UI.FluentTheme.dll",
+        "lib/xamarinios10/Uno.UI.FluentTheme.v1.dll",
+        "lib/xamarinios10/Uno.UI.FluentTheme.v2.dll",
+        "lib/xamarinios10/Uno.UI.Toolkit.dll",
+        "lib/xamarinios10/Uno.UI.Toolkit.pdb",
+        "lib/xamarinios10/Uno.UI.dll",
+        "lib/xamarinios10/Uno.Xaml.dll",
+        "lib/xamarinios10/Uno.Xaml.pdb",
+        "lib/xamarinios10/Uno.dll",
+        "lib/xamarinios10/Uno.pdb",
+        "lib/xamarinios10/pdb_move_to_debug/Uno.UI.FluentTheme.pdb",
+        "lib/xamarinios10/pdb_move_to_debug/Uno.UI.FluentTheme.v1.pdb",
+        "lib/xamarinios10/pdb_move_to_debug/Uno.UI.FluentTheme.v2.pdb",
+        "lib/xamarinios10/pdb_move_to_debug/Uno.UI.pdb",
+        "lib/xamarinmac20/Uno.Foundation.Logging.dll",
+        "lib/xamarinmac20/Uno.Foundation.Logging.pdb",
+        "lib/xamarinmac20/Uno.Foundation.dll",
+        "lib/xamarinmac20/Uno.Foundation.pdb",
+        "lib/xamarinmac20/Uno.UI.Composition.dll",
+        "lib/xamarinmac20/Uno.UI.Composition.pdb",
+        "lib/xamarinmac20/Uno.UI.Dispatching.dll",
+        "lib/xamarinmac20/Uno.UI.Dispatching.pdb",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.dll",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.pdb",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.v1.dll",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.v1.pdb",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.v2.dll",
+        "lib/xamarinmac20/Uno.UI.FluentTheme.v2.pdb",
+        "lib/xamarinmac20/Uno.UI.Toolkit.dll",
+        "lib/xamarinmac20/Uno.UI.Toolkit.pdb",
+        "lib/xamarinmac20/Uno.UI.dll",
+        "lib/xamarinmac20/Uno.UI.pdb",
+        "lib/xamarinmac20/Uno.Xaml.dll",
+        "lib/xamarinmac20/Uno.Xaml.pdb",
+        "lib/xamarinmac20/Uno.dll",
+        "lib/xamarinmac20/Uno.pdb",
+        "tools/linker/Mono.Cecil.Pdb.dll",
+        "tools/linker/Mono.Cecil.dll",
+        "tools/linker/System.Json.dll",
+        "tools/linker/System.Reflection.MetadataLoadContext.dll",
+        "tools/linker/illink.deps.json",
+        "tools/linker/illink.dll",
+        "tools/linker/illink.exe",
+        "tools/linker/illink.runtimeconfig.dev.json",
+        "tools/linker/illink.runtimeconfig.json",
+        "tools/uno-sourcegen/Microsoft.ApplicationInsights.dll",
+        "tools/uno-sourcegen/Microsoft.DotNet.PlatformAbstractions.dll",
+        "tools/uno-sourcegen/System.Diagnostics.DiagnosticSource.dll",
+        "tools/uno-sourcegen/Uno.UI.SourceGenerators.dll",
+        "tools/uno-sourcegen/Uno.UI.SourceGenerators.pdb",
+        "tools/uno-sourcegen/Uno.Xaml.dll",
+        "tools/uno-sourcegen/Uno.Xaml.pdb",
+        "uno-runtime/net7.0/skia/Uno.Foundation.Logging.dll",
+        "uno-runtime/net7.0/skia/Uno.Foundation.Logging.pdb",
+        "uno-runtime/net7.0/skia/Uno.Foundation.dll",
+        "uno-runtime/net7.0/skia/Uno.Foundation.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.Composition.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.Composition.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.Dispatching.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.Dispatching.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.v1.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.v1.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.v2.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.FluentTheme.v2.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.Toolkit.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.Toolkit.pdb",
+        "uno-runtime/net7.0/skia/Uno.UI.dll",
+        "uno-runtime/net7.0/skia/Uno.UI.pdb",
+        "uno-runtime/net7.0/skia/Uno.Xaml.dll",
+        "uno-runtime/net7.0/skia/Uno.Xaml.pdb",
+        "uno-runtime/net7.0/skia/Uno.dll",
+        "uno-runtime/net7.0/skia/Uno.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.Foundation.Logging.dll",
+        "uno-runtime/net7.0/webassembly/Uno.Foundation.Logging.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.Foundation.dll",
+        "uno-runtime/net7.0/webassembly/Uno.Foundation.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Composition.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Composition.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Dispatching.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Dispatching.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.v1.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.v1.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.v2.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.FluentTheme.v2.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Toolkit.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Toolkit.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Wasm.deps.json",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Wasm.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Wasm.dll.config",
+        "uno-runtime/net7.0/webassembly/Uno.UI.Wasm.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.UI.dll",
+        "uno-runtime/net7.0/webassembly/Uno.UI.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.Xaml.dll",
+        "uno-runtime/net7.0/webassembly/Uno.Xaml.pdb",
+        "uno-runtime/net7.0/webassembly/Uno.dll",
+        "uno-runtime/net7.0/webassembly/Uno.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.Foundation.Logging.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.Foundation.Logging.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.Foundation.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.Foundation.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Composition.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Composition.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Dispatching.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Dispatching.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.v1.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.v1.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.v2.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.FluentTheme.v2.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Toolkit.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.Toolkit.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.UI.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.Xaml.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.Xaml.pdb",
+        "uno-runtime/netstandard2.0/skia/Uno.dll",
+        "uno-runtime/netstandard2.0/skia/Uno.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Foundation.Logging.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Foundation.Logging.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Foundation.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Foundation.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Composition.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Composition.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Dispatching.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Dispatching.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.v1.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.v1.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.v2.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.FluentTheme.v2.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Toolkit.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Toolkit.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Wasm.deps.json",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Wasm.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Wasm.dll.config",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.Wasm.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.UI.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Xaml.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.Xaml.pdb",
+        "uno-runtime/netstandard2.0/webassembly/Uno.dll",
+        "uno-runtime/netstandard2.0/webassembly/Uno.pdb",
+        "uno.png",
+        "uno.ui.4.8.39.nupkg.sha512",
+        "uno.ui.nuspec"
+      ]
     }
   },
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "MonoGame.Content.Builder.Task >= 3.8.1.303",
-      "MonoGame.Framework.WindowsDX >= 3.8.1.303"
+      "MonoGame.Framework.WindowsDX >= 3.8.1.303",
+      "NUnit >= 3.13.3",
+      "NUnit3TestAdapter >= 4.4.2",
+      "Uno.UI >= 4.8.39"
     ]
   },
   "packageFolders": {
@@ -7575,6 +8799,18 @@
           "MonoGame.Framework.WindowsDX": {
             "target": "Package",
             "version": "[3.8.1.303, )"
+          },
+          "NUnit": {
+            "target": "Package",
+            "version": "[3.13.3, )"
+          },
+          "NUnit3TestAdapter": {
+            "target": "Package",
+            "version": "[4.4.2, )"
+          },
+          "Uno.UI": {
+            "target": "Package",
+            "version": "[4.8.39, )"
           }
         },
         "imports": [

@@ -52,6 +52,18 @@
             "MonoGame.Framework.WindowsDX": {
               "target": "Package",
               "version": "[3.8.1.303, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.13.3, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[4.4.2, )"
+            },
+            "Uno.UI": {
+              "target": "Package",
+              "version": "[4.8.39, )"
             }
           },
           "imports": [

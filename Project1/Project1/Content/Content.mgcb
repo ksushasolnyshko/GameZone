@@ -253,6 +253,18 @@
 /processorParam:TextureFormat=Color
 /build:bg_level4.png
 
+#begin continue_bg.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:continue_bg.png
+
 #begin Controls/exit_button.png
 /importer:TextureImporter
 /processor:TextureProcessor

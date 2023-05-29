@@ -24,6 +24,7 @@ namespace Zone.Models
         {
             Speed = 8f;
         }
+
         protected override void SetAnimations()
         {
             if (Velocity.X > 0)

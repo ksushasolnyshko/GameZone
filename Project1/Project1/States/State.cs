@@ -48,7 +48,7 @@ namespace Zone.States
             return firstObjRect.Intersects(secondObjRect);
         }
 
-        public void QuitGame(object sender, EventArgs e)
+        public virtual void QuitGame(object sender, EventArgs e)
         {
             _game.Exit();
         }

@@ -48,14 +48,19 @@ namespace Zone.States
             foreach (var b in boxes)
                 if (Collide(player, b)) player.Velocity.Y = 0;
             player.isJump = true;
-            if (Collide(player, secretBook) || Collide(player, emptyArt))
+            if (Collide(player, emptyArt) && sprites[emptyArt])
             {
                 artifactSoundInstance.Play();
-                if (Collide(player, emptyArt)) sprites[emptyArt] = false;
-                if (Collide(player, secretBook)) sprites[secretBook] = false;
+                sprites[emptyArt] = false;
             }
 
-            if (!sprites[secretBook] && !sprites[emptyArt]) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
+            if (Collide(player, secretBook) && sprites[secretBook])
+            {
+                artifactSoundInstance.Play();
+                sprites[secretBook] = false;
+            }
+
+            if (!sprites[secretBook] && !sprites[emptyArt]) _game.ChangeState(new ContinueState(_game, _graphicsDevice, _content, 1));
             foreach (var sprite in sprites.Keys)
                 if (sprite == player) sprite.Update(gameTime, sprite, boxes);
                 else sprite.Update(gameTime, sprite);

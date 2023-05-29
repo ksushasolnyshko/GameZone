@@ -54,7 +54,7 @@ namespace Zone.States
             if (!sprites[spring]) player.isJump = true;
             else player.isJump = false;
 
-            if (!sprites[spring] && !sprites[medal] && !sprites[flask]) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
+            if (!sprites[spring] && !sprites[medal] && !sprites[flask]) _game.ChangeState(new ContinueState(_game, _graphicsDevice, _content, 2));
             if (Collide(player, eye))
             {
                 anomalySoundInstance.Play();

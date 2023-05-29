@@ -24,6 +24,7 @@
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level1 (2).png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level2.jpg</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/bg_level4.png</File>
+    <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/continue_bg.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/exit_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/play_button.png</File>
     <File>C:/Users/ksupo/GitHub/GameZone/Project1/Project1/Content/Controls/replay_button.png</File>
@@ -67,6 +68,7 @@
     <File>Artifacts/book2.png</File>
     <File>Artifacts/heart.png</File>
     <File>bg_level1.png</File>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

@@ -71,7 +71,7 @@ namespace Zone.States
             if (Collide(player, star)) sprites[star] = false;
             if (Collide(player, fly)) sprites[fly] = false;
             
-            if (!sprites[crystal] && !sprites[star] && !sprites[fly]) _game.ChangeState(new Level4(_game, _graphicsDevice, _content));
+            if (!sprites[crystal] && !sprites[star] && !sprites[fly]) _game.ChangeState(new ContinueState(_game, _graphicsDevice, _content, 3));
             foreach (var sprite in sprites.Keys)
                 if (sprite == player) sprite.Update(gameTime, sprite, boxes);
                 else if (sprite != health)

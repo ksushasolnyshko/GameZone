@@ -3,8 +3,13 @@ using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using Zone.Controls;
+using System.Runtime.Serialization;
+using System.Threading.Tasks;
+using Windows.Storage;
+using System.Linq;
 
 namespace Zone.States
 {
@@ -14,6 +19,7 @@ namespace Zone.States
         Texture2D background;
         public SoundEffect levelSound;
         public SoundEffectInstance levelsSoundInstance;
+        public int levelNumber;
 
         public MenuState(Game1 game, GraphicsDevice graphicsDevice, ContentManager content)
           : base(game, graphicsDevice, content)
@@ -25,7 +31,7 @@ namespace Zone.States
             levelSound = _content.Load<SoundEffect>("Sounds/level_sound");
             levelsSoundInstance = levelSound.CreateInstance();
             levelsSoundInstance.IsLooped = true;
-            levelsSoundInstance.Volume = 0.1f;
+            levelsSoundInstance.Volume = 0.6f;
 
             var playButton = new Button(playButtomTexture)
             {
@@ -62,10 +68,44 @@ namespace Zone.States
 
             spriteBatch.End();
         }
+        public async void LoadLevelNumber()
+        {
+            await readXMLAsync();
+        }
+
+        private async Task readXMLAsync()
+        {
+            var serializer = new DataContractSerializer(typeof(Int16));
+
+            bool existed = await FileExists(ApplicationData.Current.LocalFolder, "level.xml");
+            if (existed)
+            {
+                using (var stream = await ApplicationData.Current.LocalFolder.OpenStreamForReadAsync("level.xml"))
+                {
+                    levelNumber = (Int16)serializer.ReadObject(stream);
+                }
+            }
+            else levelNumber = 0;
+        }
+
+
+        public async Task<bool> FileExists(StorageFolder folder, string fileName)
+        {
+            return (await folder.GetFilesAsync()).Any(x => x.Name == fileName);
+        }
+
 
         private void PlayButton_Click(object sender, EventArgs e)
         {
-            _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
+            LoadLevelNumber();
+            if (levelNumber != 0)
+            {
+                if (levelNumber == 1) _game.ChangeState(new Level2(_game, _graphicsDevice, _content));
+                else if (levelNumber == 2) _game.ChangeState(new Level3(_game, _graphicsDevice, _content));
+                else if (levelNumber == 3) _game.ChangeState(new Level4(_game, _graphicsDevice, _content));
+                else _game.ChangeState(new Level5(_game, _graphicsDevice, _content));
+            }
+            else _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
