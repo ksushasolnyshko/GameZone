@@ -8,7 +8,7 @@ namespace Zone
 {
     public class Game1 : Game
     {
-        GraphicsDeviceManager graphics;
+        public GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Texture2D background;
         //private List<Component> _gameComponents;
