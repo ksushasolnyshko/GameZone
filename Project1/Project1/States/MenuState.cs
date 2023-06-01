@@ -105,7 +105,7 @@ namespace Zone.States
                 else if (levelNumber == 3) _game.ChangeState(new Level4(_game, _graphicsDevice, _content));
                 else _game.ChangeState(new Level5(_game, _graphicsDevice, _content));
             }
-            else _game.ChangeState(new Level1(_game, _graphicsDevice, _content));
+            else _game.ChangeState(new Level4(_game, _graphicsDevice, _content));
         }
         private void RulesButton_Click(object sender, EventArgs e)
         {
